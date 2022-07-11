@@ -10,7 +10,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
 
-public class LoginTestRelativeLocators {
+public class TestLoginRelativeLocators {
 
     private static final String CREDENTIALS_TEXT = "Username: admin Password: admin123";
     private static final String USERNAME_TEXT = "Username";

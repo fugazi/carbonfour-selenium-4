@@ -36,7 +36,7 @@ public class TestWindowManagement {
     }
 
     /**
-     * Open a new WINDOW using built-in method 'Window and Tab Management' Selenium 4.0.
+     * Test opening a new WINDOW using built-in method 'Window and Tab Management' Selenium 4.0.
      */
     @Test
     void testNewWindowSelenium() {
@@ -49,7 +49,7 @@ public class TestWindowManagement {
     }
 
     /**
-     * Open a new TAB using built-in method 'Window and Tab Management' Selenium 4.0.
+     * Test opening a new TAB using built-in method 'Window and Tab Management' Selenium 4.0.
      */
     @Test
     void testNewTabSelenium() {
@@ -62,7 +62,7 @@ public class TestWindowManagement {
     }
 
     /**
-     * Automatically Open & Switch To The New WINDOW or TAB using built-in method 'Window and Tab Management' Selenium 4.0.
+     * Test Automatically Open & Switch To The New WINDOW or TAB using built-in method 'Window and Tab Management' Selenium 4.0.
      * Switch & Work In The Main Window Or Tab
      */
     @Test
