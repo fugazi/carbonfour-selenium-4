@@ -1,6 +1,6 @@
-package com.selenium_4.tests;
+package Selenium_4_Tests;
 
-import com.selenium_4.tests.Pages.LoginPage;
+import Selenium_4_Tests.Pages.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

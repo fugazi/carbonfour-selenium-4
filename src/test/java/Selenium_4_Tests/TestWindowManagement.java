@@ -1,4 +1,4 @@
-package com.selenium_4.tests;
+package Selenium_4_Tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
@@ -24,7 +24,7 @@ public class TestWindowManagement {
         WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver();
         driver.manage().window().maximize();
-        driver.get("https://demo.opencart.com");
+        driver.get("https://ecommerce-playground.lambdatest.io");
     }
 
     /**
@@ -80,11 +80,11 @@ public class TestWindowManagement {
         // Switch To The Parent Window
         driver.switchTo().window(parentWindowId.iterator().next());
         // Work In The Parent Window Or Tab
-        WebElement searchBoxParent = driver.findElement(By.name("search"));
+        WebElement searchBoxParent = driver.findElement(By.xpath("(//input[@placeholder='Search For Products'])[1]"));
         searchBoxParent.sendKeys("iPhone");
         searchBoxParent.sendKeys(Keys.ENTER);
         assertSoftly(softly -> {
-            softly.assertThat(driver.getTitle()).isEqualTo("Your Store");
+            softly.assertThat(driver.getTitle()).isEqualTo("Search - iPhone");
         });
     }
 

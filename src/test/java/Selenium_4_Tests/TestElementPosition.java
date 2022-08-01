@@ -1,4 +1,4 @@
-package com.selenium_4.tests;
+package Selenium_4_Tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
