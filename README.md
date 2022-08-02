@@ -2,6 +2,7 @@
 # Selenium 4 - UI Tests Project
 
 This is an Automation project using the new features for Selenium Webdriver 4.3 version.
+
 This project has been developed by [Douglas Urrea Ocampo](https://www.linkedin.com/in/douglasfugazi) to improve learning on advanced Automation testing with Selenium 4.0.
 
 The main features of this project has the following:
@@ -46,8 +47,11 @@ This project using the following languages and frameworks:
 
 ### ⚡️Automation Test Strategy
 We know that any automation project starting with a good test architecture.
-This is an end-to-end UI tests using Selenium Webdriver with latest 4.3. version
+
+This projects has UI Tests using Selenium Webdriver with latest 4.3. version.
+
 The website under test is an e-commerce website [here](https://ecommerce-playground.lambdatest.io) to test different domain access according to the scope of each test.
+
 I must say it was fun learning and automating this website because it was challenging in some respects.
 
 1. Browser is Microsoft Edge in order to have a different approach to test.
@@ -84,7 +88,7 @@ I must say it was fun learning and automating this website because it was challe
 4. Annotation @Test will be used to group the tests by Smoke and Regression tests.
 5. Each tests will finish automatically and the browser will be closed.
 
-## 🟢🟢 Pre-requisites:
+## 🟢 Pre-requisites: 🟢
 1. Download the latest Java JDK from [here](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133155.html)
 2. Install git from [here](https://git-scm.com)
 3. Selenium Webdriver from [here](https://www.selenium.dev)
@@ -109,7 +113,7 @@ I must say it was fun learning and automating this website because it was challe
     * Option 2: Open the project baseline and run each Selenium Test: `src/test/java/Selenium_4_Tests`
 5. Enjoy the project! 😎
 
-## ☎️Generating the test report
+## ☎️ Generating the test report
 This project uses Allure Report to automatically generate the test report.
 There are some configuration to make it happen:
 * aspectj configuration on `pom.xml` file
@@ -127,6 +131,11 @@ You can use the command line to generate it in two ways:
     * Screenshots package `Selenium 4/Screenshots` into folder `src/test/java/com.selenium_4/Screenshots`
 * testName: `carbonfour-selenium-4`
 
-## 🏁 Do you want to help?
-* If you have an idea, suggestion, feature or an issue, please open a new Pull Request on [GitHub]()
+## 💡 Do you want to help?
+* If you have an idea, suggestion, feature or an issue, please open a new Pull Request on [GitHub](https://github.com/fugazi/carbonfour-selenium-4/pulls)
 * Pull requests without explanations will be rejected. No hard feelings, we are open to all suggestions.
+
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://douglasfugazi.co/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/douglasfugazi)
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/douglasfugazi)
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/fugazi/carbonfour-selenium-4/blob/main/LICENSE)
