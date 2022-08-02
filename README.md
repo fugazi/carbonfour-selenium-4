@@ -21,7 +21,7 @@ The main features of this project has the following:
 > Some practices will help you to improve your test architecture, but the central point of this repository is
 > demonstrate with examples the new and exciting features of Selenium 4.0.
 > 
-> You can find more information about the new features in the oficial links:
+> You can find more information about the new features with the official links:
 > * [Selenium 4.0](https://www.seleniumhq.org/docs/04_dev_guide.jsp#selenium-4-0)
 > * [Selenium Webdriver documentation](https://www.selenium.dev/documentation/webdriver/)
 > * [Chrome DevTools documentation](https://chromedevtools.github.io/devtools-protocol/)
