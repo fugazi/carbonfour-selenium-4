@@ -52,7 +52,7 @@ This projects has UI Tests using Selenium Webdriver with latest 4.3. version.
 
 The website under test is an e-commerce website [here](https://ecommerce-playground.lambdatest.io) to test different domain access according to the scope of each test.
 
-I must say it was fun learning and automating this website because it was challenging in some respects.
+I must say it was fun learning and automating this website because it was challenging in some respects. 😀
 
 1. Browser is Microsoft Edge in order to have a different approach to test.
 2. Test has following scenarios:
@@ -83,7 +83,7 @@ I must say it was fun learning and automating this website because it was challe
             * Time to Interactive (TTI): It helps identify cases where a page appears interactive but is not.
             * Total Blocking Time (TBT): It helps quantify the severity of a page's non-interactivity before it becomes reliably interactive.
             * Cumulative Layout Shift (CLS): It helps in quantifying how frequently users encounter unexpected layout shifts.
-            * 
+          
 3. After the test, assertions will be validated to each test.
 4. Annotation @Test will be used to group the tests by Smoke and Regression tests.
 5. Each tests will finish automatically and the browser will be closed.
