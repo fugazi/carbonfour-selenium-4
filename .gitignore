@@ -11,6 +11,8 @@ target/
 *.iws
 *.iml
 *.ipr
+### IntelliJ IDEA Configs ###
+.idea/
 
 ### Eclipse ###
 .apt_generated

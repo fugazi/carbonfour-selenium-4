@@ -124,8 +124,9 @@ You can use the command line to generate it in two ways:
     * Project package `Selenium_4_Tests` into folder `src/test/java/Selenium_4_Tests`
     * Selenium UI Tests `Test.java` into folder `src/test/java/Selenium_4_Tests`
     * Page Objects `CategoriesPage.java` into folder `src/test/java/Selenium_4_Tests/Pages`
+    * Screenshots package `Selenium 4/Screenshots` into folder `src/test/java/com.selenium_4/Screenshots`
 * testName: `carbonfour-selenium-4`
 
-## Do you want to help?
-If you have an idea, suggestion, feature or an issue, please open a new Pull Request on [GitHub]()
-Pull requests without explanations will be rejected. No hard feelings, we are open to all suggestions.
+## 🏁 Do you want to help?
+* If you have an idea, suggestion, feature or an issue, please open a new Pull Request on [GitHub]()
+* Pull requests without explanations will be rejected. No hard feelings, we are open to all suggestions.
