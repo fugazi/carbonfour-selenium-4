@@ -37,7 +37,7 @@ public class TestDevToolsNetwork {
     }
 
     /**
-     * Emulate Network Conditions using Selenium 4.0.
+     * Network Emulation Conditions using Selenium 4.0.
      * DevTools has a method to emulate Network Conditions like connection type, latency, download and upload rate.
      * <a href="Link">https://chromedevtools.github.io/devtools-protocol/tot/Network/</a>
      * The website under test should go after the 'emulateNetworkConditions' method.
