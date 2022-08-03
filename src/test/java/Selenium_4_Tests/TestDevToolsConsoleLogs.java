@@ -56,8 +56,6 @@ public class TestDevToolsConsoleLogs {
             System.out.println("Timestamp: " + logEntry.getTimestamp());
             System.out.println("StackTrace: " + logEntry.getStackTrace());
         });
-        assertSoftly(softly -> {
-            softly.assertThat(driver.getTitle()).isEqualTo("My Location - Where am I Right Now?");
-        });
+        assertSoftly(softly -> softly.assertThat(driver.getTitle()).isEqualTo("My Location - Where am I Right Now?"));
     }
 }

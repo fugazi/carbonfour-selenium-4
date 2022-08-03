@@ -52,9 +52,7 @@ public class TestDevToolsNetwork {
         // Activates emulation of network conditions for Cellular 3G.
         devTools.send(Network.emulateNetworkConditions(false, 150, 2500, 1500, Optional.of(ConnectionType.CELLULAR3G)));
         driver.get("https://linkedin.com");
-        assertSoftly(softly -> {
-            softly.assertThat(driver.getTitle()).contains("LinkedIn");
-        });
+        assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("LinkedIn"));
     }
 
     @Test
@@ -64,12 +62,10 @@ public class TestDevToolsNetwork {
         devTools.createSession();
         // Enables network tracking, network events will now be delivered to the client
         devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
-        // Activates emulation of network conditions for Wifi.
+        // Activates emulation of network conditions for Wi-Fi.
         devTools.send(Network.emulateNetworkConditions(false, 250, 8500, 5000, Optional.of(ConnectionType.WIFI)));
         driver.get("https://linkedin.com");
-        assertSoftly(softly -> {
-            softly.assertThat(driver.getTitle()).contains("LinkedIn");
-        });
+        assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("LinkedIn"));
     }
 
     @Test
@@ -82,8 +78,6 @@ public class TestDevToolsNetwork {
         // Activates emulation of network conditions for Bluetooth.
         devTools.send(Network.emulateNetworkConditions(false, 80, 12400, 1185, Optional.of(ConnectionType.BLUETOOTH)));
         driver.get("https://linkedin.com");
-        assertSoftly(softly -> {
-            softly.assertThat(driver.getTitle()).contains("LinkedIn");
-        });
+        assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("LinkedIn"));
     }
 }

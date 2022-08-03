@@ -43,11 +43,9 @@ public class TestLoginRelativeLocators {
     @Test
     void isLoginLogoDisplayed() {
         LoginPage loginPage = new LoginPage(driver);
-        assertSoftly(softly -> {
-            softly.assertThat(loginPage.isLoginLogoDisplayed())
-                    .describedAs("OrangeHRM is loaded. Login logo is displayed")
-                    .isTrue();
-        });
+        assertSoftly(softly -> softly.assertThat(loginPage.isLoginLogoDisplayed())
+                .describedAs("OrangeHRM is loaded. Login logo is displayed")
+                .isTrue());
     }
 
     /**
@@ -56,9 +54,7 @@ public class TestLoginRelativeLocators {
     @Test
     void getLoginPanelTitle() {
         LoginPage loginPage = new LoginPage(driver);
-        assertSoftly(softly -> {
-            softly.assertThat(loginPage.getLoginPanelTitle()).isEqualTo("LOGIN Panel");
-        });
+        assertSoftly(softly -> softly.assertThat(loginPage.getLoginPanelTitle()).isEqualTo("LOGIN Panel"));
     }
 
     /**
@@ -69,9 +65,7 @@ public class TestLoginRelativeLocators {
     @Test
     void testRelativeLocatorsAbove() {
         LoginPage loginPage = new LoginPage(driver);
-        assertSoftly(softly -> {
-            softly.assertThat(loginPage.getCredentialsTextRelativeLocatorsAbove()).isEqualTo(CREDENTIALS_TEXT);
-        });
+        assertSoftly(softly -> softly.assertThat(loginPage.getCredentialsTextRelativeLocatorsAbove()).isEqualTo(CREDENTIALS_TEXT));
     }
 
     /**
@@ -81,9 +75,7 @@ public class TestLoginRelativeLocators {
     @Test
     void testRelativeLocatorsBelow() {
         LoginPage loginPage = new LoginPage(driver);
-        assertSoftly(softly -> {
-            softly.assertThat(loginPage.getUsernameTextRelativeLocatorsBelow()).isEqualTo(USERNAME_TEXT);
-        });
+        assertSoftly(softly -> softly.assertThat(loginPage.getUsernameTextRelativeLocatorsBelow()).isEqualTo(USERNAME_TEXT));
     }
 
     /**
@@ -93,11 +85,9 @@ public class TestLoginRelativeLocators {
     @Test
     void testRelativeLocatorsImage() {
         LoginPage loginPage = new LoginPage(driver);
-        assertSoftly(softly -> {
-            softly.assertThat(loginPage.getLoginImageRelativeLocatorsLeft())
-                    .describedAs("The Login image should be available on the left of the Login Panel")
-                    .isTrue();
-        });
+        assertSoftly(softly -> softly.assertThat(loginPage.getLoginImageRelativeLocatorsLeft())
+                .describedAs("The Login image should be available on the left of the Login Panel")
+                .isTrue());
     }
 
     /**
@@ -107,11 +97,9 @@ public class TestLoginRelativeLocators {
     @Test
     void testRelativeLocatorsSubmitButton() {
         LoginPage loginPage = new LoginPage(driver);
-        assertSoftly(softly -> {
-            softly.assertThat(loginPage.getLoginSubmitButtonRelativeLocatorsRight())
-                    .describedAs("The Login Submit button should be available on the right of the Login Image")
-                    .isTrue();
-        });
+        assertSoftly(softly -> softly.assertThat(loginPage.getLoginSubmitButtonRelativeLocatorsRight())
+                .describedAs("The Login Submit button should be available on the right of the Login Image")
+                .isTrue());
     }
 
     /**
@@ -122,11 +110,9 @@ public class TestLoginRelativeLocators {
     void testRelativeLocatorsForgotPasswordLink() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.clickForgotPasswordRelativeLocatorsNear();
-        assertSoftly(softly -> {
-            softly.assertThat(loginPage.clickForgotPasswordRelativeLocatorsNear())
-                    .describedAs("The Forgot Password link should be available near the Login Submit button")
-                    .exists();
-        });
+        assertSoftly(softly -> softly.assertThat(loginPage.clickForgotPasswordRelativeLocatorsNear())
+                .describedAs("The Forgot Password link should be available near the Login Submit button")
+                .exists());
     }
 
     /**
@@ -136,10 +122,8 @@ public class TestLoginRelativeLocators {
     @Test
     void testRelativeLocatorsSocialImages() {
         LoginPage loginPage = new LoginPage(driver);
-        assertSoftly(softly -> {
-            softly.assertThat(loginPage.getSocialImagesRelativeLocatorsNear())
-                    .describedAs("The social images should be available near the footer")
-                    .isNotNull();
-        });
+        assertSoftly(softly -> softly.assertThat(loginPage.getSocialImagesRelativeLocatorsNear())
+                .describedAs("The social images should be available near the footer")
+                .isNotNull());
     }
 }

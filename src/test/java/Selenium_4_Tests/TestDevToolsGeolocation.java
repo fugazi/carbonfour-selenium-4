@@ -44,7 +44,7 @@ public class TestDevToolsGeolocation {
      */
     @Test
     void mockGeolocationCDPCommand() {
-        HashMap<String, Object> coordinates = new HashMap()
+        HashMap coordinates = new HashMap()
         {{
             put("latitude", 34.066540);
             put("longitude", -84.296260);
@@ -68,8 +68,6 @@ public class TestDevToolsGeolocation {
         // Set The Geolocation Override: Latitude, Longitude, Accuracy.
         devTools.send(Emulation.setGeolocationOverride(Optional.of(41.889980), Optional.of(12.494260), Optional.of(1)));
         driver.get("https://my-location.org/");
-        assertSoftly(softly -> {
-            softly.assertThat(driver.getTitle()).isEqualTo("My Location - Where am I Right Now?");
-        });
+        assertSoftly(softly -> softly.assertThat(driver.getTitle()).isEqualTo("My Location - Where am I Right Now?"));
     }
 }

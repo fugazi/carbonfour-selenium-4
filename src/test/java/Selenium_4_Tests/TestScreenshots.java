@@ -22,11 +22,9 @@ public class TestScreenshots {
     void shopLogoSmokeTest() {
         ScreenshotsPage screenshotsPage = new ScreenshotsPage(driver);
         screenshotsPage.setupUrl();
-        assertSoftly(softly -> {
-            softly.assertThat(screenshotsPage.isShopLogoDisplayed())
-                    .describedAs("E-Commerce LambdaTest is loaded. Shop logo is displayed")
-                    .isTrue();
-        });
+        assertSoftly(softly -> softly.assertThat(screenshotsPage.isShopLogoDisplayed())
+                .describedAs("E-Commerce LambdaTest is loaded. Shop logo is displayed")
+                .isTrue());
         screenshotsPage.tearDown();
     }
 

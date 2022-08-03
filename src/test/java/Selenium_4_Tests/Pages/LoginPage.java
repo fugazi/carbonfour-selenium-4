@@ -105,8 +105,6 @@ public class LoginPage {
     /**
      * Click on the Forgot Password link using Relative Locators Selenium 4.0.
      * Element to search with the NEAR method.
-     *
-     * @return
      */
     public Path clickForgotPasswordRelativeLocatorsNear() {
         WebElement loginPanel = driver.findElement(Using.LOGIN_BUTTON.selector);
@@ -118,8 +116,6 @@ public class LoginPage {
     /**
      * Get a list of social images from the footer using Relative Locators Selenium 4.0.
      * Element to search with the NEAR method.
-     *
-     * @return
      */
     public String getSocialImagesRelativeLocatorsNear() {
         List<WebElement> socialImages = Collections.singletonList(driver.findElement(with(By.tagName("img")).near(Using.LOGIN_FOOTER.selector)));
