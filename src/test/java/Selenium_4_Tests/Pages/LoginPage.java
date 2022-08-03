@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.locators.RelativeLocator;
+
 import static org.openqa.selenium.support.locators.RelativeLocator.with;
 
 import java.nio.file.Path;
@@ -24,7 +25,7 @@ public class LoginPage {
          */
         private final By selector;
 
-        Using(By selector){
+        Using(By selector) {
             this.selector = selector;
         }
 
@@ -38,6 +39,7 @@ public class LoginPage {
      */
 
     public WebDriver driver;
+
     public LoginPage(WebDriver driver) {
         super();
     }
@@ -55,9 +57,10 @@ public class LoginPage {
     /**
      * Get the login panel title on the webpage
      * The happy way ever < Selenium 4.0.
-     *
      */
-    public String getLoginPanelTitle() { return driver.findElement(Using.LOGIN_PANEL.selector).getText(); }
+    public String getLoginPanelTitle() {
+        return driver.findElement(Using.LOGIN_PANEL.selector).getText();
+    }
 
     /**
      * Get the Credentials text using Relative Locators Selenium 4.0.
