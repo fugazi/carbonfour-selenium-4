@@ -83,6 +83,21 @@ I must say it was fun learning and automating this website because it was challe
             * Time to Interactive (TTI): It helps identify cases where a page appears interactive but is not.
             * Total Blocking Time (TBT): It helps quantify the severity of a page's non-interactivity before it becomes reliably interactive.
             * Cumulative Layout Shift (CLS): It helps in quantifying how frequently users encounter unexpected layout shifts.
+   * Scenario 7:
+       * How To Simulate Devices Viewport In Selenium 4.0
+           * Google Chrome
+           * Firefox
+           * Microsoft Edge
+           * Internet Explorer 11
+           * Safari
+           * Opera
+           * iPhone X
+           * iPhone SE
+           * iPad Pro
+           * Galaxy Note 10
+           * Galaxy Tablet
+           * Pixel 6 XL
+           * OnePlus 10
           
 3. After the test, assertions will be validated to each test.
 4. Annotation @Test will be used to group the tests by Smoke and Regression tests.
