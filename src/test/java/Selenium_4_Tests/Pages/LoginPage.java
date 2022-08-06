@@ -35,7 +35,7 @@ public class LoginPage {
     }
 
     /**
-     * Constructor stub to initialize the WebDriver object
+     * Constructor stub to initialize the WebDriver object.
      */
     public WebDriver driver;
 

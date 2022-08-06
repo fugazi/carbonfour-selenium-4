@@ -29,18 +29,14 @@ public class ScreenshotsPage {
         Using(By selector){
             this.selector = selector;
         }
-
-        public By selector() {
-            return this.selector;
-        }
     }
 
     /**
-     * Constructor stub to initialize the driver object
+     * Constructor stub to initialize the WebDriver object.
      */
 
     public WebDriver driver;
-    public ScreenshotsPage(WebDriver driver) {
+    public ScreenshotsPage() {
         super();
     }
 
@@ -72,6 +68,16 @@ public class ScreenshotsPage {
      */
     public boolean isShopLogoDisplayed() {
         return driver.findElement(Using.SHOP_LOGO.selector).isDisplayed();
+    }
+
+    /**
+     * Get the shop title on the webpage
+     * The happy way ever < Selenium 4.0.
+     *
+     * @return the shop title
+     */
+    public String getShopTitle() {
+        return driver.getTitle();
     }
 
     /**
