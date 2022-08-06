@@ -32,19 +32,14 @@ public class LoginPage {
         Using(By selector) {
             this.selector = selector;
         }
-
-        public By selector() {
-            return this.selector;
-        }
     }
 
     /**
-     * Constructor stub to initialize the driver object
+     * Constructor stub to initialize the WebDriver object
      */
-
     public WebDriver driver;
 
-    public LoginPage(WebDriver driver) {
+    public LoginPage() {
         super();
     }
 

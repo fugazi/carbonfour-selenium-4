@@ -3,7 +3,6 @@ package Selenium_4_Tests;
 import Selenium_4_Tests.Pages.LoginPage;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebDriver;
 
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
 
@@ -12,7 +11,10 @@ public class TestLoginRelativeLocators {
     private static final String CREDENTIALS_TEXT = "Username: admin Password: admin123";
     private static final String USERNAME_TEXT = "Username";
 
-    public WebDriver driver;
+    /**
+     * Instantiate the LoginPage class to the Webdriver object.
+     */
+    LoginPage loginPage = new LoginPage();
 
     /**
      * Check if the Login Logo is displayed. The happy way ever < Selenium 4.0.
@@ -20,7 +22,6 @@ public class TestLoginRelativeLocators {
     @Test
     @Tag("Smoke")
     void isLoginLogoDisplayed() {
-        LoginPage loginPage = new LoginPage(driver);
         loginPage.setUp();
         assertSoftly(softly -> softly.assertThat(loginPage.isLoginLogoDisplayed())
                 .describedAs("OrangeHRM is loaded. Login logo is displayed")
@@ -34,7 +35,6 @@ public class TestLoginRelativeLocators {
     @Test
     @Tag("Smoke")
     void getLoginPanelTitle() {
-        LoginPage loginPage = new LoginPage(driver);
         loginPage.setUp();
         assertSoftly(softly -> softly.assertThat(loginPage.getLoginPanelTitle()).isEqualTo("LOGIN Panel"));
         loginPage.tearDown();
@@ -48,7 +48,6 @@ public class TestLoginRelativeLocators {
     @Test
     @Tag("Regression")
     void testRelativeLocatorsAbove() {
-        LoginPage loginPage = new LoginPage(driver);
         loginPage.setUp();
         assertSoftly(softly -> softly.assertThat(loginPage.getCredentialsTextRelativeLocatorsAbove()).isEqualTo(CREDENTIALS_TEXT));
         loginPage.tearDown();
@@ -61,7 +60,6 @@ public class TestLoginRelativeLocators {
     @Test
     @Tag("Regression")
     void testRelativeLocatorsBelow() {
-        LoginPage loginPage = new LoginPage(driver);
         loginPage.setUp();
         assertSoftly(softly -> softly.assertThat(loginPage.getUsernameTextRelativeLocatorsBelow()).isEqualTo(USERNAME_TEXT));
         loginPage.tearDown();
@@ -74,7 +72,6 @@ public class TestLoginRelativeLocators {
     @Test
     @Tag("Regression")
     void testRelativeLocatorsImage() {
-        LoginPage loginPage = new LoginPage(driver);
         loginPage.setUp();
         assertSoftly(softly -> softly.assertThat(loginPage.getLoginImageRelativeLocatorsLeft())
                 .describedAs("The Login image should be available on the left of the Login Panel")
@@ -89,7 +86,6 @@ public class TestLoginRelativeLocators {
     @Test
     @Tag("Regression")
     void testRelativeLocatorsSubmitButton() {
-        LoginPage loginPage = new LoginPage(driver);
         loginPage.setUp();
         assertSoftly(softly -> softly.assertThat(loginPage.getLoginSubmitButtonRelativeLocatorsRight())
                 .describedAs("The Login Submit button should be available on the right of the Login Image")
@@ -104,7 +100,6 @@ public class TestLoginRelativeLocators {
     @Test
     @Tag("Regression")
     void testRelativeLocatorsForgotPasswordLink() {
-        LoginPage loginPage = new LoginPage(driver);
         loginPage.setUp();
         loginPage.clickForgotPasswordRelativeLocatorsNear();
         assertSoftly(softly -> softly.assertThat(loginPage.clickForgotPasswordRelativeLocatorsNear())
@@ -120,7 +115,6 @@ public class TestLoginRelativeLocators {
     @Test
     @Tag("Regression")
     void testRelativeLocatorsSocialImages() {
-        LoginPage loginPage = new LoginPage(driver);
         loginPage.setUp();
         assertSoftly(softly -> softly.assertThat(loginPage.getSocialImagesRelativeLocatorsNear())
                 .describedAs("The social images should be available near the footer")
