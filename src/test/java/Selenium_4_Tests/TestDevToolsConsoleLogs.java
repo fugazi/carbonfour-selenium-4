@@ -1,15 +1,17 @@
 package Selenium_4_Tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.devtools.v85.log.Log;
+import org.openqa.selenium.devtools.v103.log.Log;
 
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
 
+@Slf4j
 public class TestDevToolsConsoleLogs {
 
     public EdgeDriver driver;
@@ -48,13 +50,14 @@ public class TestDevToolsConsoleLogs {
 
         // Add A Listener For The Console Logs
         devTools.addListener(Log.entryAdded(), logEntry -> {
-            // Print The Logs
-            System.out.println("--------");
-            System.out.println("Level: " + logEntry.getLevel());
-            System.out.println("Text: " + logEntry.getText());
-            System.out.println("URL: " + logEntry.getUrl());
-            System.out.println("Timestamp: " + logEntry.getTimestamp());
-            System.out.println("StackTrace: " + logEntry.getStackTrace());
+            // Print The Logs To The Console
+            log.info("--------");
+            log.info("Level: " + logEntry.getLevel());
+            log.info("Text: " + logEntry.getText());
+            log.info("URL: " + logEntry.getUrl());
+            log.info("Timestamp: " + logEntry.getTimestamp());
+            log.info("StackTrace: " + logEntry.getStackTrace());
+            log.info("--------");
         });
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).isEqualTo("My Location - Where am I Right Now?"));
     }
