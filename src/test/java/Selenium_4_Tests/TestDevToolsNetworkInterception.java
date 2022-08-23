@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.NetworkInterceptor;
 import org.openqa.selenium.devtools.v104.fetch.Fetch;
@@ -21,7 +22,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
-import static org.openqa.selenium.devtools.v104.network.Network.loadingFailed;
+import static org.openqa.selenium.devtools.v104.network.Network.*;
 import static org.openqa.selenium.remote.http.Contents.utf8String;
 
 @Slf4j
@@ -149,5 +150,49 @@ public class TestDevToolsNetworkInterception {
         });
         // Go to the website
         driver.get("https://ecommerce-playground.lambdatest.io");
+    }
+
+    /**
+     * WebSocket Listener using Selenium 4.0.
+     * DevTools has a method to intercept WebSocket requests and create a listener: 'webSocketCreated'
+     * The website under test should go after the 'webSocketClosed' method.
+     */
+    @Test
+    public void verifyWebSocketOperationTest() throws InterruptedException {
+        // Get The DevTools & Create A Session with the ChromeDriver.
+        DevTools devTools = driver.getDevTools();
+        devTools.createSession();
+        // Enables network tracking with the 'Enable' method, network events will now be delivered to the client
+        devTools.send(enable(Optional.empty(), Optional.empty(), Optional.empty()));
+        // Add a new WebSocket listener
+        devTools.addListener(webSocketCreated(), ws -> {
+            log.info("WebSocket created: " + ws.getUrl());
+            log.info("WebSocket id: " + ws.getRequestId());
+            log.info("WebSocket type: " + ws.getInitiator().stream().findFirst().get().getType());
+        });
+        // Received WebSocket listener
+        devTools.addListener(webSocketFrameReceived(), e -> {
+            log.info("WebSocket frame received: " + e.getRequestId());
+            log.info(e.getResponse().getPayloadData());
+            log.info(e.getResponse().getOpcode().toString());
+            log.info(String.valueOf(e.getResponse().getMask()));
+        });
+        // Get WebSocket error listener
+        devTools.addListener(webSocketFrameError(), e -> {
+            log.info("WebSocket error: " + e.getErrorMessage());
+        });
+        // Close WebSocket listener
+        devTools.addListener(webSocketClosed(), c -> {
+            log.info("WebSocket Closed");
+            log.info(String.valueOf(c.getTimestamp()));
+        });
+        // Go to the website and open a WebSocket connection
+        driver.get("https://www.piesocket.com/websocket-tester");
+        var button = driver.findElement(By.xpath("//button[@type='submit']"));
+        button.click();
+        Thread.sleep(5000);
+        var closeButton = driver.findElement(By.xpath("//button[normalize-space()='Disconnect']"));
+        closeButton.click();
+        Thread.sleep(2000);
     }
 }
