@@ -15,6 +15,7 @@ import org.openqa.selenium.devtools.v104.network.model.BlockedReason;
 import org.openqa.selenium.devtools.v104.network.model.ResourceType;
 import org.openqa.selenium.devtools.v104.security.Security;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.http.HttpResponse;
 import org.openqa.selenium.remote.http.Route;
 
@@ -27,6 +28,8 @@ import static org.openqa.selenium.remote.http.Contents.utf8String;
 
 @Slf4j
 public class TestDevToolsNetworkInterception {
+
+    private static final Integer PAUSE_TIME = 5000;
 
     public EdgeDriver driver;
 
@@ -190,9 +193,17 @@ public class TestDevToolsNetworkInterception {
         driver.get("https://www.piesocket.com/websocket-tester");
         var button = driver.findElement(By.xpath("//button[@type='submit']"));
         button.click();
-        Thread.sleep(5000);
+        setPause();
         var closeButton = driver.findElement(By.xpath("//button[normalize-space()='Disconnect']"));
         closeButton.click();
-        Thread.sleep(2000);
+        setPause();
+    }
+
+    /**
+     * Sets a pause on the page load.
+     */
+    private void setPause() {
+        Actions actions = new Actions(driver);
+        actions.pause(PAUSE_TIME).perform();
     }
 }
