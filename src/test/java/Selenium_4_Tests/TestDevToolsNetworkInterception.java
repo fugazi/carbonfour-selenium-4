@@ -259,6 +259,31 @@ public class TestDevToolsNetworkInterception {
     }
 
     /**
+     * Get Request served from Cache using Selenium 4.0.
+     * DevTools has a method to intercept network requests: 'requestServedFromCache'
+     * The website under test should go after the 'addListener' method.
+     */
+    @Test
+    void getRequestServedFromCacheTest() {
+        // Get The DevTools & Create A Session with the ChromeDriver.
+        DevTools devTools = driver.getDevTools();
+        devTools.createSession();
+        // Enables network tracking with the 'Enable' method, network events will now be delivered to the client
+        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+        // Clear Browser Cache
+        devTools.send(Network.setCacheDisabled(true));
+        devTools.send(Network.clearBrowserCache());
+        devTools.send(Network.clearBrowserCookies());
+        // Add a new HTTP listener
+        devTools.addListener(requestServedFromCache(), cacheRequest -> {
+            log.info("HTTP request served from cache: " + cacheRequest);
+        });
+        // Go to the website
+        driver.get("https://ecommerce-playground.lambdatest.io");
+        assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
+    }
+
+    /**
      * Sets a pause on the page load.
      */
     private void setPause() {
