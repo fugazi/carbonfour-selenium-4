@@ -76,6 +76,5 @@
             <artifactId>allure-maven</artifactId>
             <version>${alluremvn.version}</version>
         </dependency>
-
     </dependencies>
 </project>
