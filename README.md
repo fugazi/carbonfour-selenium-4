@@ -98,7 +98,15 @@ I must say it was fun learning and automating this website because it was challe
            * Galaxy Tablet
            * Pixel 6 XL
            * OnePlus 10
-          
+   * Scenario 8:
+       * How To Simulate Network Interception In Selenium 4.0
+           * Network Security to intercept network requests and block requests based on the conditions.
+           * Network Block Patterns to block URLs and requests patterns.
+           * WebSocket Listener to intercept WebSocket requests.
+           * Event Message Listener to intercept source events.
+           * Intercept HTTP traffic and responses.
+           * Request Cache to intercept requests served from cache.
+           * Response Override to intercept responses served from cache.
 3. After the test, assertions will be validated to each test.
 4. Annotation @Test will be used to group the tests by Smoke and Regression tests.
 5. Each tests will finish automatically and the browser will be closed.
