@@ -153,6 +153,7 @@ public class TestDevToolsNetworkInterception {
         });
         // Go to the website
         driver.get("https://ecommerce-playground.lambdatest.io");
+        assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
     }
 
     /**
@@ -197,6 +198,7 @@ public class TestDevToolsNetworkInterception {
         var closeButton = driver.findElement(By.xpath("//button[normalize-space()='Disconnect']"));
         closeButton.click();
         setPause();
+        assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Online WebSocket"));
     }
 
     /**
@@ -222,6 +224,38 @@ public class TestDevToolsNetworkInterception {
         // Go to the website and open an Event Source connection
         driver.get("https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_sse");
         setPause();
+        assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Editor"));
+    }
+
+    /**
+     * Get HTTP traffic using Selenium 4.0.
+     * DevTools has a method to intercept HTTP requests and create a listener: 'responseReceived'
+     * The website under test should go after the 'addListener' method.
+     */
+    @Test
+    void getHttpTrafficTest() {
+        // Get The DevTools & Create A Session with the ChromeDriver.
+        DevTools devTools = driver.getDevTools();
+        devTools.createSession();
+        // Enables network tracking with the 'Enable' method, network events will now be delivered to the client
+        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+        // Add a new HTTP listener
+        devTools.addListener(responseReceived(), e -> {
+            log.info("HTTP response received: " + e.getRequestId());
+            log.info("HTTP response url: " + e.getResponse().getUrl());
+            log.info("HTTP response status: " + e.getResponse().getStatus());
+            log.info("HTTP response status text: " + e.getResponse().getStatusText());
+            log.info("HTTP response headers: " + e.getResponse().getHeaders());
+            log.info("HTTP response protocol: " + e.getResponse().getProtocol());
+            log.info("HTTP response remote IP address: " + e.getResponse().getRemoteIPAddress());
+            log.info("HTTP response remote port: " + e.getResponse().getRemotePort());
+            log.info("HTTP response mime type: " + e.getResponse().getMimeType());
+            log.info("HTTP response connection id: " + e.getResponse().getConnectionId());
+            log.info("---");
+        });
+        // Go to the website
+        driver.get("https://ecommerce-playground.lambdatest.io");
+        assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
     }
 
     /**
