@@ -161,7 +161,7 @@ public class TestDevToolsNetworkInterception {
      * The website under test should go after the 'webSocketClosed' method.
      */
     @Test
-    public void verifyWebSocketOperationTest() throws InterruptedException {
+    public void verifyWebSocketOperationTest() {
         // Get The DevTools & Create A Session with the ChromeDriver.
         DevTools devTools = driver.getDevTools();
         devTools.createSession();
@@ -196,6 +196,31 @@ public class TestDevToolsNetworkInterception {
         setPause();
         var closeButton = driver.findElement(By.xpath("//button[normalize-space()='Disconnect']"));
         closeButton.click();
+        setPause();
+    }
+
+    /**
+     * Event Message Listener using Selenium 4.0.
+     * DevTools has a method to intercept Event source and create a listener: 'eventSourceMessageReceived'
+     * The website under test should go after the 'addListener' method.
+     */
+    @Test
+    void verifyEventSourceMessagesTest() {
+        // Get The DevTools & Create A Session with the ChromeDriver.
+        DevTools devTools = driver.getDevTools();
+        devTools.createSession();
+        // Enables network tracking with the 'Enable' method, network events will now be delivered to the client
+        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+        // Add a new Event Source listener
+        devTools.addListener(eventSourceMessageReceived(), e -> {
+            log.info("Event Source event data received: " + e.getData());
+            log.info("Event Source event name: " + e.getEventName());
+            log.info("Event Source event id: " + e.getEventId());
+            log.info("Event Source message id: " + e.getRequestId());
+            log.info("Event Source event time: " + e.getTimestamp());
+        });
+        // Go to the website and open an Event Source connection
+        driver.get("https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_sse");
         setPause();
     }
 
