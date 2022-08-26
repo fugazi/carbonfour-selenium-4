@@ -18,8 +18,6 @@
         <assertj.version>3.23.1</assertj.version>
         <lombok.version>1.18.24</lombok.version>
         <slf4j.version>1.7.36</slf4j.version>
-        <allure.version>2.19.0</allure.version>
-        <alluremvn.version>2.11.2</alluremvn.version>
         <junit.version>5.9.0</junit.version>
     </properties>
 
@@ -64,17 +62,6 @@
             <artifactId>junit-jupiter-engine</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-junit5</artifactId>
-            <version>${allure.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-maven</artifactId>
-            <version>${alluremvn.version}</version>
         </dependency>
     </dependencies>
 </project>
