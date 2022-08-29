@@ -1,6 +1,7 @@
 package Selenium_4_Tests_Practice.Components;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public abstract class FormFieldComponent {
@@ -15,13 +16,15 @@ public abstract class FormFieldComponent {
     }
 
     private final WebElement element;
+    private final WebDriver page;
 
     /**
      * Constructor for the FormFieldComponent abstract class.
      * @param element WebElement
      */
-    public FormFieldComponent(WebElement element) {
+    public FormFieldComponent(WebElement element, WebDriver page) {
         this.element = element;
+        this.page = page;
     }
 
     /**
@@ -31,6 +34,7 @@ public abstract class FormFieldComponent {
     public WebElement getElement() {
         return element;
     }
+    public WebDriver getPage() { return page; }
 
     /**
      * Get the Error Message of the Web Element.

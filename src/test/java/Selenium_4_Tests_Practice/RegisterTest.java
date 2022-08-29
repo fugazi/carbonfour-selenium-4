@@ -1,5 +1,6 @@
 package Selenium_4_Tests_Practice;
 
+import Selenium_4_Tests_Practice.BaseUtility.BaseUrl;
 import Selenium_4_Tests_Practice.Components.FormFieldComponent;
 import Selenium_4_Tests_Practice.Pages.RegisterPage;
 import Selenium_4_Tests_Practice.Utilities.FormFieldUtility;
@@ -11,6 +12,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 
 import java.util.Arrays;
@@ -24,32 +26,12 @@ public class RegisterTest {
 
     private static final int EXPECTED_ERRORS_TOTAL = 2;
 
+    /**
+     * Instantiate the BaseUrl class to the Webdriver object.
+     */
     public WebDriver driver;
-
-    /**
-     * Instantiate the RegisterPage class to the Webdriver object.
-     */
-    RegisterPage registerPage = new RegisterPage(driver);
-
-    /**
-     * Initialize the WebDriverManager and EdgeDriver.
-     * Go to the website under Test and maximize the browser window.
-     */
-    @BeforeEach
-    public void setupUrl() {
-        WebDriverManager.edgedriver().setup();
-        driver = new EdgeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://my-location.org");
-    }
-
-    /**
-     * Close the browser window.
-     */
-    @AfterEach
-    public void tearDown() {
-        driver.quit();
-    }
+    BaseUrl baseUrl = new BaseUrl(driver);
+    RegisterPage registerPage;
 
     /**
      * Test to validate the Register Page.
@@ -57,18 +39,24 @@ public class RegisterTest {
     @ParameterizedTest
     @MethodSource("Source")
     void validateFormFieldErrors(RegisterPage.FormField formField) {
-        FormFieldComponent formFieldComponent = registerPage.getFieldErrorMessages().get(formField);
+        baseUrl.setupUrl();
+        registerPage.clickContinueButton();
+        FormFieldComponent formFieldComponent = registerPage.getFormFieldComponent(formField);
         FormFieldUtility formFieldUtility = FormFieldUtility.getInstance(formFieldComponent);
         formFieldUtility.checkInputText();
     }
 
-    private static Stream<RegisterPage.FormField formField> Source() {
-        return Stream.of(Arrays.stream(RegisterPage.FormField.values()))
+    private static Stream<RegisterPage.FormField> Source() {
+        return Stream.of(
+                Arrays.stream(RegisterPage.FirstAndLastName.values())
+                )
                 .flatMap(Function.identity());
     }
 
     @Test
     void testRegister() {
+        baseUrl.setupUrl();
+        registerPage.clickContinueButton();
         // validate error messages
         List<String> errorMessages = registerPage.getFieldErrorMessages();
         assertSoftly(softly -> {
@@ -80,7 +68,7 @@ public class RegisterTest {
                         .isTrue();
             }
         });
-
+        baseUrl.tearDown();
     }
 }
 

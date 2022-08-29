@@ -12,16 +12,22 @@ import java.util.stream.Collectors;
 
 public class RegisterPage {
 
-    private final WebElement element;
+    public final WebElement element;
 
+    /**
+     * Constructor for the RegisterPage class.
+     * @param element WebElement instance
+     */
     public RegisterPage(WebElement element) {
         this.element = element;
     }
 
     private enum Using {
-        ERROR_MESSAGES(By.xpath("//div[@class='text-danger']"));
+        ERROR_MESSAGES(By.xpath("//div[@class='text-danger']")),
+        CONTINUE_BUTTON(By.xpath("//input[@value='Continue']"));
 
         public final By selector;
+
         Using(By selector) {
             this.selector = selector;
         }
@@ -32,16 +38,20 @@ public class RegisterPage {
      */
     public interface FormField<P> {
         By getSelector();
+
         FormFieldComponent getComponent(WebElement element, P page);
     }
 
     /**
      * Enum containing the elements of Register Account Form
-     * Also including 'First Name and Last name' fields with the minimum and maximum characters for each component
+     * Also including 'First Name and Last name' fields with the minimum and maximum characters for each component.
+     * Functional Interface for the FormFieldComponent that represents a function that accepts two arguments and produces a result.
      */
     public enum FirstAndLastName implements FormField<RegisterPage> {
-        FIRST_NAME_INPUT(By.xpath("//input[@id='input-firstname']"), (element, page) -> new InputTextComponent(element, 1, 32)),
-        LAST_NAME_INPUT(By.xpath("//input[@id='input-lastname']"), (element, page) -> new InputTextComponent(element, 1, 32));
+        FIRST_NAME_INPUT(By.xpath("//input[@id='input-firstname']"),
+                (element, page) -> new InputTextComponent(element, page, 1,32)),
+        LAST_NAME_INPUT(By.xpath("//input[@id='input-lastname']"),
+                (element, page) -> new InputTextComponent(element, page, 1,32));
 
         final By selector;
         final BiFunction<WebElement, WebDriver, FormFieldComponent> componentFactory;
@@ -62,6 +72,14 @@ public class RegisterPage {
         }
     }
 
+
+    /**
+     * FormFieldComponent Final
+     */
+    public FormFieldComponent getFormFieldComponent(final FormField<RegisterPage> formField) {
+        return formField.getComponent(element.findElement(formField.getSelector()), this);
+    }
+
     /**
      * Gets the Error messages from the Register Account Form
      *
@@ -70,5 +88,12 @@ public class RegisterPage {
     public List<String> getFieldErrorMessages() {
         return element.findElements(Using.ERROR_MESSAGES.selector).stream().map(WebElement::getText)
                 .collect(Collectors.toList());
+    }
+
+    /**
+     * Click on the Continue button
+     */
+    public void clickContinueButton() {
+        element.findElement(Using.CONTINUE_BUTTON.selector).click();
     }
 }

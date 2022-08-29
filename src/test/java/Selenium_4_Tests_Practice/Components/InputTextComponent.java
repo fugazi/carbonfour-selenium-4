@@ -1,7 +1,7 @@
 package Selenium_4_Tests_Practice.Components;
 
-import Selenium_4_Tests_Practice.Components.FormFieldComponent;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class InputTextComponent extends FormFieldComponent {
@@ -12,10 +12,13 @@ public class InputTextComponent extends FormFieldComponent {
     /**
      * Constructor stub for the FormFieldComponent abstract class.
      *
-     * @param element WebElement
+     * @param element WebElement instance
+     * @param page WebDriver instance
+     * @param minChar minimum number of characters
+     * @param maxChar maximum number of characters
      */
-    public InputTextComponent(WebElement element, int minChar, int maxChar) {
-        super(element);
+    public InputTextComponent(WebElement element, WebDriver page, int minChar, int maxChar) {
+        super(element, page);
         this.minChar = minChar;
         this.maxChar = maxChar;
     }
@@ -38,7 +41,7 @@ public class InputTextComponent extends FormFieldComponent {
      * Add the value on the input text.
      */
     public void addInputText(String value) {
-        getElement().sendKeys(Keys.chord(Keys.CONTROL, "abc"));
+        getElement().sendKeys(Keys.chord(Keys.CONTROL, "a"));
         getElement().sendKeys(Keys.DELETE);
         getElement().sendKeys(value);
     }
