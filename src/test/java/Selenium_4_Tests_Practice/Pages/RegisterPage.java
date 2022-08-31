@@ -13,7 +13,6 @@ import java.util.stream.Collectors;
 
 public class RegisterPage extends BaseUrl {
 
-    public WebElement element;
     public WebDriver driver;
 
     /**
@@ -78,7 +77,7 @@ public class RegisterPage extends BaseUrl {
      * FormFieldComponent Final
      */
     public FormFieldComponent getFormFieldComponent(final FormField<RegisterPage> formField) {
-        return formField.getComponent(element.findElement(formField.getSelector()), this);
+        return formField.getComponent(driver.findElement(formField.getSelector()), this);
     }
 
     /**
@@ -87,7 +86,7 @@ public class RegisterPage extends BaseUrl {
      * @return The list containing the error messages
      */
     public List<String> getFieldErrorMessages() {
-        return element.findElements(Using.ERROR_MESSAGES.selector).stream().map(WebElement::getText)
+        return driver.findElements(Using.ERROR_MESSAGES.selector).stream().map(WebElement::getText)
                 .collect(Collectors.toList());
     }
 

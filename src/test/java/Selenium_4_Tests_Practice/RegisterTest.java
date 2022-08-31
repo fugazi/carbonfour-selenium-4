@@ -19,8 +19,9 @@ import static org.assertj.core.api.SoftAssertions.assertSoftly;
 public class RegisterTest {
 
     private static final int EXPECTED_ERRORS_TOTAL = 2;
-
     public WebDriver driver;
+
+    RegisterPage registerPage = new RegisterPage(BaseUrl.driver);
 
     /**
      * Test to validate the Register Page.
@@ -28,7 +29,6 @@ public class RegisterTest {
     @ParameterizedTest
     @MethodSource("Source")
     void validateFormFieldErrors(RegisterPage.FormField formField) {
-        RegisterPage registerPage = new RegisterPage(driver);
         BaseUrl baseUrl = new BaseUrl(driver);
         baseUrl.setupUrl();
         registerPage.clickContinueButton();
@@ -46,7 +46,6 @@ public class RegisterTest {
 
     @Test
     void testRegister() {
-        RegisterPage registerPage = new RegisterPage(driver);
         BaseUrl baseUrl = new BaseUrl(driver);
         baseUrl.setupUrl();
         registerPage.clickContinueButton();

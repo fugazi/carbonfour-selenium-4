@@ -11,7 +11,7 @@ public class BaseUrl {
     /**
      * Constructor stub to initialize the WebDriver object.
      */
-    public WebDriver driver;
+    public static WebDriver driver;
 
     public BaseUrl(WebDriver driver) {
         super();
