@@ -4,16 +4,10 @@ import Selenium_4_Tests_Practice.BaseUtility.BaseUrl;
 import Selenium_4_Tests_Practice.Components.FormFieldComponent;
 import Selenium_4_Tests_Practice.Pages.RegisterPage;
 import Selenium_4_Tests_Practice.Utilities.FormFieldUtility;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.edge.EdgeDriver;
 
 import java.util.Arrays;
 import java.util.List;
@@ -26,12 +20,7 @@ public class RegisterTest {
 
     private static final int EXPECTED_ERRORS_TOTAL = 2;
 
-    /**
-     * Instantiate the BaseUrl class to the Webdriver object.
-     */
     public WebDriver driver;
-    BaseUrl baseUrl = new BaseUrl(driver);
-    RegisterPage registerPage;
 
     /**
      * Test to validate the Register Page.
@@ -39,6 +28,8 @@ public class RegisterTest {
     @ParameterizedTest
     @MethodSource("Source")
     void validateFormFieldErrors(RegisterPage.FormField formField) {
+        RegisterPage registerPage = new RegisterPage(driver);
+        BaseUrl baseUrl = new BaseUrl(driver);
         baseUrl.setupUrl();
         registerPage.clickContinueButton();
         FormFieldComponent formFieldComponent = registerPage.getFormFieldComponent(formField);
@@ -48,13 +39,15 @@ public class RegisterTest {
 
     private static Stream<RegisterPage.FormField> Source() {
         return Stream.of(
-                Arrays.stream(RegisterPage.FirstAndLastName.values())
+                        Arrays.stream(RegisterPage.FirstAndLastName.values())
                 )
                 .flatMap(Function.identity());
     }
 
     @Test
     void testRegister() {
+        RegisterPage registerPage = new RegisterPage(driver);
+        BaseUrl baseUrl = new BaseUrl(driver);
         baseUrl.setupUrl();
         registerPage.clickContinueButton();
         // validate error messages
