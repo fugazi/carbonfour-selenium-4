@@ -1,39 +1,21 @@
 package Selenium_4_Tests_Practice.BaseUtility;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 
-public class BaseUrl {
+public interface BaseUrl {
 
-    /**
-     * Constructor stub to initialize the WebDriver object.
-     */
-    public static WebDriver driver;
-
-    public BaseUrl(WebDriver driver) {
-        super();
-    }
+    String DOMAIN_ENV_VAR = "domain";
+    String DOMAIN_BY_DEFAULT = "ecommerce-playground.lambdatest.io";
+    String DOMAIN = System.getenv(DOMAIN_ENV_VAR) != null ? System.getenv(DOMAIN_ENV_VAR) : DOMAIN_BY_DEFAULT;
+    String BASE_URL = DOMAIN + "/index.php?route=account/register";
+    String BASE_URL_WITH_PROTOCOL = "https://" + BASE_URL;
 
     /**
-     * Initialize the WebDriverManager and EdgeDriver.
-     * Go to the website under Test and maximize the browser window.
+     * Initialize the WebDriver instance.
+     * Get the current URL and set it as the base URL.
      */
-    @BeforeEach
-    public void setupUrl() {
-        WebDriverManager.edgedriver().setup();
-        driver = new EdgeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://ecommerce-playground.lambdatest.io/index.php?route=account/register");
-    }
-
-    /**
-     * Close the browser window.
-     */
-    @AfterEach
-    public void tearDown() {
-        driver.quit();
+    static void getBaseUrl(WebDriver driver) {
+        driver.get(BASE_URL_WITH_PROTOCOL);
+        driver.getCurrentUrl();
     }
 }

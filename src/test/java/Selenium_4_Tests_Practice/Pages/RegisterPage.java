@@ -1,6 +1,5 @@
 package Selenium_4_Tests_Practice.Pages;
 
-import Selenium_4_Tests_Practice.BaseUtility.BaseUrl;
 import Selenium_4_Tests_Practice.Components.FormFieldComponent;
 import Selenium_4_Tests_Practice.Components.InputTextComponent;
 import org.openqa.selenium.By;
@@ -11,7 +10,7 @@ import java.util.List;
 import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 
-public class RegisterPage extends BaseUrl {
+public class RegisterPage {
 
     public WebDriver driver;
 
@@ -19,7 +18,7 @@ public class RegisterPage extends BaseUrl {
      * Constructor for the RegisterPage class.
      */
     public RegisterPage(WebDriver driver) {
-        super(driver);
+        super();
     }
 
     private enum Using {
