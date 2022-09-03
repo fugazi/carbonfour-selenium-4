@@ -24,7 +24,7 @@ import static org.assertj.core.api.SoftAssertions.assertSoftly;
 
 public class RegisterTest {
 
-    private static final int EXPECTED_ERRORS_TOTAL = 2;
+    private static final int EXPECTED_ERRORS_TOTAL = 5;
 
     public WebDriver driver;
     public RegisterPage registerPage;

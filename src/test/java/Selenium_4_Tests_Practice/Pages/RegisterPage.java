@@ -12,13 +12,13 @@ import java.util.stream.Collectors;
 
 public class RegisterPage {
 
-    public WebDriver driver;
+    private final WebDriver driver;
 
     /**
      * Constructor for the RegisterPage class.
      */
     public RegisterPage(WebDriver driver) {
-        super();
+        this.driver = driver;
     }
 
     private enum Using {
