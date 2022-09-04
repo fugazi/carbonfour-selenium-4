@@ -39,10 +39,10 @@ public class RegisterPage {
     /**
      * Interface Form Fields.
      */
-    public interface FormField<P> {
+    public interface FormField<WebDriver> {
         By getSelector();
 
-        FormFieldComponent getComponent(WebElement element, P page);
+        FormFieldComponent getComponent(WebElement element, WebDriver page);
     }
 
     /**
@@ -71,7 +71,7 @@ public class RegisterPage {
 
         @Override
         public FormFieldComponent getComponent(WebElement element, RegisterPage page) {
-            return componentFactory.apply(element, (WebDriver) page);
+            return componentFactory.apply(element, page.driver);
         }
     }
 

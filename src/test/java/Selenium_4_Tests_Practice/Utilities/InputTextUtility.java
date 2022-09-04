@@ -28,15 +28,15 @@ public class InputTextUtility extends FormFieldUtility {
         SoftAssertions report = new SoftAssertions();
         if (component.getMinChar() > 1) {
             component.addInputText(RandomStringUtils.randomAlphabetic(component.getMinChar() - 1));
-            report.assertThat(ERROR_INPUT_FIRST_NAME_MESSAGE).isEqualTo(component.getErrorMessage());
+            report.assertThat(ERROR_INPUT_LAST_NAME_MESSAGE).isEqualTo(component.getErrorMessage());
         } else if (component.getMinChar() == 1) {
             component.addInputText(RandomStringUtils.randomAlphabetic(component.getMinChar() - 1));
-            report.assertThat(ERROR_INPUT_LAST_NAME_MESSAGE).isEqualTo(component.getErrorMessage());
+            report.assertThat(ERROR_INPUT_FIRST_NAME_MESSAGE).isEqualTo(component.getErrorMessage());
         }
         component.addInputText(RandomStringUtils.randomAlphabetic(component.getMaxChar() + 1));
-        report.assertThat(ERROR_INPUT_FIRST_NAME_MESSAGE).isEqualTo(component.getErrorMessage());
-        component.addInputText(RandomStringUtils.randomAlphabetic(component.getMaxChar() + 1));
         report.assertThat(ERROR_INPUT_LAST_NAME_MESSAGE).isEqualTo(component.getErrorMessage());
+        component.addInputText(RandomStringUtils.randomAlphabetic(component.getMaxChar() + 1));
+        report.assertThat(ERROR_INPUT_FIRST_NAME_MESSAGE).isEqualTo(component.getErrorMessage());
         report.assertAll();
     }
 }
