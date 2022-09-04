@@ -1,13 +1,12 @@
 package Selenium_4_Tests_Practice;
 
-import Selenium_4_Tests_Practice.BaseUtility.BaseUrl;
 import Selenium_4_Tests_Practice.Components.FormFieldComponent;
 import Selenium_4_Tests_Practice.Pages.RegisterPage;
 import Selenium_4_Tests_Practice.Utilities.FormFieldUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -25,6 +24,7 @@ import static org.assertj.core.api.SoftAssertions.assertSoftly;
 public class RegisterTest {
 
     private static final int EXPECTED_ERRORS_TOTAL = 5;
+    private static final String REGISTER_ACCOUNT_TITLE = "Register Account";
 
     public WebDriver driver;
     public RegisterPage registerPage;
@@ -50,28 +50,26 @@ public class RegisterTest {
     }
 
     /**
-     * Test to validate the Register Page.
+     * Test to verify that the user is able to load Register Account page.
      */
-    @ParameterizedTest
-    @MethodSource("Source")
-    void validateFormFieldErrors(RegisterPage.FormField formField) {
-        registerPage = new RegisterPage(driver);
-        registerPage.clickContinueButton();
-        FormFieldComponent formFieldComponent = registerPage.getFormFieldComponent(formField);
-        FormFieldUtility formFieldUtility = FormFieldUtility.getInstance(formFieldComponent);
-        formFieldUtility.checkInputText();
-    }
-
-    private static Stream<RegisterPage.FormField> Source() {
-        return Stream.of(
-                        Arrays.stream(RegisterPage.FirstAndLastName.values())
-                )
-                .flatMap(Function.identity());
-    }
-
     @Test
-    void testRegister() {
+    @Tag("Smoke")
+    public void testHomeRegister() {
         registerPage = new RegisterPage(driver);
+        registerPage.clickMyAccountLink();
+        assertSoftly(softly -> {
+            softly.assertThat(registerPage.getRegisterAccountTitle()).isEqualTo(REGISTER_ACCOUNT_TITLE);
+        });
+    }
+
+    /**
+     * Verify the error messages without filling the Register Account Form.
+     */
+    @Test
+    @Tag("Regression")
+    void testErrorFieldMessages() {
+        registerPage = new RegisterPage(driver);
+        registerPage.clickMyAccountLink();
         registerPage.clickContinueButton();
         // validate error messages
         List<String> errorMessages = registerPage.getFieldErrorMessages();
@@ -84,6 +82,28 @@ public class RegisterTest {
                         .isTrue();
             }
         });
+    }
+
+    /**
+     * Test to validate the Register Page.
+     */
+    @ParameterizedTest
+    @MethodSource("Source")
+    @Tag("Regression")
+    void validateFormFieldErrors(RegisterPage.FormField formField) {
+        registerPage = new RegisterPage(driver);
+        registerPage.clickMyAccountLink();
+        registerPage.clickContinueButton();
+        FormFieldComponent formFieldComponent = registerPage.getFormFieldComponent(formField);
+        FormFieldUtility formFieldUtility = FormFieldUtility.getInstance(formFieldComponent);
+        formFieldUtility.checkInputText();
+    }
+
+    private static Stream<RegisterPage.FormField> Source() {
+        return Stream.of(
+                        Arrays.stream(RegisterPage.FirstAndLastName.values())
+                )
+                .flatMap(Function.identity());
     }
 }
 
