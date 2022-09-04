@@ -25,6 +25,11 @@ public class RegisterTest {
 
     private static final int EXPECTED_ERRORS_TOTAL = 5;
     private static final String REGISTER_ACCOUNT_TITLE = "Register Account";
+    private static final String FIRST_NAME_ERROR_MESSAGE = "First Name must be between 1 and 32 characters!";
+    private static final String LAST_NAME_ERROR_MESSAGE = "Last Name must be between 1 and 32 characters!";
+    private static final String EMAIL_ERROR_MESSAGE = "E-Mail Address does not appear to be valid!";
+    private static final String TELEPHONE_ERROR_MESSAGE = "Telephone must be between 3 and 32 characters!";
+    private static final String PASSWORD_ERROR_MESSAGE = "Password must be between 4 and 20 characters!";
 
     public WebDriver driver;
     public RegisterPage registerPage;
@@ -63,7 +68,7 @@ public class RegisterTest {
     }
 
     /**
-     * Verify the error messages without filling the Register Account Form.
+     * Verify the error messages count and red alert text without filling the Register Account Form.
      */
     @Test
     @Tag("Regression")
@@ -77,7 +82,8 @@ public class RegisterTest {
             softly.assertThat(errorMessages.size()).as("The field error message count is not as expected")
                     .isEqualTo(EXPECTED_ERRORS_TOTAL);
             for (String errorMessage : errorMessages) {
-                softly.assertThat(errorMessage.contains("Field is required") || errorMessage.contains("The validation is not valid"))
+                softly.assertThat(errorMessage.contains(FIRST_NAME_ERROR_MESSAGE) || errorMessage.contains(LAST_NAME_ERROR_MESSAGE)
+                                || errorMessage.contains(EMAIL_ERROR_MESSAGE) || errorMessage.contains(TELEPHONE_ERROR_MESSAGE) || errorMessage.contains(PASSWORD_ERROR_MESSAGE))
                         .as("The field error message is not as expected. Actual message: " + errorMessage)
                         .isTrue();
             }
