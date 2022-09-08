@@ -1,14 +1,12 @@
 package Selenium_4_Tests_Practice.Utilities;
 
-import Selenium_4_Tests_Practice.Components.EmailComponent;
-import Selenium_4_Tests_Practice.Components.FormFieldComponent;
-import Selenium_4_Tests_Practice.Components.InputTextComponent;
-import Selenium_4_Tests_Practice.Components.TelephoneComponent;
+import Selenium_4_Tests_Practice.Components.*;
 
 public abstract class FormFieldUtility {
 
     /**
      * Get the instance of the FormFieldComponent.
+     *
      * @param formFieldComponent instance of the InputTextComponent
      * @return IllegalArgumentException if the formFieldComponent is not an instance of InputTextComponent
      */
@@ -20,6 +18,8 @@ public abstract class FormFieldUtility {
             return new EmailUtility((EmailComponent) formFieldComponent);
         } else if (formFieldComponent instanceof TelephoneComponent) {
             return new TelephoneUtility((TelephoneComponent) formFieldComponent);
+        } else if (formFieldComponent instanceof PasswordComponent) {
+            return new PasswordUtility((PasswordComponent) formFieldComponent);
         }
         throw new IllegalArgumentException("Error Unknown component");
     }

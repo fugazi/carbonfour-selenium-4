@@ -10,6 +10,7 @@ public abstract class FormFieldComponent {
         ERROR_MESSAGES(By.xpath("//div[@class='text-danger']"));
 
         public final By selector;
+
         Using(By selector) {
             this.selector = selector;
         }
@@ -20,6 +21,7 @@ public abstract class FormFieldComponent {
 
     /**
      * Constructor for the FormFieldComponent abstract class.
+     *
      * @param element WebElement
      */
     public FormFieldComponent(WebElement element, WebDriver page) {
@@ -34,7 +36,10 @@ public abstract class FormFieldComponent {
     public WebElement getElement() {
         return element;
     }
-    public WebDriver getPage() { return page; }
+
+    public WebDriver getPage() {
+        return page;
+    }
 
     /**
      * Get the Error Message of the Web Element.
