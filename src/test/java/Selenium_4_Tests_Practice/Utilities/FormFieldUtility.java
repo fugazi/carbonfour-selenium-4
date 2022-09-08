@@ -3,6 +3,7 @@ package Selenium_4_Tests_Practice.Utilities;
 import Selenium_4_Tests_Practice.Components.EmailComponent;
 import Selenium_4_Tests_Practice.Components.FormFieldComponent;
 import Selenium_4_Tests_Practice.Components.InputTextComponent;
+import Selenium_4_Tests_Practice.Components.TelephoneComponent;
 
 public abstract class FormFieldUtility {
 
@@ -17,6 +18,8 @@ public abstract class FormFieldUtility {
             return new InputTextUtility((InputTextComponent) formFieldComponent);
         } else if (formFieldComponent instanceof EmailComponent) {
             return new EmailUtility((EmailComponent) formFieldComponent);
+        } else if (formFieldComponent instanceof TelephoneComponent) {
+            return new TelephoneUtility((TelephoneComponent) formFieldComponent);
         }
         throw new IllegalArgumentException("Error Unknown component");
     }

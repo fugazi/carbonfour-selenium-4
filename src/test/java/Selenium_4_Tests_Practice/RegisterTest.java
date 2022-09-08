@@ -12,6 +12,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.Arrays;
 import java.util.List;
@@ -108,7 +109,8 @@ public class RegisterTest {
     private static Stream<RegisterPage.FormField> Source() {
         return Stream.of(
                         Arrays.stream(RegisterPage.FirstAndLastName.values()),
-                        Arrays.stream(RegisterPage.Email.values())
+                        Arrays.stream(RegisterPage.Email.values()),
+                        Arrays.stream(RegisterPage.Telephone.values())
                 )
                 .flatMap(Function.identity());
     }

@@ -2,6 +2,7 @@ package Selenium_4_Tests_Practice.Pages;
 
 import Selenium_4_Tests_Practice.Components.FormFieldComponent;
 import Selenium_4_Tests_Practice.Components.InputTextComponent;
+import Selenium_4_Tests_Practice.Components.TelephoneComponent;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -91,6 +92,34 @@ public class RegisterPage {
         final BiFunction<WebElement, WebDriver, FormFieldComponent> componentFactory;
 
         Email(By selector, BiFunction<WebElement, WebDriver, FormFieldComponent> componentFactory) {
+            this.selector = selector;
+            this.componentFactory = componentFactory;
+        }
+
+        @Override
+        public By getSelector() {
+            return selector;
+        }
+
+        @Override
+        public FormFieldComponent getComponent(WebElement element, RegisterPage page) {
+            return componentFactory.apply(element, page.driver);
+        }
+    }
+
+    /**
+     * Enum containing the elements of Register Account Form
+     * Also including 'Telephone' field with the minimum and maximum characters for each component.
+     * Functional Interface for the FormFieldComponent that represents a function that accepts two arguments and produces a result.
+     */
+    public enum Telephone implements FormField<RegisterPage> {
+        TELEPHONE_INPUT(By.xpath("//input[@id='input-telephone']"),
+                (element, page) -> new InputTextComponent(element, page, 3, 32));
+
+        final By selector;
+        final BiFunction<WebElement, WebDriver, FormFieldComponent> componentFactory;
+
+        Telephone(By selector, BiFunction<WebElement, WebDriver, FormFieldComponent> componentFactory) {
             this.selector = selector;
             this.componentFactory = componentFactory;
         }
