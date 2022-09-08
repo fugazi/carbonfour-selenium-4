@@ -107,7 +107,8 @@ public class RegisterTest {
 
     private static Stream<RegisterPage.FormField> Source() {
         return Stream.of(
-                        Arrays.stream(RegisterPage.FirstAndLastName.values())
+                        Arrays.stream(RegisterPage.FirstAndLastName.values()),
+                        Arrays.stream(RegisterPage.Email.values())
                 )
                 .flatMap(Function.identity());
     }
