@@ -21,6 +21,7 @@ public class InputTextUtility extends FormFieldUtility {
 
     /**
      * Check the input text field.
+     * 'First Name and Last name' fields
      * Do assertions on the input text field.
      */
     @Override

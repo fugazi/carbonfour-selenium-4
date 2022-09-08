@@ -25,6 +25,7 @@ public class InputTextComponent extends FormFieldComponent {
 
     /**
      * Get the minimum value of the input text.
+     * 'First Name and Last name' fields
      */
     public int getMinChar() {
         return minChar;
@@ -32,6 +33,7 @@ public class InputTextComponent extends FormFieldComponent {
 
     /**
      * Get the maximum value of the input text.
+     * 'First Name and Last name' fields
      */
     public int getMaxChar() {
         return maxChar;
@@ -39,6 +41,7 @@ public class InputTextComponent extends FormFieldComponent {
 
     /**
      * Add the value on the input text.
+     * 'First Name and Last name' fields
      */
     public void addInputText(String value) {
         getElement().sendKeys(Keys.chord(Keys.CONTROL, "a"));

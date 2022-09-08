@@ -22,6 +22,9 @@ public class RegisterPage {
         this.driver = driver;
     }
 
+    /**
+     * Locators for the Register Account page.
+     */
     private enum Using {
         MY_ACCOUNT_LINK(By.xpath("//a[@role='button'][normalize-space()='My account']")),
         REGISTER_LINK(By.xpath("//span[normalize-space()='Register']")),
@@ -37,7 +40,7 @@ public class RegisterPage {
     }
 
     /**
-     * Interface Form Fields.
+     * Interface Form Fields to validate the form fields.
      */
     public interface FormField<WebDriver> {
         By getSelector();
@@ -60,6 +63,34 @@ public class RegisterPage {
         final BiFunction<WebElement, WebDriver, FormFieldComponent> componentFactory;
 
         FirstAndLastName(By selector, BiFunction<WebElement, WebDriver, FormFieldComponent> componentFactory) {
+            this.selector = selector;
+            this.componentFactory = componentFactory;
+        }
+
+        @Override
+        public By getSelector() {
+            return selector;
+        }
+
+        @Override
+        public FormFieldComponent getComponent(WebElement element, RegisterPage page) {
+            return componentFactory.apply(element, page.driver);
+        }
+    }
+
+    /**
+     * Enum containing the elements of Register Account Form
+     * Also including 'Email' field with the minimum and maximum characters for each component.
+     * Functional Interface for the FormFieldComponent that represents a function that accepts two arguments and produces a result.
+     */
+    public enum Email implements FormField<RegisterPage> {
+        EMAIL_INPUT(By.xpath("//input[@id='input-email']"),
+                (element, page) -> new InputTextComponent(element, page, 1, 36));
+
+        final By selector;
+        final BiFunction<WebElement, WebDriver, FormFieldComponent> componentFactory;
+
+        Email(By selector, BiFunction<WebElement, WebDriver, FormFieldComponent> componentFactory) {
             this.selector = selector;
             this.componentFactory = componentFactory;
         }
