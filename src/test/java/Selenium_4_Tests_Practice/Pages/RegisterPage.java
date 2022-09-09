@@ -1,7 +1,6 @@
 package Selenium_4_Tests_Practice.Pages;
 
-import Selenium_4_Tests_Practice.Components.FormFieldComponent;
-import Selenium_4_Tests_Practice.Components.InputTextComponent;
+import Selenium_4_Tests_Practice.Components.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -85,7 +84,7 @@ public class RegisterPage {
      */
     public enum Email implements FormField<RegisterPage> {
         EMAIL_INPUT(By.xpath("//input[@id='input-email']"),
-                (element, page) -> new InputTextComponent(element, page, 1, 36));
+                (element, page) -> new EmailComponent(element, page, 1, 36));
 
         final By selector;
         final BiFunction<WebElement, WebDriver, FormFieldComponent> componentFactory;
@@ -113,7 +112,7 @@ public class RegisterPage {
      */
     public enum Telephone implements FormField<RegisterPage> {
         TELEPHONE_INPUT(By.xpath("//input[@id='input-telephone']"),
-                (element, page) -> new InputTextComponent(element, page, 3, 32));
+                (element, page) -> new TelephoneComponent(element, page, 3, 32));
 
         final By selector;
         final BiFunction<WebElement, WebDriver, FormFieldComponent> componentFactory;
@@ -141,7 +140,7 @@ public class RegisterPage {
      */
     public enum Password implements FormField<RegisterPage> {
         PASSWORD_INPUT(By.xpath("//input[@id='input-password']"),
-                (element, page) -> new InputTextComponent(element, page, 4, 20));
+                (element, page) -> new PasswordComponent(element, page, 4, 20));
 
         final By selector;
         final BiFunction<WebElement, WebDriver, FormFieldComponent> componentFactory;

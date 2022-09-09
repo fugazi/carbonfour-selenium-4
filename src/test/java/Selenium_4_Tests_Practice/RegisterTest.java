@@ -12,6 +12,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.Arrays;
 import java.util.List;
@@ -103,6 +104,7 @@ public class RegisterTest {
         FormFieldComponent formFieldComponent = registerPage.getFormFieldComponent(formField);
         FormFieldUtility formFieldUtility = FormFieldUtility.getInstance(formFieldComponent);
         formFieldUtility.checkInputText();
+        setPause();
     }
 
     private static Stream<RegisterPage.FormField> Source() {
@@ -113,6 +115,16 @@ public class RegisterTest {
                         Arrays.stream(RegisterPage.Password.values())
                 )
                 .flatMap(Function.identity());
+    }
+
+    private static final Integer PAUSE_TIME = 5000;
+
+    /**
+     * Sets a pause on the page
+     */
+    public void setPause() {
+        Actions actions = new Actions(driver);
+        actions.pause(PAUSE_TIME).perform();
     }
 }
 

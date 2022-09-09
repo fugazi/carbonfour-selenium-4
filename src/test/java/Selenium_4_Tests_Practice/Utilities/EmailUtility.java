@@ -27,11 +27,11 @@ public class EmailUtility extends FormFieldUtility {
         public void checkInputText() {
             SoftAssertions report = new SoftAssertions();
             component.addEmailText(RandomStringUtils.randomAlphabetic(component.getMinChar() - 1));
-            report.assertThat(ERROR_EMAIL_MESSAGE).isEqualTo(component.getErrorMessage());
+            report.assertThat(ERROR_EMAIL_MESSAGE).isEqualTo(component.getEmailErrorMessage());
             component.addEmailText(RandomStringUtils.randomAlphabetic(component.getMaxChar() + 1));
-            report.assertThat(ERROR_EMAIL_MESSAGE).isEqualTo(component.getErrorMessage());
+            report.assertThat(ERROR_EMAIL_MESSAGE).isEqualTo(component.getEmailErrorMessage());
             component.addEmailText(RandomStringUtils.randomAlphabetic(12) + "@testdata.com");
-            report.assertThat(component.getErrorMessage()).contains("@testdata.com");
+            report.assertThat(ERROR_EMAIL_MESSAGE).isNotEmpty();
             report.assertAll();
         }
 }
