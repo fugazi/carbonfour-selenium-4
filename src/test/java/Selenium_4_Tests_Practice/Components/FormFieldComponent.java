@@ -9,7 +9,8 @@ public abstract class FormFieldComponent {
     private enum Using {
         ERROR_MESSAGES(By.xpath("//div[@class='text-danger']")),
         EMAIL_ERROR_MESSAGE(By.xpath("//div[contains(text(),'E-Mail Address does not appear to be valid!')]")),
-        TELEPHONE_ERROR_MESSAGE(By.xpath("//div[normalize-space()='Telephone must be between 3 and 32 characters!']"));
+        TELEPHONE_ERROR_MESSAGE(By.xpath("//div[normalize-space()='Telephone must be between 3 and 32 characters!']")),
+        PASSWORD_ERROR_MESSAGE(By.xpath("//div[contains(text(),'Password must be between 4 and 20 characters!')]"));
 
         public final By selector;
 
@@ -62,5 +63,12 @@ public abstract class FormFieldComponent {
      */
     public String getTelephoneErrorMessage() {
         return element.findElement(Using.TELEPHONE_ERROR_MESSAGE.selector).getText();
+    }
+
+    /**
+     * Get the Error Message of the Web Element: 'Password' fields
+     */
+    public String getPasswordErrorMessage() {
+        return element.findElement(Using.PASSWORD_ERROR_MESSAGE.selector).getText();
     }
 }

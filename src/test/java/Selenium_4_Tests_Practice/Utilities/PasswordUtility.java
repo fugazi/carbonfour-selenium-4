@@ -29,7 +29,7 @@ public class PasswordUtility extends FormFieldUtility {
     public void checkInputText() {
         SoftAssertions report = new SoftAssertions();
         component.addPasswordText(RandomStringUtils.randomAlphanumeric(component.getMaxChar()));
-        report.assertThat(ERROR_PASSWORD_MESSAGE).isEqualTo(component.getErrorMessage());
+        report.assertThat(ERROR_PASSWORD_MESSAGE).isEqualTo(component.getPasswordErrorMessage());
         report.assertAll();
     }
 
