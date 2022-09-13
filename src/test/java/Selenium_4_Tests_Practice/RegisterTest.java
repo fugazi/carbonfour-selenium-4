@@ -59,7 +59,7 @@ public class RegisterTest {
      */
     @Test
     @Tag("Smoke")
-    public void testHomeRegister() {
+    void testHomeRegister() {
         registerPage = new RegisterPage(driver);
         registerPage.clickMyAccountLink();
         assertSoftly(softly -> {
