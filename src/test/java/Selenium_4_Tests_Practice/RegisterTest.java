@@ -12,7 +12,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.interactions.Actions;
 
 import java.util.Arrays;
 import java.util.List;
@@ -69,11 +68,13 @@ public class RegisterTest {
     }
 
     /**
+     * First Approach: Test the Register Account page. Negative test cases.
      * Verify the error messages count and red alert text without filling the Register Account Form.
      */
     @Test
     @Tag("Regression")
     void testErrorFieldMessages() {
+//        ((HasAuthentication) driver).register(() -> new UsernameAndPassword("admin", "admin"));
         registerPage = new RegisterPage(driver);
         registerPage.clickMyAccountLink();
         registerPage.clickContinueButton();
@@ -92,7 +93,9 @@ public class RegisterTest {
     }
 
     /**
-     * Test to validate the Register Page.
+     * Second Approach: Test the Register Account page. Negative test cases.
+     * Verify the error messages to each field through the FormFieldComponent.
+     * Parameterized test with MethodSource to perform the test for each field and do assertions.
      */
     @ParameterizedTest
     @MethodSource("Source")
@@ -104,9 +107,14 @@ public class RegisterTest {
         FormFieldComponent formFieldComponent = registerPage.getFormFieldComponent(formField);
         FormFieldUtility formFieldUtility = FormFieldUtility.getInstance(formFieldComponent);
         formFieldUtility.checkInputText();
-        setPause();
     }
 
+    /**
+     * MethodSource for the ParameterizedTest.
+     * Returns a stream of the results replacing each element of this stream with the contents of a mapped stream.
+     *
+     * @return Stream of FormField.
+     */
     private static Stream<RegisterPage.FormField> Source() {
         return Stream.of(
                         Arrays.stream(RegisterPage.FirstAndLastName.values()),
@@ -115,16 +123,6 @@ public class RegisterTest {
                         Arrays.stream(RegisterPage.Password.values())
                 )
                 .flatMap(Function.identity());
-    }
-
-    private static final Integer PAUSE_TIME = 5000;
-
-    /**
-     * Sets a pause on the page
-     */
-    public void setPause() {
-        Actions actions = new Actions(driver);
-        actions.pause(PAUSE_TIME).perform();
     }
 }
 
