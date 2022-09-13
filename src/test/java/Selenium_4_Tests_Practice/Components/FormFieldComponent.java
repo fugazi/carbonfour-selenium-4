@@ -9,7 +9,7 @@ public abstract class FormFieldComponent {
 
     private enum Using {
         ERROR_MESSAGES(By.xpath("//div[@class='text-danger']")),
-        EMAIL_ERROR_MESSAGE(By.xpath("//input[@id='input-email']"));
+        EMAIL_ERROR_MESSAGE(By.xpath("//div[contains(text(),'E-Mail Address does not appear to be valid!')]"));
 
         public final By selector;
 
@@ -51,12 +51,9 @@ public abstract class FormFieldComponent {
     }
 
     /**
-     * Get the Error Message of the Web Element: 'Email' using Relative Locators Selenium 4.0.
-     * Element to search with the BELOW method.
+     * Get the Error Message of the Web Element: 'Email' fields
      */
     public String getEmailErrorMessage() {
-        WebElement errorMsg = element.findElement(Using.ERROR_MESSAGES.selector);
-        WebElement relativeEmail = element.findElement(RelativeLocator.with(Using.EMAIL_ERROR_MESSAGE.selector).above(errorMsg));
-        return relativeEmail.getText();
+        return element.findElement(Using.EMAIL_ERROR_MESSAGE.selector).getText();
     }
 }
