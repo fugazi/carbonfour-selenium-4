@@ -32,7 +32,7 @@ public class TelephoneUtility extends FormFieldUtility {
                 component.addTelephoneText(RandomStringUtils.randomNumeric(i));
                 report.assertThat(ERROR_TELEPHONE_MESSAGE)
                         .describedAs(DESCRIPTION_MESSAGE)
-                        .isEqualTo(component.getErrorMessage());
+                        .isEqualTo(component.getTelephoneErrorMessage());
             }
             report.assertAll();
         }

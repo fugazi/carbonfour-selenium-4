@@ -3,13 +3,13 @@ package Selenium_4_Tests_Practice.Components;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.locators.RelativeLocator;
 
 public abstract class FormFieldComponent {
 
     private enum Using {
         ERROR_MESSAGES(By.xpath("//div[@class='text-danger']")),
-        EMAIL_ERROR_MESSAGE(By.xpath("//div[contains(text(),'E-Mail Address does not appear to be valid!')]"));
+        EMAIL_ERROR_MESSAGE(By.xpath("//div[contains(text(),'E-Mail Address does not appear to be valid!')]")),
+        TELEPHONE_ERROR_MESSAGE(By.xpath("//div[normalize-space()='Telephone must be between 3 and 32 characters!']"));
 
         public final By selector;
 
@@ -55,5 +55,12 @@ public abstract class FormFieldComponent {
      */
     public String getEmailErrorMessage() {
         return element.findElement(Using.EMAIL_ERROR_MESSAGE.selector).getText();
+    }
+
+    /**
+     * Get the Error Message of the Web Element: 'Telephone' fields
+     */
+    public String getTelephoneErrorMessage() {
+        return element.findElement(Using.TELEPHONE_ERROR_MESSAGE.selector).getText();
     }
 }
