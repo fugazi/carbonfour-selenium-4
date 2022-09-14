@@ -62,9 +62,7 @@ public class RegisterTest {
     void testHomeRegister() {
         registerPage = new RegisterPage(driver);
         registerPage.clickMyAccountLink();
-        assertSoftly(softly -> {
-            softly.assertThat(registerPage.getRegisterAccountTitle()).isEqualTo(REGISTER_ACCOUNT_TITLE);
-        });
+        assertSoftly(softly -> softly.assertThat(registerPage.getRegisterAccountTitle()).isEqualTo(REGISTER_ACCOUNT_TITLE));
     }
 
     /**

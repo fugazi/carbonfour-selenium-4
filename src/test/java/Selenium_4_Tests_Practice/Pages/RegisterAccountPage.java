@@ -2,10 +2,12 @@ package Selenium_4_Tests_Practice.Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 public class RegisterAccountPage {
 
+    private static final String VALUE_ATTRIBUTE = "value";
     private final WebDriver driver;
 
     /**
@@ -21,7 +23,16 @@ public class RegisterAccountPage {
     private enum Using {
         MY_ACCOUNT_LINK(By.xpath("//a[@role='button'][normalize-space()='My account']")),
         REGISTER_LINK(By.xpath("//span[normalize-space()='Register']")),
-        REGISTER_ACCOUNT_TITLE(By.xpath("//h1"));
+        REGISTER_ACCOUNT_TITLE(By.xpath("//h1")),
+        INPUT_FIRST_NAME(By.id("input-firstname")),
+        INPUT_LAST_NAME(By.id("input-lastname")),
+        INPUT_EMAIL(By.id("input-email")),
+        INPUT_TELEPHONE(By.id("input-telephone")),
+        INPUT_PASSWORD(By.id("input-password")),
+        INPUT_PASSWORD_CONFIRM(By.id("input-confirm")),
+        RADIO_NEWSLETTER(By.xpath("//label[normalize-space()='No']")),
+        PRIVACY_POLICY_CHECKBOX(By.xpath("//label[@for='input-agree']")),
+        CONTINUE_BUTTON(By.xpath("//input[@value='Continue']"));
 
         public final By selector;
 
@@ -47,6 +58,165 @@ public class RegisterAccountPage {
      */
     public String getRegisterAccountTitle() {
         return driver.findElement(Using.REGISTER_ACCOUNT_TITLE.selector).getText();
+    }
+
+    /**
+     * Sets the First Name.
+     *
+     * @param firstName First Name in the form.
+     */
+    public void enterFirstName(String firstName) {
+        WebElement firstNameInput = driver.findElement(Using.INPUT_FIRST_NAME.selector);
+        firstNameInput.clear();
+        firstNameInput.sendKeys(firstName);
+    }
+
+    /**
+     * Gets the entered value of the First Name.
+     *
+     * @return First Name value.
+     */
+    public String getFirstName() {
+        return driver.findElement(Using.INPUT_FIRST_NAME.selector).getAttribute(VALUE_ATTRIBUTE);
+    }
+
+    /**
+     * Sets the Last Name.
+     *
+     * @param lastName Last Name in the form.
+     */
+    public void enterLastName(String lastName) {
+        WebElement lastNameInput = driver.findElement(Using.INPUT_LAST_NAME.selector);
+        lastNameInput.clear();
+        lastNameInput.sendKeys(lastName);
+    }
+
+    /**
+     * Gets the entered value of the Last Name.
+     *
+     * @return Last Name value.
+     */
+    public String getLastName() {
+        return driver.findElement(Using.INPUT_LAST_NAME.selector).getAttribute(VALUE_ATTRIBUTE);
+    }
+
+    /**
+     * Sets the Email.
+     *
+     * @param email Email in the form.
+     */
+    public void enterEmail(String email) {
+        WebElement emailInput = driver.findElement(Using.INPUT_EMAIL.selector);
+        emailInput.clear();
+        emailInput.sendKeys(email);
+    }
+
+    /**
+     * Gets the entered value of the Email.
+     *
+     * @return Email value.
+     */
+    public String getEmail() {
+        return driver.findElement(Using.INPUT_EMAIL.selector).getAttribute(VALUE_ATTRIBUTE);
+    }
+
+    /**
+     * Sets the Telephone.
+     *
+     * @param telephone Telephone in the form.
+     */
+    public void enterTelephone(String telephone) {
+        WebElement telephoneInput = driver.findElement(Using.INPUT_TELEPHONE.selector);
+        telephoneInput.clear();
+        telephoneInput.sendKeys(telephone);
+    }
+
+    /**
+     * Gets the entered value of the Telephone.
+     *
+     * @return Telephone value.
+     */
+    public String getTelephone() {
+        return driver.findElement(Using.INPUT_TELEPHONE.selector).getAttribute(VALUE_ATTRIBUTE);
+    }
+
+    /**
+     * Sets the Password.
+     *
+     * @param password Password in the form.
+     */
+    public void enterPassword(String password) {
+        WebElement passwordInput = driver.findElement(Using.INPUT_PASSWORD.selector);
+        passwordInput.clear();
+        passwordInput.sendKeys(password);
+    }
+
+    /**
+     * Gets the entered value of the Password.
+     *
+     * @return Password value.
+     */
+    public String getPassword() {
+        return driver.findElement(Using.INPUT_PASSWORD.selector).getAttribute(VALUE_ATTRIBUTE);
+    }
+
+    /**
+     * Sets the Password Confirm.
+     *
+     * @param passwordConfirm Password Confirm in the form.
+     */
+    public void enterPasswordConfirm(String passwordConfirm) {
+        WebElement passwordConfirmInput = driver.findElement(Using.INPUT_PASSWORD_CONFIRM.selector);
+        passwordConfirmInput.clear();
+        passwordConfirmInput.sendKeys(passwordConfirm);
+    }
+
+    /**
+     * Gets the entered value of the Password Confirm.
+     *
+     * @return Password Confirm value.
+     */
+    public String getPasswordConfirm() {
+        return driver.findElement(Using.INPUT_PASSWORD_CONFIRM.selector).getAttribute(VALUE_ATTRIBUTE);
+    }
+
+    /**
+     * Clicks on the Newsletter radio button.
+     */
+    public void clickNewsletterRadioButton() {
+        driver.findElement(Using.RADIO_NEWSLETTER.selector).click();
+    }
+
+    /**
+     * Checks if the Newsletter radio button is selected.
+     *
+     * @return true if the radio button is selected, false otherwise.
+     */
+    public boolean isNewsletterRadioButtonSelected() {
+        return driver.findElement(Using.RADIO_NEWSLETTER.selector).isSelected();
+    }
+
+    /**
+     * Clicks on the Privacy Policy checkbox.
+     */
+    public void clickPrivacyPolicyCheckbox() {
+        driver.findElement(Using.PRIVACY_POLICY_CHECKBOX.selector).click();
+    }
+
+    /**
+     * Checks if the Privacy Policy checkbox is selected.
+     *
+     * @return true if the checkbox is selected, false otherwise.
+     */
+    public boolean isPrivacyPolicyCheckboxSelected() {
+        return driver.findElement(Using.PRIVACY_POLICY_CHECKBOX.selector).isSelected();
+    }
+
+    /**
+     * Click on the Continue button
+     */
+    public void clickContinueButton() {
+        driver.findElement(Using.CONTINUE_BUTTON.selector).click();
     }
 
 }
