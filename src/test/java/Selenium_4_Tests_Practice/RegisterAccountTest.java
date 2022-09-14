@@ -44,17 +44,6 @@ public class RegisterAccountTest {
     }
 
     /**
-     * Test to verify that the user is able to load Register Account page.
-     */
-    @Test
-    @Tag("Smoke")
-    void testHomeRegisterAccount() {
-        registerAccountPage = new RegisterAccountPage(driver);
-        registerAccountPage.clickRegisterLink();
-        assertSoftly(softly -> softly.assertThat(registerAccountPage.getRegisterAccountTitle()).isEqualTo(REGISTER_ACCOUNT_TITLE));
-    }
-
-    /**
      * Precondition Scenario: Load the Test Data to perform the Register Account page.
      * Fill the data in the Register Account form.
      */
@@ -65,6 +54,17 @@ public class RegisterAccountTest {
         email = RandomStringUtils.randomAlphabetic(8) + "@tesdata.com";
         telephone = RandomStringUtils.randomNumeric(10);
         password = RandomStringUtils.randomAlphabetic(12);
+    }
+
+    /**
+     * Test to verify that the user is able to load Register Account page.
+     */
+    @Test
+    @Tag("Smoke")
+    void testHomeRegisterAccount() {
+        registerAccountPage = new RegisterAccountPage(driver);
+        registerAccountPage.clickRegisterLink();
+        assertSoftly(softly -> softly.assertThat(registerAccountPage.getRegisterAccountTitle()).isEqualTo(REGISTER_ACCOUNT_TITLE));
     }
 
     /**
