@@ -111,6 +111,19 @@ I must say it was fun learning and automating this website because it was challe
 4. Annotation @Test will be used to group the tests by Smoke and Regression tests.
 5. Each tests will finish automatically and the browser will be closed.
 
+**New Scenarios:**
+* Practice Test:
+  * First Approach: Test the Register Account page.
+    * Verify the error messages count and red alert text without filling the Register Account Form.
+    * Negative test cases.
+  * Second Approach: Test the Register Account page with Page Object Model (POM).
+    * Parameterized test with MethodSource to perform the test for each field and do assertions.
+    * Negative test cases.
+  * Third Approach: Test the Register Account page with Page Object Model (POM) and Data Driven.
+    * Precondition Scenario: Load the Test Data to perform the Register Account page.
+    * Test to verify that the user is able to Register an Account.
+    * Assertions to each field.
+
 ## 🟢 Pre-requisites: 🟢
 1. Download the latest Java JDK from [here](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133155.html)
 2. Install git from [here](https://git-scm.com)
