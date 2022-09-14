@@ -152,6 +152,7 @@ You can use the command line to generate it in two ways:
     * Selenium UI Tests `Test.java` into folder `src/test/java/Selenium_4_Tests`
     * Page Objects `CategoriesPage.java` into folder `src/test/java/Selenium_4_Tests/Pages`
     * Screenshots package `Selenium 4/Screenshots` into folder `src/test/java/com.selenium_4/Screenshots`
+    * **New Scenarios** Selenium 4.0 Test Practices into folder `src/test/java/Selenium_4_Tests_Practice`
 * testName: `carbonfour-selenium-4`
 
 ## 💡 Do you want to help?
