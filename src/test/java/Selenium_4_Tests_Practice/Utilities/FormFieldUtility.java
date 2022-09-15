@@ -6,8 +6,9 @@ public abstract class FormFieldUtility {
 
     /**
      * Get the instance of the FormFieldComponent.
+     * Create the flow of the FormFieldComponent.
      *
-     * @param formFieldComponent instance of the InputTextComponent
+     * @param formFieldComponent instance of the FormFieldComponent
      * @return IllegalArgumentException if the formFieldComponent is not an instance of InputTextComponent
      */
 
