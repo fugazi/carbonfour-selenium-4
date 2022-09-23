@@ -1,11 +1,13 @@
 package Selenium_4_Tests_Practice;
 
 import Selenium_4_Tests_Practice.Pages.RegisterAccountPage;
+import Selenium_4_Tests_Practice.Utilities.RegisterAccountPageUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import static Selenium_4_Tests_Practice.BaseUtility.BaseUrl.getBaseUrl;
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
@@ -22,6 +24,7 @@ public class RegisterAccountTest {
 
     public WebDriver driver;
     public RegisterAccountPage registerAccountPage;
+    public RegisterAccountPageUtility registerAccountPageUtility;
 
     /**
      * Initialize the WebDriverManager and EdgeDriver.
@@ -68,8 +71,10 @@ public class RegisterAccountTest {
     }
 
     /**
-     * First Approach: Test to verify that the user is able to Register an Account.
+     * First Approach: Test to verify that the user is able to Register an Account with the loadTestData method.
+     * Fill the data in the Register Account form.
      * Verify each field with the correct data in the Register Account form.
+     * Register a new Account, verify the success message registration.
      */
     @Test
     @Tag("Regression")
@@ -99,6 +104,22 @@ public class RegisterAccountTest {
         registerAccountPage.clickPrivacyPolicyCheckbox();
         assertSoftly(softly -> softly.assertThat(registerAccountPage.isPrivacyPolicyCheckboxSelected()).isEqualTo(false));
 
+        registerAccountPage.clickContinueButton();
+        assertSoftly(softly -> softly.assertThat(registerAccountPage.getRegisterAccountTitle()).isEqualTo(REGISTER_ACCOUNT_SUCCESS_MESSAGE));
+    }
+
+    /**
+     * Second Approach: Test to verify that the user is able to Register an Account with the Builder Pattern.
+     * Fill each field in the Register Account form.
+     * Register a new Account, verify the success message registration.
+     */
+    @Test
+    @Tag("Regression")
+    void testRegisterAccountFactoryPattern() {
+        registerAccountPage = new RegisterAccountPage(driver);
+        registerAccountPageUtility = new RegisterAccountPageUtility(driver);
+        registerAccountPage.clickRegisterLink();
+        registerAccountPageUtility.fillRegisterAccountForm();
         registerAccountPage.clickContinueButton();
         assertSoftly(softly -> softly.assertThat(registerAccountPage.getRegisterAccountTitle()).isEqualTo(REGISTER_ACCOUNT_SUCCESS_MESSAGE));
     }

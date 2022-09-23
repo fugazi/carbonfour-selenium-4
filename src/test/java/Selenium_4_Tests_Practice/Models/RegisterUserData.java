@@ -15,3 +15,8 @@ public class RegisterUserData {
     private Boolean newsletterSubscribe;
     private Boolean privacyPolicy;
 }
+
+/*
+ * This class is used to create a RegisterUserData object with the Builder pattern.
+ * Using the Lombok library Builder and Getter annotations.
+ */

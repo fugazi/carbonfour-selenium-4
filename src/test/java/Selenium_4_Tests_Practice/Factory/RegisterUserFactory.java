@@ -3,9 +3,14 @@ package Selenium_4_Tests_Practice.Factory;
 import Selenium_4_Tests_Practice.Models.RegisterUserData;
 import com.github.javafaker.Faker;
 
-public class UserFactory {
+public class RegisterUserFactory {
 
     private static final Faker faker = new Faker();
+
+    /**
+     * Fill a RegisterUserData object with random data using Faker.
+     * @return RegisterUserData object with the Builder pattern.
+     */
 
     public static RegisterUserData getRegisterUserData() {
         return RegisterUserData.builder()
