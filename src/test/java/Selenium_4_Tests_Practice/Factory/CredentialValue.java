@@ -4,7 +4,7 @@ public enum CredentialValue {
 
     ADMIN_USER("selenium@testdata.com", "Colombia+2022"),
     NO_PERMISSIONS_USER("test-no-permissions@testdata.com", "NoPermissions+2022"),
-    PUBLIC_USER("public@testdata.com", "Public+2022");
+    PUBLIC_USER("jared.graham@hotmail.com", "htgrxu5m2y");
     private final String username;
     private final String password;
 

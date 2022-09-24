@@ -2,6 +2,8 @@ package Selenium_4_Tests_Practice.Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class LoginPage {
 
@@ -15,7 +17,8 @@ public class LoginPage {
         LOGIN_PASSWORD_INPUT(By.xpath("//input[@id='input-password']")),
         LOGIN_BUTTON(By.xpath("//input[@value='Login']")),
         RETURNING_CUSTOMER_TITLE(By.xpath("//h2[normalize-space()='Returning Customer']")),
-        LOGIN_ERROR_MESSAGE(By.xpath("//div[@class='alert alert-danger alert-dismissible']"));
+        LOGIN_ERROR_MESSAGE(By.xpath("//div[@class='alert alert-danger alert-dismissible']")),
+        USER_LOGIN_DASHBOARD(By.xpath("//h2[normalize-space()='My Account']"));
 
         public final By selector;
 
@@ -24,7 +27,7 @@ public class LoginPage {
         }
     }
 
-    private final WebDriver driver;
+    public WebDriver driver;
 
     /**
      * Constructor for the LoginPage class.
@@ -34,32 +37,34 @@ public class LoginPage {
     }
 
     /**
-     * Click on the My Account link.
-     */
-    public void clickMyAccountLink() {
-        driver.findElement(Using.MY_ACCOUNT_LINK.selector).click(); }
-
-    /**
-     * Click on the Login link.
+     * Mouse over on My Account dropdown and click on Login link.
+     * Actions class is used to perform mouse over user interactions.
      */
     public void clickLoginLink() {
-        driver.findElement(Using.LOGIN_LINK.selector).click(); }
+        Actions builder = new Actions(driver);
+        builder.moveToElement(driver.findElement(Using.MY_ACCOUNT_LINK.selector)).build().perform();
+        driver.findElement(Using.LOGIN_LINK.selector).click();
+    }
 
     /**
      * Login with the email address.
      *
-     * @param username The email address.
+     * @param username The email address in the form.
      */
     public void loginEmailAddress(String username) {
-        driver.findElement((Using.LOGIN_EMAIL_INPUT.selector)); }
+        WebElement loginInput = driver.findElement((Using.LOGIN_EMAIL_INPUT.selector));
+        loginInput.clear();
+        loginInput.sendKeys(username); }
 
     /**
      * Login with the password.
      *
-     * @param password the user password.
+     * @param password the user password in the form.
      */
     public void loginPassword(String password) {
-        driver.findElement((Using.LOGIN_PASSWORD_INPUT.selector)); }
+        WebElement passwordInput = driver.findElement((Using.LOGIN_PASSWORD_INPUT.selector));
+        passwordInput.clear();
+        passwordInput.sendKeys(password); }
 
     /**
      * Click on the Login button.
@@ -68,14 +73,22 @@ public class LoginPage {
         driver.findElement(Using.LOGIN_BUTTON.selector).click(); }
 
     /**
-     * Verify that the user is on the Login page.
+     * Get the Returning Customer title.
+     *
+     * @return The Returning Customer title.
      */
-    public void verifyLoginTitle() {
-        driver.findElement(Using.RETURNING_CUSTOMER_TITLE.selector); }
+    public Boolean getLoginTitle() {
+       return driver.findElement(Using.RETURNING_CUSTOMER_TITLE.selector).isDisplayed(); }
 
     /**
      * Verify that the user is not able to log in with invalid credentials.
      */
     public Boolean verifyLoginErrorMessage() {
         return driver.findElement(Using.LOGIN_ERROR_MESSAGE.selector).isDisplayed(); }
+
+    /**
+     * Verify that user is able to join on the user dashboard.
+     */
+    public Boolean verifyUserLoginDashboard() {
+        return driver.findElement(Using.USER_LOGIN_DASHBOARD.selector).isDisplayed(); }
 }
