@@ -12,6 +12,8 @@ import static org.assertj.core.api.SoftAssertions.assertSoftly;
 
 public class LoginTest {
 
+    private static final int NO_ACTION_ITEMS = 0;
+
     public WebDriver driver;
 
     /**
@@ -62,6 +64,9 @@ public class LoginTest {
         assertSoftly(softly -> softly.assertThat(loginPage.verifyUserLoginDashboard())
                 .describedAs("The user is not logged in as ADMIN_USER")
                 .isTrue());
+        assertSoftly(softly -> softly.assertThat(loginPage.getTableRowsTotal())
+                .describedAs("The action elements should be shown")
+                .isGreaterThan(NO_ACTION_ITEMS));
     }
 
     /**
@@ -94,5 +99,8 @@ public class LoginTest {
         assertSoftly(softly -> softly.assertThat(loginPage.verifyUserLoginDashboard())
                 .describedAs("The user is not logged in as PUBLIC_USER")
                 .isTrue());
+        assertSoftly(softly -> softly.assertThat(loginPage.getTableRowsTotal())
+                .describedAs("The action elements should be shown")
+                .isGreaterThan(NO_ACTION_ITEMS));
     }
 }

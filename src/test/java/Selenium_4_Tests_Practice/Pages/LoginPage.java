@@ -18,7 +18,8 @@ public class LoginPage {
         LOGIN_BUTTON(By.xpath("//input[@value='Login']")),
         RETURNING_CUSTOMER_TITLE(By.xpath("//h2[normalize-space()='Returning Customer']")),
         LOGIN_ERROR_MESSAGE(By.xpath("//div[@class='alert alert-danger alert-dismissible']")),
-        USER_LOGIN_DASHBOARD(By.xpath("//h2[normalize-space()='My Account']"));
+        USER_LOGIN_DASHBOARD(By.xpath("//h2[normalize-space()='My Account']")),
+        USER_DASHBOARD_TABLE(By.xpath("//div[@id='content']"));
 
         public final By selector;
 
@@ -91,4 +92,11 @@ public class LoginPage {
      */
     public Boolean verifyUserLoginDashboard() {
         return driver.findElement(Using.USER_LOGIN_DASHBOARD.selector).isDisplayed(); }
+
+    /**
+     * Returns the total number of the table rows
+     * @return the total number of the table rows
+     */
+    public int getTableRowsTotal() {
+        return driver.findElements(Using.USER_DASHBOARD_TABLE.selector).size(); }
 }
