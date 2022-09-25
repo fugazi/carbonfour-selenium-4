@@ -24,6 +24,7 @@ public class RegisterAccountPage {
         MY_ACCOUNT_LINK(By.xpath("//a[@role='button'][normalize-space()='My account']")),
         REGISTER_LINK(By.xpath("//span[normalize-space()='Register']")),
         REGISTER_ACCOUNT_TITLE(By.xpath("//h1")),
+        LOGIN_PAGE_LINK(By.xpath("//h1/following-sibling::p/a")),
         INPUT_FIRST_NAME(By.id("input-firstname")),
         INPUT_LAST_NAME(By.id("input-lastname")),
         INPUT_EMAIL(By.id("input-email")),
@@ -59,6 +60,14 @@ public class RegisterAccountPage {
     public String getRegisterAccountTitle() {
         return driver.findElement(Using.REGISTER_ACCOUNT_TITLE.selector).getText();
     }
+
+    /**
+     * Get the Login Page link.
+     *
+     * @return Login Page link.
+     */
+    public WebElement loginPageLink() {
+        return driver.findElement(Using.LOGIN_PAGE_LINK.selector); }
 
     /**
      * Sets the First Name.
