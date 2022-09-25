@@ -1,11 +1,17 @@
 package Selenium_4_Tests_Practice;
 
+import Selenium_4_Tests_Practice.Factory.CredentialValue;
 import Selenium_4_Tests_Practice.Pages.LoginPage;
 import Selenium_4_Tests_Practice.Utilities.LoginPageUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+
+import java.util.stream.Stream;
 
 import static Selenium_4_Tests_Practice.BaseUtility.BaseUrl.getBaseUrl;
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
@@ -100,7 +106,37 @@ public class LoginTest {
                 .describedAs("The user is not logged in as PUBLIC_USER")
                 .isTrue());
         assertSoftly(softly -> softly.assertThat(loginPage.getTableRowsTotal())
-                .describedAs("The action elements should be shown")
+                .describedAs("The dashboard elements should be shown")
                 .isGreaterThan(NO_ACTION_ITEMS));
+    }
+
+    /**
+     * Second Approach: Test to verify that the user is able to Log in with credentials.
+     * Stream sequence of CredentialValue to perform parameterized test.
+     *
+     * @param credentialValue with the credential access type.
+     */
+    @ParameterizedTest
+    @MethodSource("credentialsProvider")
+    @DisplayName("Login with valid credentials: ADMIN_USER, PUBLIC_USER")
+    @Tag("Regression")
+    void loginWithParameterizedTest(CredentialValue credentialValue) {
+        var loginPage = new LoginPage(driver);
+        var loginUtility = new LoginPageUtility(loginPage);
+        loginPage.clickLoginLink();
+        loginUtility.loginWithCredentials(credentialValue.getUsername(), credentialValue.getPassword());
+        assertSoftly(softly -> softly.assertThat(loginPage.verifyUserLoginDashboard())
+                .describedAs("The user is not logged in as " + credentialValue)
+                .isTrue());
+        assertSoftly(softly -> softly.assertThat(loginPage.getTableRowsTotal())
+                .describedAs("The dashboard elements should be shown")
+                .isGreaterThan(NO_ACTION_ITEMS));
+    }
+
+    private static Stream<Arguments> credentialsProvider() {
+        return Stream.of(
+                Arguments.of(CredentialValue.ADMIN_USER),
+                Arguments.of(CredentialValue.PUBLIC_USER)
+        );
     }
 }
