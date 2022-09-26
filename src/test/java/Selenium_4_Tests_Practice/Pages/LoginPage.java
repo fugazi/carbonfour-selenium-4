@@ -95,6 +95,7 @@ public class LoginPage {
 
     /**
      * Returns the total number of the table rows
+     *
      * @return the total number of the table rows
      */
     public int getTableRowsTotal() {

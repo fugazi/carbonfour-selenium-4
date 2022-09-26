@@ -7,7 +7,6 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.interactions.Actions;
 
 import static Selenium_4_Tests_Practice.BaseUtility.BaseUrl.getBaseUrl;
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
