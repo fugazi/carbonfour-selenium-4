@@ -33,6 +33,7 @@ public class RegisterAccountPage {
         INPUT_PASSWORD_CONFIRM(By.id("input-confirm")),
         RADIO_NEWSLETTER(By.xpath("//label[normalize-space()='No']")),
         PRIVACY_POLICY_CHECKBOX(By.xpath("//label[@for='input-agree']")),
+        PRIVACY_POLICY_LINK(By.xpath("//a[@class='agree']")),
         CONTINUE_BUTTON(By.xpath("//input[@value='Continue']"));
 
         public final By selector;
@@ -219,6 +220,15 @@ public class RegisterAccountPage {
      */
     public boolean isPrivacyPolicyCheckboxSelected() {
         return driver.findElement(Using.PRIVACY_POLICY_CHECKBOX.selector).isSelected();
+    }
+
+    /**
+     * Get the privacy policy link.
+     *
+     * @return Privacy Policy link.
+     */
+    public WebElement privacyPolicyLink() {
+        return driver.findElement(Using.PRIVACY_POLICY_LINK.selector);
     }
 
     /**

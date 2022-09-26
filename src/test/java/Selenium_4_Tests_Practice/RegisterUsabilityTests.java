@@ -25,6 +25,7 @@ public class RegisterUsabilityTests {
     private static final String REGISTER_ACCOUNT_TITLE = "Register Account";
     private static final String REGISTER_BASE_URL = "https://ecommerce-playground.lambdatest.io/";
     private static final String LOGIN_URL_LINK = "https://ecommerce-playground.lambdatest.io/index.php?route=account/login";
+    private static final String PRIVACY_POLICY_LINK = "https://ecommerce-playground.lambdatest.io/index.php?route=information/information/agree&information_id=3";
 
     public EdgeDriver driver;
 
@@ -83,6 +84,7 @@ public class RegisterUsabilityTests {
         assertSoftly(softly -> softly.assertThat(registerAccountPage.getRegisterAccountTitle()).isEqualTo(REGISTER_ACCOUNT_TITLE));
         assertSoftly(softly -> softly.assertThat(driver.getCurrentUrl()).contains(REGISTER_BASE_URL));
         assertSoftly(softly -> softly.assertThat(LOGIN_URL_LINK).isEqualTo(registerAccountPage.loginPageLink().getAttribute("href")));
+        assertSoftly(softly -> softly.assertThat(PRIVACY_POLICY_LINK).isEqualTo(registerAccountPage.privacyPolicyLink().getAttribute("href")));
     }
 
 }
