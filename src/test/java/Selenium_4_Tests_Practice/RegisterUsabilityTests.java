@@ -51,9 +51,10 @@ public class RegisterUsabilityTests {
 
     /**
      * Test to verify that the user is able to load correct Login link.
+     * Enable Browser Console Logs using Selenium 4.0.
      */
     @Test
-    @Tag("RegisterUsabilityTests")
+    @Tag("Regression")
     void verifyLoginLink() {
         // Get The DevTools & Create A Session with the EdgeDriver.
         DevTools devTools = driver.getDevTools();
