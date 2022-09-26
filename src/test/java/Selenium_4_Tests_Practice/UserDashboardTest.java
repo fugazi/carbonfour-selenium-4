@@ -2,6 +2,7 @@ package Selenium_4_Tests_Practice;
 
 import Selenium_4_Tests_Practice.Pages.LoginPage;
 import Selenium_4_Tests_Practice.Pages.UserDashboardPage;
+import Selenium_4_Tests_Practice.Utilities.Dashboard.UserDashboardUtility;
 import Selenium_4_Tests_Practice.Utilities.LoginPageUtility;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
@@ -62,6 +63,7 @@ public class UserDashboardTest {
         var loginPage = new LoginPage(driver);
         var loginUtility = new LoginPageUtility(loginPage);
         var userDashboard = new UserDashboardPage(driver);
+        var userDashboardUtility = new UserDashboardUtility(userDashboard);
         loginPage.clickLoginLink();
         loginUtility.authenticateWithPublicUserCredentials();
         assertSoftly(softly -> {
@@ -72,5 +74,6 @@ public class UserDashboardTest {
                     .describedAs("The dashboard elements should be shown")
                     .isNotEqualTo(NO_ACTION_ITEMS);
         });
+        userDashboardUtility.addNewAddressBook();
     }
 }

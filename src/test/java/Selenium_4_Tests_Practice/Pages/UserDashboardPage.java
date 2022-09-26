@@ -19,8 +19,8 @@ public class UserDashboardPage {
     private enum Using {
         DASHBOARD_MY_ACCOUNT_TITLE(By.xpath("//h2[normalize-space()='My Account']")),
         USER_DASHBOARD_TABLE(By.xpath("//div[@id='content']")),
-        EDIT_PASSWORD_LINK(By.xpath("//a[normalize-space()='Change your password']")),
-        EDIT_ADDRESS_LINK(By.xpath("//a[normalize-space()='Modify your address book entries']")),
+        ADDRESS_BOOK_LINK(By.xpath("//a[normalize-space()='Address Book']")),
+        ADD_NEW_ADDRESS_BUTTON(By.xpath("//a[normalize-space()='New Address']")),
         LOGOUT_LINK(By.xpath("//a[normalize-space()='Logout']"));
 
         public final By selector;
@@ -44,4 +44,16 @@ public class UserDashboardPage {
      */
     public int getTableRowsTotal() {
         return driver.findElements(Using.USER_DASHBOARD_TABLE.selector).size(); }
+
+    /**
+     * Click on the Address Book link.
+     */
+    public void clickAddressBookLink() {
+        driver.findElement(Using.ADDRESS_BOOK_LINK.selector).click(); }
+
+    /**
+     * Click on the Add New Address button.
+     */
+    public void clickNewAddressButton() {
+        driver.findElement(Using.ADD_NEW_ADDRESS_BUTTON.selector).click(); }
 }

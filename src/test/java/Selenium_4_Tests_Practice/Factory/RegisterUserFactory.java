@@ -9,6 +9,7 @@ public class RegisterUserFactory {
 
     /**
      * Fill a RegisterUserData object with random data using Faker.
+     *
      * @return RegisterUserData object with the Builder pattern.
      */
 
