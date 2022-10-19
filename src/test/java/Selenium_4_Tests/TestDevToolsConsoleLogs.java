@@ -7,7 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.devtools.v103.log.Log;
+import org.openqa.selenium.devtools.v106.log.Log;
 
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
 

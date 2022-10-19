@@ -6,9 +6,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v103.network.Network;
-import org.openqa.selenium.devtools.v103.performance.Performance;
-import org.openqa.selenium.devtools.v103.performance.model.Metric;
+import org.openqa.selenium.devtools.v106.network.Network;
+import org.openqa.selenium.devtools.v106.performance.Performance;
+import org.openqa.selenium.devtools.v106.performance.model.Metric;
 import org.openqa.selenium.edge.EdgeDriver;
 
 import java.util.Arrays;
