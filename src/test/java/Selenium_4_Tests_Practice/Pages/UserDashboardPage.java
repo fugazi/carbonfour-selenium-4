@@ -3,6 +3,7 @@ package Selenium_4_Tests_Practice.Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class UserDashboardPage {
 
@@ -28,7 +29,12 @@ public class UserDashboardPage {
         INPUT_COMPANY(By.id("input-company")),
         INPUT_ADDRESS_1(By.id("input-address-1")),
         INPUT_ADDRESS_2(By.id("input-address-2")),
-        INPUT_CITY(By.id("input-city"));
+        INPUT_CITY(By.id("input-city")),
+        INPUT_POSTCODE(By.id("input-postcode")),
+        SELECT_COUNTRY(By.id("input-country")),
+        SELECT_REGION_STATE(By.id("input-zone")),
+        CHECKBOX_DEFAULT_ADDRESS(By.xpath("//input[@value='0']")),
+        BUTTON_CONTINUE(By.xpath("//input[@value='Continue']"));
 
         public final By selector;
 
@@ -183,4 +189,76 @@ public class UserDashboardPage {
     public String getCity() {
         return driver.findElement(Using.INPUT_CITY.selector).getAttribute(VALUE_ATTRIBUTE);
     }
+
+    /**
+     * Sets the Post Code.
+     *
+     * @param postCode Post Code in the form.
+     */
+    public void enterPostcode(String postCode) {
+        WebElement postCodeInput = driver.findElement(Using.INPUT_POSTCODE.selector);
+        postCodeInput.clear();
+        postCodeInput.sendKeys(postCode);
+    }
+
+    /**
+     * Gets the entered value of the Post Code.
+     *
+     * @return Post Code value.
+     */
+    public String getPostcode() {
+        return driver.findElement(Using.INPUT_POSTCODE.selector).getAttribute(VALUE_ATTRIBUTE);
+    }
+
+    /**
+     * Sets the Country.
+     *
+     * @param country Country in the form.
+     */
+    public void selectCountry(String country) {
+        Select countrySelect = new Select(driver.findElement(Using.SELECT_COUNTRY.selector));
+        countrySelect.selectByVisibleText(country);
+    }
+
+    /**
+     * Gets the selected value of the Country.
+     *
+     * @return Country value.
+     */
+    public String getCountry() {
+        Select countrySelect = new Select(driver.findElement(Using.SELECT_COUNTRY.selector));
+        return countrySelect.getFirstSelectedOption().getText();
+    }
+
+    /**
+     * Sets the Region tate.
+     *
+     * @param state Region State in the form.
+     */
+    public void selectRegionState(String state) {
+        Select stateSelect = new Select(driver.findElement(Using.SELECT_REGION_STATE.selector));
+        stateSelect.selectByVisibleText(state);
+    }
+
+    /**
+     * Gets the selected value of the Region State.
+     *
+     * @return Region State value.
+     */
+    public String getRegionState() {
+        Select stateSelect = new Select(driver.findElement(Using.SELECT_REGION_STATE.selector));
+        return stateSelect.getFirstSelectedOption().getText();
+    }
+
+    /**
+     * Click on the Default Address checkbox.
+     */
+    public void clickDefaultAddressCheckbox() {
+        driver.findElement(Using.CHECKBOX_DEFAULT_ADDRESS.selector).click(); }
+
+    /**
+     * Click on the Continue button.
+     */
+    public void clickContinueButton() {
+        driver.findElement(Using.BUTTON_CONTINUE.selector).click(); }
 }
