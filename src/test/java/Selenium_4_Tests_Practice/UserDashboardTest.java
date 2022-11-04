@@ -75,5 +75,10 @@ public class UserDashboardTest {
                     .isNotEqualTo(NO_ACTION_ITEMS);
         });
         userDashboardUtility.addNewAddressBook();
+        assertSoftly(softly -> {
+            softly.assertThat(userDashboard.getFirstName())
+                    .describedAs("The success message should be shown")
+                    .isNotBlank();
+        });
     }
 }
