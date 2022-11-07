@@ -3,20 +3,20 @@
 
 This is an Automation project using the new features for Selenium Webdriver 4.6 version.
 
-This project has been developed by [Douglas Urrea Ocampo](https://www.linkedin.com/in/douglasfugazi) to improve learning on advanced Automation testing with Selenium 4.0.
+This project has been developed by [Douglas Urrea Ocampo](https://www.linkedin.com/in/douglasfugazi) to improve learning on advanced Automation testing with Selenium 4.6.
 
 The main features of this project has the following:
 
-* You find the latest and greatest features and techniques for Selenium 4.0 to improve your testing!
+* You find the latest and greatest features and techniques for Selenium 4.6 to improve your testing!
 * Page Object Model (POM) as a design pattern for creating an Object directory for web UI elements.
-* Use industry-standard best practices for writing tests with Selenium 4.0.
+* Use industry-standard best practices for writing tests with Selenium 4.6.
 * The re-usability of code to avoid unnecessary data exposure to the user by using the abstraction.
 * JUnit as framework for writing test automation tests for Java programming language.
 * Selenium Webdriver that supports comprehensive Web Tests.
 
 > ⚠️ **Disclaimer** ⚠️
 >
-> This project has an educational objective: To learn the newest features for Selenium 4.0.
+> This project has an educational objective: To learn the newest features for Selenium 4.6.
 >
 > Some practices will help you to improve your test architecture, but the central point of this repository is
 > demonstrate with examples the new and exciting features of Selenium 4.6.
