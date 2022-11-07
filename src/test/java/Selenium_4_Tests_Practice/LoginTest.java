@@ -3,7 +3,6 @@ package Selenium_4_Tests_Practice;
 import Selenium_4_Tests_Practice.Factory.CredentialValue;
 import Selenium_4_Tests_Practice.Pages.LoginPage;
 import Selenium_4_Tests_Practice.Utilities.LoginPageUtility;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -28,7 +27,6 @@ public class LoginTest {
      */
     @BeforeEach
     public void setupUrl() {
-        WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver();
         driver.manage().window().maximize();
         getBaseUrl(driver);
@@ -51,9 +49,7 @@ public class LoginTest {
     void verifyUserIsAbleToLoadLoginPage() {
         var loginPage = new LoginPage(driver);
         loginPage.clickLoginLink();
-        assertSoftly(softly -> softly.assertThat(loginPage.getLoginTitle())
-                .describedAs("Returning Customer title is not available")
-                .isTrue());
+        assertSoftly(softly -> softly.assertThat(loginPage.getLoginTitle()).describedAs("Returning Customer title is not available").isTrue());
     }
 
     /**
@@ -67,12 +63,8 @@ public class LoginTest {
         var loginUtility = new LoginPageUtility(loginPage);
         loginPage.clickLoginLink();
         loginUtility.authenticateWithAdminCredentials();
-        assertSoftly(softly -> softly.assertThat(loginPage.verifyUserLoginDashboard())
-                .describedAs("The user is not logged in as ADMIN_USER")
-                .isTrue());
-        assertSoftly(softly -> softly.assertThat(loginPage.getTableRowsTotal())
-                .describedAs("The action elements should be shown")
-                .isGreaterThan(NO_ACTION_ITEMS));
+        assertSoftly(softly -> softly.assertThat(loginPage.verifyUserLoginDashboard()).describedAs("The user is not logged in as ADMIN_USER").isTrue());
+        assertSoftly(softly -> softly.assertThat(loginPage.getTableRowsTotal()).describedAs("The action elements should be shown").isGreaterThan(NO_ACTION_ITEMS));
     }
 
     /**
@@ -86,9 +78,7 @@ public class LoginTest {
         var loginUtility = new LoginPageUtility(loginPage);
         loginPage.clickLoginLink();
         loginUtility.authenticateWithNoPermissionsCredentials();
-        assertSoftly(softly -> softly.assertThat(loginPage.verifyLoginErrorMessage())
-                .describedAs("The user is not able to authenticate in the form")
-                .isTrue());
+        assertSoftly(softly -> softly.assertThat(loginPage.verifyLoginErrorMessage()).describedAs("The user is not able to authenticate in the form").isTrue());
     }
 
     /**
@@ -102,12 +92,8 @@ public class LoginTest {
         var loginUtility = new LoginPageUtility(loginPage);
         loginPage.clickLoginLink();
         loginUtility.authenticateWithPublicUserCredentials();
-        assertSoftly(softly -> softly.assertThat(loginPage.verifyUserLoginDashboard())
-                .describedAs("The user is not logged in as PUBLIC_USER")
-                .isTrue());
-        assertSoftly(softly -> softly.assertThat(loginPage.getTableRowsTotal())
-                .describedAs("The dashboard elements should be shown")
-                .isGreaterThan(NO_ACTION_ITEMS));
+        assertSoftly(softly -> softly.assertThat(loginPage.verifyUserLoginDashboard()).describedAs("The user is not logged in as PUBLIC_USER").isTrue());
+        assertSoftly(softly -> softly.assertThat(loginPage.getTableRowsTotal()).describedAs("The dashboard elements should be shown").isGreaterThan(NO_ACTION_ITEMS));
     }
 
     /**
@@ -125,18 +111,11 @@ public class LoginTest {
         var loginUtility = new LoginPageUtility(loginPage);
         loginPage.clickLoginLink();
         loginUtility.loginWithCredentials(credentialValue.getUsername(), credentialValue.getPassword());
-        assertSoftly(softly -> softly.assertThat(loginPage.verifyUserLoginDashboard())
-                .describedAs("The user is not logged in as " + credentialValue)
-                .isTrue());
-        assertSoftly(softly -> softly.assertThat(loginPage.getTableRowsTotal())
-                .describedAs("The dashboard elements should be shown")
-                .isGreaterThan(NO_ACTION_ITEMS));
+        assertSoftly(softly -> softly.assertThat(loginPage.verifyUserLoginDashboard()).describedAs("The user is not logged in as " + credentialValue).isTrue());
+        assertSoftly(softly -> softly.assertThat(loginPage.getTableRowsTotal()).describedAs("The dashboard elements should be shown").isGreaterThan(NO_ACTION_ITEMS));
     }
 
     private static Stream<Arguments> credentialsProvider() {
-        return Stream.of(
-                Arguments.of(CredentialValue.ADMIN_USER),
-                Arguments.of(CredentialValue.PUBLIC_USER)
-        );
+        return Stream.of(Arguments.of(CredentialValue.ADMIN_USER), Arguments.of(CredentialValue.PUBLIC_USER));
     }
 }

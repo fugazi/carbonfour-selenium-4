@@ -1,6 +1,5 @@
 package Selenium_4_Tests;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -24,7 +23,6 @@ public class TestDevToolsGeolocation {
      */
     @BeforeEach
     public void setupUrl() {
-        WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver();
         driver.manage().window().maximize();
     }
@@ -44,14 +42,12 @@ public class TestDevToolsGeolocation {
      */
     @Test
     void mockGeolocationCDPCommand() {
-        HashMap coordinates = new HashMap()
-        {{
+        HashMap coordinates = new HashMap() {{
             put("latitude", 34.066540);
             put("longitude", -84.296260);
             put("accuracy", 1);
         }};
-        driver.executeCdpCommand(
-                "Emulation.setGeolocationOverride", coordinates);
+        driver.executeCdpCommand("Emulation.setGeolocationOverride", coordinates);
         driver.get("https://where-am-i.org");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).isEqualTo("Where Am I? - What is My Location Now on Map"));
     }

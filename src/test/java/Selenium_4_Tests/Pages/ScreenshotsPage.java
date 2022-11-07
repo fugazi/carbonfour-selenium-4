@@ -1,6 +1,5 @@
 package Selenium_4_Tests.Pages;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.By;
@@ -17,16 +16,14 @@ import java.io.IOException;
 public class ScreenshotsPage {
 
     private enum Using {
-        SHOP_LOGO(By.xpath("//img[@alt='Poco Electro']")),
-        SHOP_CATEGORIES(By.xpath("//div[@class='entry-module module-mz_product_listing left-title ']")),
-        SHOP_CONTENT(By.xpath("//div[@id='common-home']"));
+        SHOP_LOGO(By.xpath("//img[@alt='Poco Electro']")), SHOP_CATEGORIES(By.xpath("//div[@class='entry-module module-mz_product_listing left-title ']")), SHOP_CONTENT(By.xpath("//div[@id='common-home']"));
 
         /**
          * Constructor stub to initialize the selector
          */
         private final By selector;
 
-        Using(By selector){
+        Using(By selector) {
             this.selector = selector;
         }
     }
@@ -36,6 +33,7 @@ public class ScreenshotsPage {
      */
 
     public WebDriver driver;
+
     public ScreenshotsPage() {
         super();
     }
@@ -46,7 +44,6 @@ public class ScreenshotsPage {
      */
     @BeforeEach
     public void setupUrl() {
-        WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver();
         driver.manage().window().maximize();
         driver.get("https://ecommerce-playground.lambdatest.io/");
@@ -111,7 +108,7 @@ public class ScreenshotsPage {
      * Method 'getFullPageScreenshotAs' is used to take a Full Page screenshot.
      */
     public void takeShopContentScreenshot() throws IOException {
-        File source = ((FirefoxDriver)driver).getFullPageScreenshotAs(OutputType.FILE);
+        File source = ((FirefoxDriver) driver).getFullPageScreenshotAs(OutputType.FILE);
         File destination = new File("src/test/java/com/selenium_4/screenshots/shopContent.png");
         FileHandler.copy(source, destination);
     }

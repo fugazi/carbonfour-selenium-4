@@ -1,6 +1,5 @@
 package Selenium_4_Tests;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -22,7 +21,6 @@ public class TestDevToolsConsoleLogs {
      */
     @BeforeEach
     public void setupUrl() {
-        WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver();
         driver.manage().window().maximize();
         driver.get("https://my-location.org");

@@ -1,6 +1,5 @@
 package Selenium_4_Tests.Pages;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.By;
@@ -9,11 +8,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.locators.RelativeLocator;
 
-import static org.openqa.selenium.support.locators.RelativeLocator.with;
-
 import java.nio.file.Path;
 import java.util.Collections;
 import java.util.List;
+
+import static org.openqa.selenium.support.locators.RelativeLocator.with;
 
 public class LoginPage {
 
@@ -49,7 +48,6 @@ public class LoginPage {
      */
     @BeforeEach
     public void setUp() {
-        WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver();
         driver.manage().window().maximize();
         driver.get("https://opensource-demo.orangehrmlive.com");

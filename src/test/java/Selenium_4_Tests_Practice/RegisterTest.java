@@ -3,7 +3,6 @@ package Selenium_4_Tests_Practice;
 import Selenium_4_Tests_Practice.Components.FormFieldComponent;
 import Selenium_4_Tests_Practice.Pages.RegisterPage;
 import Selenium_4_Tests_Practice.Utilities.FormFieldUtility;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
@@ -40,7 +39,6 @@ public class RegisterTest {
      */
     @BeforeEach
     public void setupUrl() {
-        WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver();
         driver.manage().window().maximize();
         getBaseUrl(driver);
@@ -79,13 +77,9 @@ public class RegisterTest {
         // validate error messages
         List<String> errorMessages = registerPage.getFieldErrorMessages();
         assertSoftly(softly -> {
-            softly.assertThat(errorMessages.size()).as("The field error message count is not as expected")
-                    .isEqualTo(EXPECTED_ERRORS_TOTAL);
+            softly.assertThat(errorMessages.size()).as("The field error message count is not as expected").isEqualTo(EXPECTED_ERRORS_TOTAL);
             for (String errorMessage : errorMessages) {
-                softly.assertThat(errorMessage.contains(FIRST_NAME_ERROR_MESSAGE) || errorMessage.contains(LAST_NAME_ERROR_MESSAGE)
-                                || errorMessage.contains(EMAIL_ERROR_MESSAGE) || errorMessage.contains(TELEPHONE_ERROR_MESSAGE) || errorMessage.contains(PASSWORD_ERROR_MESSAGE))
-                        .as("The field error message is not as expected. Actual message: " + errorMessage)
-                        .isTrue();
+                softly.assertThat(errorMessage.contains(FIRST_NAME_ERROR_MESSAGE) || errorMessage.contains(LAST_NAME_ERROR_MESSAGE) || errorMessage.contains(EMAIL_ERROR_MESSAGE) || errorMessage.contains(TELEPHONE_ERROR_MESSAGE) || errorMessage.contains(PASSWORD_ERROR_MESSAGE)).as("The field error message is not as expected. Actual message: " + errorMessage).isTrue();
             }
         });
     }
@@ -114,13 +108,7 @@ public class RegisterTest {
      * @return Stream of FormField.
      */
     private static Stream<RegisterPage.FormField> Source() {
-        return Stream.of(
-                        Arrays.stream(RegisterPage.FirstAndLastName.values()),
-                        Arrays.stream(RegisterPage.Email.values()),
-                        Arrays.stream(RegisterPage.Telephone.values()),
-                        Arrays.stream(RegisterPage.Password.values())
-                )
-                .flatMap(Function.identity());
+        return Stream.of(Arrays.stream(RegisterPage.FirstAndLastName.values()), Arrays.stream(RegisterPage.Email.values()), Arrays.stream(RegisterPage.Telephone.values()), Arrays.stream(RegisterPage.Password.values())).flatMap(Function.identity());
     }
 }
 

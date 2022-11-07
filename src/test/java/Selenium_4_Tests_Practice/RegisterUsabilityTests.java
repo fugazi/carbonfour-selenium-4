@@ -1,12 +1,11 @@
 package Selenium_4_Tests_Practice;
 
 import Selenium_4_Tests_Practice.Pages.RegisterAccountPage;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.JavascriptException;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.v106.log.Log;
@@ -35,7 +34,6 @@ public class RegisterUsabilityTests {
      */
     @BeforeEach
     public void setupUrl() {
-        WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver();
         driver.manage().window().maximize();
         getBaseUrl(driver);

@@ -4,7 +4,6 @@ import Selenium_4_Tests_Practice.Pages.LoginPage;
 import Selenium_4_Tests_Practice.Pages.UserDashboardPage;
 import Selenium_4_Tests_Practice.Utilities.Dashboard.UserDashboardUtility;
 import Selenium_4_Tests_Practice.Utilities.LoginPageUtility;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -24,7 +23,6 @@ public class UserDashboardTest {
      */
     @BeforeEach
     public void setupUrl() {
-        WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver();
         driver.manage().window().maximize();
         getBaseUrl(driver);
@@ -47,9 +45,7 @@ public class UserDashboardTest {
     void verifyUserIsAbleToLoadLoginPage() {
         var loginPage = new LoginPage(driver);
         loginPage.clickLoginLink();
-        assertSoftly(softly -> softly.assertThat(loginPage.getLoginTitle())
-                .describedAs("Returning Customer title is not available")
-                .isTrue());
+        assertSoftly(softly -> softly.assertThat(loginPage.getLoginTitle()).describedAs("Returning Customer title is not available").isTrue());
     }
 
     /**
@@ -67,18 +63,10 @@ public class UserDashboardTest {
         loginPage.clickLoginLink();
         loginUtility.authenticateWithPublicUserCredentials();
         assertSoftly(softly -> {
-            softly.assertThat(userDashboard.getMyAccountTitleDashboard())
-                    .describedAs("My Account title on the Dashboard should be available")
-                    .isTrue();
-            softly.assertThat(userDashboard.getTableRowsTotal())
-                    .describedAs("The dashboard elements should be shown")
-                    .isNotEqualTo(NO_ACTION_ITEMS);
+            softly.assertThat(userDashboard.getMyAccountTitleDashboard()).describedAs("My Account title on the Dashboard should be available").isTrue();
+            softly.assertThat(userDashboard.getTableRowsTotal()).describedAs("The dashboard elements should be shown").isNotEqualTo(NO_ACTION_ITEMS);
         });
         userDashboardUtility.addNewAddressBook();
-        assertSoftly(softly -> {
-            softly.assertThat(userDashboard.getFirstName())
-                    .describedAs("The success message should be shown")
-                    .isNotBlank();
-        });
+        assertSoftly(softly -> softly.assertThat(userDashboard.getFirstName()).describedAs("The success message should be shown").isNotBlank());
     }
 }

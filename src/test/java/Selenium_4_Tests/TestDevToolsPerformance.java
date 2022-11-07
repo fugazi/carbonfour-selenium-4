@@ -1,6 +1,5 @@
 package Selenium_4_Tests;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -28,7 +27,6 @@ public class TestDevToolsPerformance {
      */
     @BeforeEach
     public void setupUrl() {
-        WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver();
         driver.manage().window().maximize();
     }
@@ -57,18 +55,7 @@ public class TestDevToolsPerformance {
         devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
         // Add an event Listener for the 'requestWillBeSent' event.
         devTools.addListener(Network.requestWillBeSent(), event -> {
-            System.out.println("Request URI: " + event.getRequest().getUrl() + "\n"
-                    + "Request URI + Assertions: " + event.getRequest().getUrl().contains("linkedin.com") + "\n"
-                    + "Request Type: " + event.getType() + "\n"
-                    + "Request Method: " + event.getRequest().getMethod() + "\n"
-                    + "Request Headers: " + event.getRequest().getHeaders() + "\n"
-                    + "Request Post Data: " + event.getRequest().getPostData() + "\n"
-                    + "Request Mixed Content Type: " + event.getRequest().getMixedContentType() + "\n"
-                    + "Request Referrer Policy: " + event.getRequest().getReferrerPolicy() + "\n"
-                    + "Request Is Signed Exchanged: " + event.getRequest().getUrlFragment().isPresent() + "\n"
-                    + "Request Document URL: " + event.getDocumentURL() + "\n"
-                    + "Request Initiator: " + event.getInitiator() + "\n"
-                    + "Request Timestamp: " + event.getTimestamp() + "\n");
+            System.out.println("Request URI: " + event.getRequest().getUrl() + "\n" + "Request URI + Assertions: " + event.getRequest().getUrl().contains("linkedin.com") + "\n" + "Request Type: " + event.getType() + "\n" + "Request Method: " + event.getRequest().getMethod() + "\n" + "Request Headers: " + event.getRequest().getHeaders() + "\n" + "Request Post Data: " + event.getRequest().getPostData() + "\n" + "Request Mixed Content Type: " + event.getRequest().getMixedContentType() + "\n" + "Request Referrer Policy: " + event.getRequest().getReferrerPolicy() + "\n" + "Request Is Signed Exchanged: " + event.getRequest().getUrlFragment().isPresent() + "\n" + "Request Document URL: " + event.getDocumentURL() + "\n" + "Request Initiator: " + event.getInitiator() + "\n" + "Request Timestamp: " + event.getTimestamp() + "\n");
         });
         // Active URL under test
         driver.get("https://linkedin.com");
@@ -92,12 +79,7 @@ public class TestDevToolsPerformance {
         // Disables performance tracking
         devTools.send(Performance.disable());
         // Print the metrics captured
-        List<String> metricsAssert = Arrays.asList(
-                "Timestamp", "Documents", "Frames", "JSEventListeners",
-                "Nodes", "LayoutCount", "RecalcStyleCount", "RecalcStyleDuration", "LayoutDuration", "MediaKeySessions",
-                "Resources", "DomContentLoaded", "NavigationStart", "TaskDuration", "JSHeapUsedSize",
-                "JSHeapTotalSize", "ScriptDuration"
-        );
+        List<String> metricsAssert = Arrays.asList("Timestamp", "Documents", "Frames", "JSEventListeners", "Nodes", "LayoutCount", "RecalcStyleCount", "RecalcStyleDuration", "LayoutDuration", "MediaKeySessions", "Resources", "DomContentLoaded", "NavigationStart", "TaskDuration", "JSHeapUsedSize", "JSHeapTotalSize", "ScriptDuration");
         // Assert that the metrics captured are the expected metrics
         metricsAssert.forEach(metric -> System.out.println("Metric: " + metric + "\n" + performanceMetrics.get(metricNames.indexOf(metric)).getValue()));
         assertSoftly(softly -> softly.assertThat(metricNames).containsAll(metricsAssert));

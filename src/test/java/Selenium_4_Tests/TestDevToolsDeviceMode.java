@@ -1,6 +1,5 @@
 package Selenium_4_Tests;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -23,7 +22,6 @@ public class TestDevToolsDeviceMode {
      */
     @BeforeEach
     public void setupUrl() {
-        WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver();
         driver.manage().window().maximize();
     }
@@ -58,8 +56,7 @@ public class TestDevToolsDeviceMode {
                 put("angle", 50);
             }});
         }};
-        driver.executeCdpCommand(
-                "Emulation.setDeviceMetricsOverride", deviceMetrics);
+        driver.executeCdpCommand("Emulation.setDeviceMetricsOverride", deviceMetrics);
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
     }
@@ -82,8 +79,7 @@ public class TestDevToolsDeviceMode {
                 put("angle", 20);
             }});
         }};
-        driver.executeCdpCommand(
-                "Emulation.setDeviceMetricsOverride", deviceMetrics);
+        driver.executeCdpCommand("Emulation.setDeviceMetricsOverride", deviceMetrics);
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
     }
@@ -106,8 +102,7 @@ public class TestDevToolsDeviceMode {
                 put("angle", 45);
             }});
         }};
-        driver.executeCdpCommand(
-                "Emulation.setDeviceMetricsOverride", deviceMetrics);
+        driver.executeCdpCommand("Emulation.setDeviceMetricsOverride", deviceMetrics);
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
     }
@@ -133,8 +128,7 @@ public class TestDevToolsDeviceMode {
                 put("angle", 25);
             }});
         }};
-        driver.executeCdpCommand(
-                "Emulation.setDeviceMetricsOverride", deviceMetrics);
+        driver.executeCdpCommand("Emulation.setDeviceMetricsOverride", deviceMetrics);
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
     }
@@ -157,8 +151,7 @@ public class TestDevToolsDeviceMode {
                 put("angle", 90);
             }});
         }};
-        driver.executeCdpCommand(
-                "Emulation.setDeviceMetricsOverride", deviceMetrics);
+        driver.executeCdpCommand("Emulation.setDeviceMetricsOverride", deviceMetrics);
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
     }
@@ -181,8 +174,7 @@ public class TestDevToolsDeviceMode {
                 put("angle", 0);
             }});
         }};
-        driver.executeCdpCommand(
-                "Emulation.setDeviceMetricsOverride", deviceMetrics);
+        driver.executeCdpCommand("Emulation.setDeviceMetricsOverride", deviceMetrics);
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
     }
@@ -206,8 +198,7 @@ public class TestDevToolsDeviceMode {
                 put("maskLength", 0);
             }});
         }};
-        driver.executeCdpCommand(
-                "Emulation.setDeviceMetricsOverride", deviceMetrics);
+        driver.executeCdpCommand("Emulation.setDeviceMetricsOverride", deviceMetrics);
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
     }
@@ -231,8 +222,7 @@ public class TestDevToolsDeviceMode {
                 put("maskLength", 0);
             }});
         }};
-        driver.executeCdpCommand(
-                "Emulation.setDeviceMetricsOverride", deviceMetrics);
+        driver.executeCdpCommand("Emulation.setDeviceMetricsOverride", deviceMetrics);
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
     }
@@ -256,8 +246,7 @@ public class TestDevToolsDeviceMode {
                 put("maskLength", 0);
             }});
         }};
-        driver.executeCdpCommand(
-                "Emulation.setDeviceMetricsOverride", deviceMetrics);
+        driver.executeCdpCommand("Emulation.setDeviceMetricsOverride", deviceMetrics);
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
     }
@@ -281,8 +270,7 @@ public class TestDevToolsDeviceMode {
                 put("maskLength", 0);
             }});
         }};
-        driver.executeCdpCommand(
-                "Emulation.setDeviceMetricsOverride", deviceMetrics);
+        driver.executeCdpCommand("Emulation.setDeviceMetricsOverride", deviceMetrics);
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
     }
@@ -306,8 +294,7 @@ public class TestDevToolsDeviceMode {
                 put("maskLength", 0);
             }});
         }};
-        driver.executeCdpCommand(
-                "Emulation.setDeviceMetricsOverride", deviceMetrics);
+        driver.executeCdpCommand("Emulation.setDeviceMetricsOverride", deviceMetrics);
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
     }
@@ -331,8 +318,7 @@ public class TestDevToolsDeviceMode {
                 put("maskLength", 0);
             }});
         }};
-        driver.executeCdpCommand(
-                "Emulation.setDeviceMetricsOverride", deviceMetrics);
+        driver.executeCdpCommand("Emulation.setDeviceMetricsOverride", deviceMetrics);
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
     }

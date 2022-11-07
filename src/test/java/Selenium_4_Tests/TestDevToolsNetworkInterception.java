@@ -1,7 +1,6 @@
 package Selenium_4_Tests;
 
 import com.google.common.collect.ImmutableList;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,11 +8,11 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.NetworkInterceptor;
-import org.openqa.selenium.devtools.v104.fetch.Fetch;
-import org.openqa.selenium.devtools.v104.network.Network;
-import org.openqa.selenium.devtools.v104.network.model.BlockedReason;
-import org.openqa.selenium.devtools.v104.network.model.ResourceType;
-import org.openqa.selenium.devtools.v104.security.Security;
+import org.openqa.selenium.devtools.v107.fetch.Fetch;
+import org.openqa.selenium.devtools.v107.network.Network;
+import org.openqa.selenium.devtools.v107.network.model.BlockedReason;
+import org.openqa.selenium.devtools.v107.network.model.ResourceType;
+import org.openqa.selenium.devtools.v107.security.Security;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.http.HttpResponse;
@@ -23,7 +22,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
-import static org.openqa.selenium.devtools.v104.network.Network.*;
+import static org.openqa.selenium.devtools.v107.network.Network.*;
 import static org.openqa.selenium.remote.http.Contents.utf8String;
 
 @Slf4j
@@ -39,7 +38,6 @@ public class TestDevToolsNetworkInterception {
      */
     @BeforeEach
     public void setupUrl() {
-        WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver();
         driver.manage().window().maximize();
     }
@@ -63,15 +61,9 @@ public class TestDevToolsNetworkInterception {
         DevTools devTools = driver.getDevTools();
         devTools.createSession();
         // Enables network tracking, network events will now be delivered to the client
-        NetworkInterceptor networkInterceptor = new NetworkInterceptor(
-                driver,
+        NetworkInterceptor networkInterceptor = new NetworkInterceptor(driver,
                 // Intercepts all network requests.
-                Route.matching(request -> true)
-                        .to(() -> request -> new HttpResponse()
-                                .setStatus(200)
-                                .addHeader("Content-Type", "text/html")
-                                .addHeader("Accept-Encoding", "gzip, deflate")
-                                .setContent(utf8String("Network Intercepted!"))));
+                Route.matching(request -> true).to(() -> request -> new HttpResponse().setStatus(200).addHeader("Content-Type", "text/html").addHeader("Accept-Encoding", "gzip, deflate").setContent(utf8String("Network Intercepted!"))));
         // Go to the website
         driver.get("https://linkedin.com");
         String pageSource = driver.getPageSource();
@@ -144,9 +136,7 @@ public class TestDevToolsNetworkInterception {
             }
         });
         // Block Patterns - In this example: Block some IMG requests.
-        devTools.send(Network.setBlockedURLs(List.of("https://ecommerce-playground.lambdatest.io/image/catalog/maza/svg/image2vector.svg",
-                "https://ecommerce-playground.lambdatest.io/image/catalog/opencart-logo.png",
-                "https://ecommerce-playground.lambdatest.io/catalog/view/theme/mz_poco/asset/stylesheet/megastore-2.28/combine/eba62915f06ab23a214a819a0557a58b.css")));
+        devTools.send(Network.setBlockedURLs(List.of("https://ecommerce-playground.lambdatest.io/image/catalog/maza/svg/image2vector.svg", "https://ecommerce-playground.lambdatest.io/image/catalog/opencart-logo.png", "https://ecommerce-playground.lambdatest.io/catalog/view/theme/mz_poco/asset/stylesheet/megastore-2.28/combine/eba62915f06ab23a214a819a0557a58b.css")));
         // Add a listener to the 'Network' method to get the blocked request
         devTools.addListener(loadingFailed(), loadingFailed -> {
             log.info("Blocking reason final: " + loadingFailed.getBlockedReason().get());
