@@ -1,7 +1,7 @@
 
 # Selenium 4 - UI Tests Project
 
-This is an Automation project using the new features for Selenium Webdriver 4.3 version.
+This is an Automation project using the new features for Selenium Webdriver 4.6 version.
 
 This project has been developed by [Douglas Urrea Ocampo](https://www.linkedin.com/in/douglasfugazi) to improve learning on advanced Automation testing with Selenium 4.0.
 
@@ -19,10 +19,10 @@ The main features of this project has the following:
 > This project has an educational objective: To learn the newest features for Selenium 4.0.
 >
 > Some practices will help you to improve your test architecture, but the central point of this repository is
-> demonstrate with examples the new and exciting features of Selenium 4.0.
+> demonstrate with examples the new and exciting features of Selenium 4.6.
 > 
 > You can find more information about the new features with the official links:
-> * [Selenium 4.0](https://www.seleniumhq.org/docs/04_dev_guide.jsp#selenium-4-0)
+> * [Selenium 4.6](https://www.seleniumhq.org/docs/04_dev_guide.jsp#selenium-4-0)
 > * [Selenium Webdriver documentation](https://www.selenium.dev/documentation/webdriver/)
 > * [Chrome DevTools documentation](https://chromedevtools.github.io/devtools-protocol/)
 
@@ -42,13 +42,13 @@ This project using the following languages and frameworks:
 * [Selenium WebDriver](https://www.selenium.dev/) as the web browser automation framework using the latest 4.3. version
 * [AssertJ](https://joel-costigliola.github.io/assertj/) as the fluent assertion library
 * [Log4J2](https://logging.apache.org/log4j/2.x/) as the logging management strategy
-* [WebDriverManager](https://github.com/bonigarcia/webdrivermanager) as the Selenium binaries management
+* ~~[WebDriverManager](https://github.com/bonigarcia/webdrivermanager) as the Selenium binaries management~~
 * [Owner](http://owner.aeonbits.org/) to minimize the code to handle the properties file
 
 ### ⚡️Automation Test Strategy
 We know that any automation project starting with a good test architecture.
 
-This projects has UI Tests using Selenium Webdriver with latest 4.3. version.
+This projects has UI Tests using Selenium Webdriver with latest 4.6. version.
 
 The website under test is an e-commerce website [here](https://ecommerce-playground.lambdatest.io) to test different domain access according to the scope of each test.
 
@@ -57,25 +57,25 @@ I must say it was fun learning and automating this website because it was challe
 1. Browser is Microsoft Edge in order to have a different approach to test.
 2. Test has following scenarios:
     * Scenario 1:
-        * How To Use Chrome DevTools Protocol (CDP) In Selenium 4.0
+        * How To Use Chrome DevTools Protocol (CDP) In Selenium 4.6
           * DevTools: Console Logs
           * Geolocation
           * Network Emulation: 3G, 4G, Wi-Fi, Bluetooth
     * Scenario 2:
-        * How To Use Element Position In Selenium 4.0
+        * How To Use Element Position In Selenium 4.6
             * Element Position of an Image using built-in method 'getRect()'
             * Size & position to fetch the width & height of an element.
     * Scenario 3:
-        * How To Use Relative Locators In Selenium 4.0
+        * How To Use Relative Locators In Selenium 4.6
             * Each relative locator is a method to be searched by: Above, Below, Left, Right, Near of.
     * Scenario 4:
-        * How To Take Screenshots In Selenium 4.0
+        * How To Take Screenshots In Selenium 4.6
             * Method 'getScreenshotAs' is used to take a WebElement screenshot.
             * Method 'getFullPageScreenshotAs' is used to take a Full Page screenshot.
     * Scenario 5:
-        * How To Use Window and Tab Management In Selenium 4.0
+        * How To Use Window and Tab Management In Selenium 4.6
     * Scenario 6:
-        * How To Use CDP command to capture Performance Metrics In Selenium 4.0
+        * How To Use CDP command to capture Performance Metrics In Selenium 4.6
             * Time to First Byte (TTFB): To identify when a web server takes too long to respond to requests.
             * First Contentful Paint (FCP): First time in the page load timeline when the user can see anything on the screen.
             * Largest Contentful Paint (LCP): It denotes the point in the page load timeline when the page's main content has most likely loaded.
@@ -84,7 +84,7 @@ I must say it was fun learning and automating this website because it was challe
             * Total Blocking Time (TBT): It helps quantify the severity of a page's non-interactivity before it becomes reliably interactive.
             * Cumulative Layout Shift (CLS): It helps in quantifying how frequently users encounter unexpected layout shifts.
    * Scenario 7:
-       * How To Simulate Devices Viewport In Selenium 4.0
+       * How To Simulate Devices Viewport In Selenium 4.6
            * Google Chrome
            * Firefox
            * Microsoft Edge
@@ -99,7 +99,7 @@ I must say it was fun learning and automating this website because it was challe
            * Pixel 6 XL
            * OnePlus 10
    * Scenario 8:
-       * How To Simulate Network Interception In Selenium 4.0
+       * How To Simulate Network Interception In Selenium 4.6
            * Network Security to intercept network requests and block requests based on the conditions.
            * Network Block Patterns to block URLs and requests patterns.
            * WebSocket Listener to intercept WebSocket requests.
@@ -128,11 +128,11 @@ I must say it was fun learning and automating this website because it was challe
 1. Download the latest Java JDK from [here](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133155.html)
 2. Install git from [here](https://git-scm.com)
 3. Selenium Webdriver from [here](https://www.selenium.dev)
-4. Get WebDriverManager from [here](https://bonigarcia.dev/webdrivermanager/)
+~~4. Get WebDriverManager from [here](https://bonigarcia.dev/webdrivermanager/)~~
 5. Install Apache Maven from [here](https://maven.apache.org)
 6. Test Runner is JUnit 5 from [here](https://junit.org/junit5/)
 7. Build Tool is Maven the latest version 
-8. Note: ChromeDriver.exe is not necessary, you should use the WebDriverManager capabilities. 
+8. Note: ChromeDriver.exe is not necessary, you should use the Selenium Manager capabilities. 
 9. Note: POM.xml has all configuration installed, you should use the Maven build tool only.
 
 ## 🛠️ Running the project:
