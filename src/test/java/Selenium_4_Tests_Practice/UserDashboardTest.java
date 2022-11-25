@@ -67,6 +67,6 @@ public class UserDashboardTest {
             softly.assertThat(userDashboard.getTableRowsTotal()).describedAs("The dashboard elements should be shown").isNotEqualTo(NO_ACTION_ITEMS);
         });
         userDashboardUtility.addNewAddressBook();
-        assertSoftly(softly -> softly.assertThat(userDashboard.getFirstName()).describedAs("The success message should be shown").isNotBlank());
+        assertSoftly(softly -> softly.assertThat(userDashboard.getFirstName()).describedAs("The success message should be shown ").isNotBlank());
     }
 }
