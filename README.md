@@ -30,7 +30,7 @@ The main features of this project has the following:
 * Name: `Douglas Urrea Ocampo`
 * Country: `Colombia`
 * City: `Medellin`
-* E-mail: `itmteleco@gmail.com`
+* E-mail: `douglas@douglasfugazi.co`
 * LinkedIn: [https://www.linkedin.com/in/douglasfugazi](https://www.linkedin.com/in/douglasfugazi)
 * Contact: [https://douglasfugazi.co](https://douglasfugazi.co)
 
@@ -39,11 +39,13 @@ This project using the following languages and frameworks:
 
 * [Java 11](https://openjdk.java.net/projects/jdk/11/) as the programming language
 * [JUnit](https://junit.org/junit5/) as the UnitTest framework to support the test creation
-* [Selenium WebDriver](https://www.selenium.dev/) as the web browser automation framework using the latest 4.3. version
+* [Selenium WebDriver](https://www.selenium.dev/) as the web browser automation framework using the latest 4.6. version
 * [AssertJ](https://joel-costigliola.github.io/assertj/) as the fluent assertion library
 * [Log4J2](https://logging.apache.org/log4j/2.x/) as the logging management strategy
 * ~~[WebDriverManager](https://github.com/bonigarcia/webdrivermanager) as the Selenium binaries management~~
 * [Owner](http://owner.aeonbits.org/) to minimize the code to handle the properties file
+* [Project Lombok](https://projectlombok.org) as fully featured builder library
+* [Java Faker](https://github.com/DiUS/java-faker) allows us to generate fake data
 
 ### ⚡️Automation Test Strategy
 We know that any automation project starting with a good test architecture.
