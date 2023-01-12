@@ -1,14 +1,19 @@
 package Selenium_4_Tests_Practice;
 
-import Selenium_4_Tests_Practice.Pages.RegisterAccountPage;
-import Selenium_4_Tests_Practice.Utilities.RegisterAccountPageUtility;
-import org.apache.commons.lang3.RandomStringUtils;
-import org.junit.jupiter.api.*;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-
 import static Selenium_4_Tests_Practice.BaseUtility.BaseUrl.getBaseUrl;
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
+
+import Selenium_4_Tests_Practice.Pages.RegisterAccountPage;
+import Selenium_4_Tests_Practice.Utilities.RegisterAccountPageUtility;
+
+import org.apache.commons.lang3.RandomStringUtils;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 public class RegisterAccountTest {
     public final String DESCRIPTION_MESSAGE = "Error: The value contained in the input is different from the one entered in the previous step.";
@@ -64,7 +69,8 @@ public class RegisterAccountTest {
     void testHomeRegisterAccount() {
         registerAccountPage = new RegisterAccountPage(driver);
         registerAccountPage.clickRegisterLink();
-        assertSoftly(softly -> softly.assertThat(registerAccountPage.getRegisterAccountTitle()).isEqualTo(REGISTER_ACCOUNT_TITLE));
+        assertSoftly(softly -> softly.assertThat(registerAccountPage.getRegisterAccountTitle())
+                .isEqualTo(REGISTER_ACCOUNT_TITLE));
     }
 
     /**
@@ -79,24 +85,33 @@ public class RegisterAccountTest {
         registerAccountPage = new RegisterAccountPage(driver);
         registerAccountPage.clickRegisterLink();
         registerAccountPage.enterFirstName(firstName);
-        assertSoftly(softly -> softly.assertThat(registerAccountPage.getFirstName()).as(DESCRIPTION_MESSAGE).isEqualTo(firstName));
+        assertSoftly(softly -> softly.assertThat(registerAccountPage.getFirstName()).as(DESCRIPTION_MESSAGE)
+                .isEqualTo(firstName));
         registerAccountPage.enterLastName(lastName);
-        assertSoftly(softly -> softly.assertThat(registerAccountPage.getLastName()).as(DESCRIPTION_MESSAGE).isEqualTo(lastName));
+        assertSoftly(softly -> softly.assertThat(registerAccountPage.getLastName()).as(DESCRIPTION_MESSAGE)
+                .isEqualTo(lastName));
         registerAccountPage.enterEmail(email);
-        assertSoftly(softly -> softly.assertThat(registerAccountPage.getEmail()).as(DESCRIPTION_MESSAGE).isEqualTo(email));
+        assertSoftly(
+                softly -> softly.assertThat(registerAccountPage.getEmail()).as(DESCRIPTION_MESSAGE).isEqualTo(email));
         registerAccountPage.enterTelephone(telephone);
-        assertSoftly(softly -> softly.assertThat(registerAccountPage.getTelephone()).as(DESCRIPTION_MESSAGE).isEqualTo(telephone));
+        assertSoftly(softly -> softly.assertThat(registerAccountPage.getTelephone()).as(DESCRIPTION_MESSAGE)
+                .isEqualTo(telephone));
         registerAccountPage.enterPassword(password);
-        assertSoftly(softly -> softly.assertThat(registerAccountPage.getPassword()).as(DESCRIPTION_MESSAGE).isEqualTo(password));
+        assertSoftly(softly -> softly.assertThat(registerAccountPage.getPassword()).as(DESCRIPTION_MESSAGE)
+                .isEqualTo(password));
         registerAccountPage.enterPasswordConfirm(password);
-        assertSoftly(softly -> softly.assertThat(registerAccountPage.getPasswordConfirm()).as(DESCRIPTION_MESSAGE).isEqualTo(password));
+        assertSoftly(softly -> softly.assertThat(registerAccountPage.getPasswordConfirm()).as(DESCRIPTION_MESSAGE)
+                .isEqualTo(password));
         registerAccountPage.clickNewsletterRadioButton();
-        assertSoftly(softly -> softly.assertThat(registerAccountPage.isNewsletterRadioButtonSelected()).isEqualTo(false));
+        assertSoftly(
+                softly -> softly.assertThat(registerAccountPage.isNewsletterRadioButtonSelected()).isEqualTo(false));
         registerAccountPage.clickPrivacyPolicyCheckbox();
-        assertSoftly(softly -> softly.assertThat(registerAccountPage.isPrivacyPolicyCheckboxSelected()).isEqualTo(false));
+        assertSoftly(
+                softly -> softly.assertThat(registerAccountPage.isPrivacyPolicyCheckboxSelected()).isEqualTo(false));
 
         registerAccountPage.clickContinueButton();
-        assertSoftly(softly -> softly.assertThat(registerAccountPage.getRegisterAccountTitle()).isEqualTo(REGISTER_ACCOUNT_SUCCESS_MESSAGE));
+        assertSoftly(softly -> softly.assertThat(registerAccountPage.getRegisterAccountTitle())
+                .isEqualTo(REGISTER_ACCOUNT_SUCCESS_MESSAGE));
     }
 
     /**
@@ -112,6 +127,7 @@ public class RegisterAccountTest {
         registerAccountPage.clickRegisterLink();
         registerAccountPageUtility.fillRegisterAccountForm();
         registerAccountPage.clickContinueButton();
-        assertSoftly(softly -> softly.assertThat(registerAccountPage.getRegisterAccountTitle()).isEqualTo(REGISTER_ACCOUNT_SUCCESS_MESSAGE));
+        assertSoftly(softly -> softly.assertThat(registerAccountPage.getRegisterAccountTitle())
+                .isEqualTo(REGISTER_ACCOUNT_SUCCESS_MESSAGE));
     }
 }

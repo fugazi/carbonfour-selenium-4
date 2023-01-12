@@ -1,7 +1,15 @@
 package Selenium_4_Tests_Practice;
 
+import static Selenium_4_Tests_Practice.BaseUtility.BaseUrl.getBaseUrl;
+import static org.assertj.core.api.SoftAssertions.assertSoftly;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
+
 import Selenium_4_Tests_Practice.Pages.RegisterAccountPage;
 import lombok.extern.slf4j.Slf4j;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
@@ -10,13 +18,6 @@ import org.openqa.selenium.JavascriptException;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.v106.log.Log;
 import org.openqa.selenium.edge.EdgeDriver;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
-
-import static Selenium_4_Tests_Practice.BaseUtility.BaseUrl.getBaseUrl;
-import static org.assertj.core.api.SoftAssertions.assertSoftly;
 
 @Slf4j
 public class RegisterUsabilityTests {
@@ -80,10 +81,13 @@ public class RegisterUsabilityTests {
 
         var registerAccountPage = new RegisterAccountPage(driver);
         registerAccountPage.clickRegisterLink();
-        assertSoftly(softly -> softly.assertThat(registerAccountPage.getRegisterAccountTitle()).isEqualTo(REGISTER_ACCOUNT_TITLE));
+        assertSoftly(softly -> softly.assertThat(registerAccountPage.getRegisterAccountTitle())
+                .isEqualTo(REGISTER_ACCOUNT_TITLE));
         assertSoftly(softly -> softly.assertThat(driver.getCurrentUrl()).contains(REGISTER_BASE_URL));
-        assertSoftly(softly -> softly.assertThat(LOGIN_URL_LINK).isEqualTo(registerAccountPage.loginPageLink().getAttribute("href")));
-        assertSoftly(softly -> softly.assertThat(PRIVACY_POLICY_LINK).isEqualTo(registerAccountPage.privacyPolicyLink().getAttribute("href")));
+        assertSoftly(softly -> softly.assertThat(LOGIN_URL_LINK)
+                .isEqualTo(registerAccountPage.loginPageLink().getAttribute("href")));
+        assertSoftly(softly -> softly.assertThat(PRIVACY_POLICY_LINK)
+                .isEqualTo(registerAccountPage.privacyPolicyLink().getAttribute("href")));
     }
 
 }

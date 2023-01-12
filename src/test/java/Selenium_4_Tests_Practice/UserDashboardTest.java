@@ -1,15 +1,20 @@
 package Selenium_4_Tests_Practice;
 
+import static Selenium_4_Tests_Practice.BaseUtility.BaseUrl.getBaseUrl;
+import static org.assertj.core.api.SoftAssertions.assertSoftly;
+
 import Selenium_4_Tests_Practice.Pages.LoginPage;
 import Selenium_4_Tests_Practice.Pages.UserDashboardPage;
 import Selenium_4_Tests_Practice.Utilities.Dashboard.UserDashboardUtility;
 import Selenium_4_Tests_Practice.Utilities.LoginPageUtility;
-import org.junit.jupiter.api.*;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
-
-import static Selenium_4_Tests_Practice.BaseUtility.BaseUrl.getBaseUrl;
-import static org.assertj.core.api.SoftAssertions.assertSoftly;
 
 public class UserDashboardTest {
 
@@ -45,7 +50,8 @@ public class UserDashboardTest {
     void verifyUserIsAbleToLoadLoginPage() {
         var loginPage = new LoginPage(driver);
         loginPage.clickLoginLink();
-        assertSoftly(softly -> softly.assertThat(loginPage.getLoginTitle()).describedAs("Returning Customer title is not available").isTrue());
+        assertSoftly(softly -> softly.assertThat(loginPage.getLoginTitle())
+                .describedAs("Returning Customer title is not available").isTrue());
     }
 
     /**
@@ -63,10 +69,13 @@ public class UserDashboardTest {
         loginPage.clickLoginLink();
         loginUtility.authenticateWithPublicUserCredentials();
         assertSoftly(softly -> {
-            softly.assertThat(userDashboard.getMyAccountTitleDashboard()).describedAs("My Account title on the Dashboard should be available").isTrue();
-            softly.assertThat(userDashboard.getTableRowsTotal()).describedAs("The dashboard elements should be shown").isNotEqualTo(NO_ACTION_ITEMS);
+            softly.assertThat(userDashboard.getMyAccountTitleDashboard())
+                    .describedAs("My Account title on the Dashboard should be available").isTrue();
+            softly.assertThat(userDashboard.getTableRowsTotal()).describedAs("The dashboard elements should be shown")
+                    .isNotEqualTo(NO_ACTION_ITEMS);
         });
         userDashboardUtility.addNewAddressBook();
-        assertSoftly(softly -> softly.assertThat(userDashboard.getFirstName()).describedAs("The success message should be shown ").isNotBlank());
+        assertSoftly(softly -> softly.assertThat(userDashboard.getFirstName())
+                .describedAs("The success message should be shown ").isNotBlank());
     }
 }

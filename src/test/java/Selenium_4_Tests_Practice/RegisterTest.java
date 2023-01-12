@@ -1,8 +1,17 @@
 package Selenium_4_Tests_Practice;
 
+import static Selenium_4_Tests_Practice.BaseUtility.BaseUrl.getBaseUrl;
+import static org.assertj.core.api.SoftAssertions.assertSoftly;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Function;
+import java.util.stream.Stream;
+
 import Selenium_4_Tests_Practice.Components.FormFieldComponent;
 import Selenium_4_Tests_Practice.Pages.RegisterPage;
 import Selenium_4_Tests_Practice.Utilities.FormFieldUtility;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
@@ -11,14 +20,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.function.Function;
-import java.util.stream.Stream;
-
-import static Selenium_4_Tests_Practice.BaseUtility.BaseUrl.getBaseUrl;
-import static org.assertj.core.api.SoftAssertions.assertSoftly;
 
 public class RegisterTest {
 
@@ -60,7 +61,8 @@ public class RegisterTest {
     void testHomeRegister() {
         registerPage = new RegisterPage(driver);
         registerPage.clickMyAccountLink();
-        assertSoftly(softly -> softly.assertThat(registerPage.getRegisterAccountTitle()).isEqualTo(REGISTER_ACCOUNT_TITLE));
+        assertSoftly(
+                softly -> softly.assertThat(registerPage.getRegisterAccountTitle()).isEqualTo(REGISTER_ACCOUNT_TITLE));
     }
 
     /**
@@ -70,16 +72,20 @@ public class RegisterTest {
     @Test
     @Tag("Regression")
     void testErrorFieldMessages() {
-//        ((HasAuthentication) driver).register(() -> new UsernameAndPassword("admin", "admin"));
+        //        ((HasAuthentication) driver).register(() -> new UsernameAndPassword("admin", "admin"));
         registerPage = new RegisterPage(driver);
         registerPage.clickMyAccountLink();
         registerPage.clickContinueButton();
         // validate error messages
         List<String> errorMessages = registerPage.getFieldErrorMessages();
         assertSoftly(softly -> {
-            softly.assertThat(errorMessages.size()).as("The field error message count is not as expected").isEqualTo(EXPECTED_ERRORS_TOTAL);
+            softly.assertThat(errorMessages.size()).as("The field error message count is not as expected")
+                    .isEqualTo(EXPECTED_ERRORS_TOTAL);
             for (String errorMessage : errorMessages) {
-                softly.assertThat(errorMessage.contains(FIRST_NAME_ERROR_MESSAGE) || errorMessage.contains(LAST_NAME_ERROR_MESSAGE) || errorMessage.contains(EMAIL_ERROR_MESSAGE) || errorMessage.contains(TELEPHONE_ERROR_MESSAGE) || errorMessage.contains(PASSWORD_ERROR_MESSAGE)).as("The field error message is not as expected. Actual message: " + errorMessage).isTrue();
+                softly.assertThat(errorMessage.contains(FIRST_NAME_ERROR_MESSAGE) || errorMessage.contains(
+                                LAST_NAME_ERROR_MESSAGE) || errorMessage.contains(EMAIL_ERROR_MESSAGE) || errorMessage.contains(
+                                TELEPHONE_ERROR_MESSAGE) || errorMessage.contains(PASSWORD_ERROR_MESSAGE))
+                        .as("The field error message is not as expected. Actual message: " + errorMessage).isTrue();
             }
         });
     }
@@ -108,7 +114,9 @@ public class RegisterTest {
      * @return Stream of FormField.
      */
     private static Stream<RegisterPage.FormField> Source() {
-        return Stream.of(Arrays.stream(RegisterPage.FirstAndLastName.values()), Arrays.stream(RegisterPage.Email.values()), Arrays.stream(RegisterPage.Telephone.values()), Arrays.stream(RegisterPage.Password.values())).flatMap(Function.identity());
+        return Stream.of(Arrays.stream(RegisterPage.FirstAndLastName.values()),
+                Arrays.stream(RegisterPage.Email.values()), Arrays.stream(RegisterPage.Telephone.values()),
+                Arrays.stream(RegisterPage.Password.values())).flatMap(Function.identity());
     }
 }
 
