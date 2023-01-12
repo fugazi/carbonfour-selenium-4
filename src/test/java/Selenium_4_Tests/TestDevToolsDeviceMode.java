@@ -1,5 +1,9 @@
 package Selenium_4_Tests;
 
+import static org.assertj.core.api.SoftAssertions.assertSoftly;
+
+import java.util.HashMap;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -7,10 +11,6 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.v106.emulation.Emulation;
 import org.openqa.selenium.edge.EdgeDriver;
-
-import java.util.HashMap;
-
-import static org.assertj.core.api.SoftAssertions.assertSoftly;
 
 public class TestDevToolsDeviceMode {
 

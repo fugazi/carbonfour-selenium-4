@@ -1,10 +1,11 @@
 package Selenium_4_Tests;
 
+import static org.assertj.core.api.SoftAssertions.assertSoftly;
+
 import Selenium_4_Tests.Pages.LoginPage;
+
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-
-import static org.assertj.core.api.SoftAssertions.assertSoftly;
 
 public class TestLoginRelativeLocators {
 
@@ -49,7 +50,8 @@ public class TestLoginRelativeLocators {
     @Tag("Regression")
     void testRelativeLocatorsAbove() {
         loginPage.setUp();
-        assertSoftly(softly -> softly.assertThat(loginPage.getCredentialsTextRelativeLocatorsAbove()).isEqualTo(CREDENTIALS_TEXT));
+        assertSoftly(softly -> softly.assertThat(loginPage.getCredentialsTextRelativeLocatorsAbove())
+                .isEqualTo(CREDENTIALS_TEXT));
         loginPage.tearDown();
     }
 
@@ -61,7 +63,8 @@ public class TestLoginRelativeLocators {
     @Tag("Regression")
     void testRelativeLocatorsBelow() {
         loginPage.setUp();
-        assertSoftly(softly -> softly.assertThat(loginPage.getUsernameTextRelativeLocatorsBelow()).isEqualTo(USERNAME_TEXT));
+        assertSoftly(
+                softly -> softly.assertThat(loginPage.getUsernameTextRelativeLocatorsBelow()).isEqualTo(USERNAME_TEXT));
         loginPage.tearDown();
     }
 

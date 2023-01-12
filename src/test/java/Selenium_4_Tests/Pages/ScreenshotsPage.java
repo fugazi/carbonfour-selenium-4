@@ -1,5 +1,8 @@
 package Selenium_4_Tests.Pages;
 
+import java.io.File;
+import java.io.IOException;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.By;
@@ -10,13 +13,12 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.io.FileHandler;
 
-import java.io.File;
-import java.io.IOException;
-
 public class ScreenshotsPage {
 
     private enum Using {
-        SHOP_LOGO(By.xpath("//img[@alt='Poco Electro']")), SHOP_CATEGORIES(By.xpath("//div[@class='entry-module module-mz_product_listing left-title ']")), SHOP_CONTENT(By.xpath("//div[@id='common-home']"));
+        SHOP_LOGO(By.xpath("//img[@alt='Poco Electro']")), SHOP_CATEGORIES(
+                By.xpath("//div[@class='entry-module module-mz_product_listing left-title ']")), SHOP_CONTENT(
+                By.xpath("//div[@id='common-home']"));
 
         /**
          * Constructor stub to initialize the selector
@@ -84,7 +86,7 @@ public class ScreenshotsPage {
      */
     public void takeShopLogoScreenshot() throws IOException {
         WebElement shopLogoScreenshot = driver.findElement(Using.SHOP_LOGO.selector);
-//        FileHandler.createDir(new File("src/test/java/com/selenium_4/screenshots"));
+        //        FileHandler.createDir(new File("src/test/java/com/selenium_4/screenshots"));
         File source = shopLogoScreenshot.getScreenshotAs(OutputType.FILE);
         File destination = new File("src/test/java/com/selenium_4/screenshots/shopLogo.png");
         FileHandler.copy(source, destination);

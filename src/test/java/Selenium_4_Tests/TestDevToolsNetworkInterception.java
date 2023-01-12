@@ -1,7 +1,14 @@
 package Selenium_4_Tests;
 
-import com.google.common.collect.ImmutableList;
+import static org.assertj.core.api.SoftAssertions.assertSoftly;
+import static org.openqa.selenium.devtools.v107.network.Network.*;
+import static org.openqa.selenium.remote.http.Contents.utf8String;
+
+import java.util.List;
+import java.util.Optional;
+
 import lombok.extern.slf4j.Slf4j;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,12 +25,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.http.HttpResponse;
 import org.openqa.selenium.remote.http.Route;
 
-import java.util.List;
-import java.util.Optional;
-
-import static org.assertj.core.api.SoftAssertions.assertSoftly;
-import static org.openqa.selenium.devtools.v107.network.Network.*;
-import static org.openqa.selenium.remote.http.Contents.utf8String;
+import com.google.common.collect.ImmutableList;
 
 @Slf4j
 public class TestDevToolsNetworkInterception {
@@ -63,7 +65,10 @@ public class TestDevToolsNetworkInterception {
         // Enables network tracking, network events will now be delivered to the client
         NetworkInterceptor networkInterceptor = new NetworkInterceptor(driver,
                 // Intercepts all network requests.
-                Route.matching(request -> true).to(() -> request -> new HttpResponse().setStatus(200).addHeader("Content-Type", "text/html").addHeader("Accept-Encoding", "gzip, deflate").setContent(utf8String("Network Intercepted!"))));
+                Route.matching(request -> true)
+                        .to(() -> request -> new HttpResponse().setStatus(200).addHeader("Content-Type", "text/html")
+                                .addHeader("Accept-Encoding", "gzip, deflate")
+                                .setContent(utf8String("Network Intercepted!"))));
         // Go to the website
         driver.get("https://linkedin.com");
         String pageSource = driver.getPageSource();
@@ -88,9 +93,11 @@ public class TestDevToolsNetworkInterception {
             String url = request.getRequest().getUrl();
             // If the url is in the list of blocked urls, block the request
             if (url.contains("linkedin.com")) {
-                devTools.send(Fetch.continueRequest(request.getRequestId(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty()));
+                devTools.send(Fetch.continueRequest(request.getRequestId(), Optional.empty(), Optional.empty(),
+                        Optional.empty(), Optional.empty(), Optional.empty()));
             } else {
-                devTools.send(Fetch.continueRequest(request.getRequestId(), Optional.of(url), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty()));
+                devTools.send(Fetch.continueRequest(request.getRequestId(), Optional.of(url), Optional.empty(),
+                        Optional.empty(), Optional.empty(), Optional.empty()));
             }
             // Go to the website
             driver.get("https://linkedin.com");
@@ -117,26 +124,35 @@ public class TestDevToolsNetworkInterception {
         devTools.addListener(loadingFailed(), loadingFailed -> {
             if (loadingFailed.getType().equals(ResourceType.STYLESHEET)) {
                 log.info("Blocking reason: " + loadingFailed.getBlockedReason());
-                assertSoftly(softly -> softly.assertThat(loadingFailed.getBlockedReason()).isEqualTo(Optional.of(BlockedReason.INSPECTOR)));
+                assertSoftly(softly -> softly.assertThat(loadingFailed.getBlockedReason())
+                        .isEqualTo(Optional.of(BlockedReason.INSPECTOR)));
             } else if (loadingFailed.getType().equals(ResourceType.IMAGE)) {
                 log.info("Blocking reason: " + loadingFailed.getBlockedReason());
-                assertSoftly(softly -> softly.assertThat(loadingFailed.getBlockedReason()).isEqualTo(Optional.of(BlockedReason.INSPECTOR)));
+                assertSoftly(softly -> softly.assertThat(loadingFailed.getBlockedReason())
+                        .isEqualTo(Optional.of(BlockedReason.INSPECTOR)));
             } else if (loadingFailed.getType().equals(ResourceType.SCRIPT)) {
                 log.info("Blocking reason: " + loadingFailed.getBlockedReason());
-                assertSoftly(softly -> softly.assertThat(loadingFailed.getBlockedReason()).isEqualTo(Optional.of(BlockedReason.INSPECTOR)));
+                assertSoftly(softly -> softly.assertThat(loadingFailed.getBlockedReason())
+                        .isEqualTo(Optional.of(BlockedReason.INSPECTOR)));
             } else if (loadingFailed.getType().equals(ResourceType.XHR)) {
                 log.info("Blocking reason: " + loadingFailed.getBlockedReason());
-                assertSoftly(softly -> softly.assertThat(loadingFailed.getBlockedReason()).isEqualTo(Optional.of(BlockedReason.INSPECTOR)));
+                assertSoftly(softly -> softly.assertThat(loadingFailed.getBlockedReason())
+                        .isEqualTo(Optional.of(BlockedReason.INSPECTOR)));
             } else if (loadingFailed.getType().equals(ResourceType.MEDIA)) {
                 log.info("Blocking reason: " + loadingFailed.getBlockedReason());
-                assertSoftly(softly -> softly.assertThat(loadingFailed.getBlockedReason()).isEqualTo(Optional.of(BlockedReason.INSPECTOR)));
+                assertSoftly(softly -> softly.assertThat(loadingFailed.getBlockedReason())
+                        .isEqualTo(Optional.of(BlockedReason.INSPECTOR)));
             } else if (loadingFailed.getType().equals(ResourceType.WEBSOCKET)) {
                 log.info("Blocking reason: " + loadingFailed.getBlockedReason());
-                assertSoftly(softly -> softly.assertThat(loadingFailed.getBlockedReason()).isEqualTo(Optional.of(BlockedReason.INSPECTOR)));
+                assertSoftly(softly -> softly.assertThat(loadingFailed.getBlockedReason())
+                        .isEqualTo(Optional.of(BlockedReason.INSPECTOR)));
             }
         });
         // Block Patterns - In this example: Block some IMG requests.
-        devTools.send(Network.setBlockedURLs(List.of("https://ecommerce-playground.lambdatest.io/image/catalog/maza/svg/image2vector.svg", "https://ecommerce-playground.lambdatest.io/image/catalog/opencart-logo.png", "https://ecommerce-playground.lambdatest.io/catalog/view/theme/mz_poco/asset/stylesheet/megastore-2.28/combine/eba62915f06ab23a214a819a0557a58b.css")));
+        devTools.send(Network.setBlockedURLs(
+                List.of("https://ecommerce-playground.lambdatest.io/image/catalog/maza/svg/image2vector.svg",
+                        "https://ecommerce-playground.lambdatest.io/image/catalog/opencart-logo.png",
+                        "https://ecommerce-playground.lambdatest.io/catalog/view/theme/mz_poco/asset/stylesheet/megastore-2.28/combine/eba62915f06ab23a214a819a0557a58b.css")));
         // Add a listener to the 'Network' method to get the blocked request
         devTools.addListener(loadingFailed(), loadingFailed -> {
             log.info("Blocking reason final: " + loadingFailed.getBlockedReason().get());

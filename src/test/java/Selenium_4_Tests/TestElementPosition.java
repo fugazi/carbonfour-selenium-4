@@ -1,5 +1,7 @@
 package Selenium_4_Tests;
 
+import static org.assertj.core.api.SoftAssertions.assertSoftly;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -8,8 +10,6 @@ import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
-
-import static org.assertj.core.api.SoftAssertions.assertSoftly;
 
 public class TestElementPosition {
 
@@ -48,7 +48,9 @@ public class TestElementPosition {
             softly.assertThat(logoOpenCartRect.width).isEqualTo(416);
             softly.assertThat(logoOpenCartRect.height).isEqualTo(39);
         });
-        System.out.println("X: " + logoOpenCartRect.x + " Y: " + logoOpenCartRect.y + " Width: " + logoOpenCartRect.width + " Height: " + logoOpenCartRect.height);
+        System.out.println(
+                "X: " + logoOpenCartRect.x + " Y: " + logoOpenCartRect.y + " Width: " + logoOpenCartRect.width
+                        + " Height: " + logoOpenCartRect.height);
     }
 
     /**

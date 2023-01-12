@@ -1,16 +1,16 @@
 package Selenium_4_Tests;
 
+import static org.assertj.core.api.SoftAssertions.assertSoftly;
+
+import java.util.Optional;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v106.network.model.ConnectionType;
 import org.openqa.selenium.devtools.v106.network.Network;
+import org.openqa.selenium.devtools.v106.network.model.ConnectionType;
 import org.openqa.selenium.edge.EdgeDriver;
-
-import java.util.Optional;
-
-import static org.assertj.core.api.SoftAssertions.assertSoftly;
 
 public class TestDevToolsNetwork {
 

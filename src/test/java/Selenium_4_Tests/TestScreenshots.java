@@ -1,13 +1,13 @@
 package Selenium_4_Tests;
 
+import static org.assertj.core.api.SoftAssertions.assertSoftly;
+
+import java.io.IOException;
+
 import Selenium_4_Tests.Pages.ScreenshotsPage;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-
-import java.io.IOException;
-
-import static org.assertj.core.api.SoftAssertions.assertSoftly;
 
 public class TestScreenshots {
 

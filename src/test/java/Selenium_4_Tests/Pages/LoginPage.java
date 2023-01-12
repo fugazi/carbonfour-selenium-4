@@ -1,5 +1,11 @@
 package Selenium_4_Tests.Pages;
 
+import static org.openqa.selenium.support.locators.RelativeLocator.with;
+
+import java.nio.file.Path;
+import java.util.Collections;
+import java.util.List;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.By;
@@ -7,12 +13,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.locators.RelativeLocator;
-
-import java.nio.file.Path;
-import java.util.Collections;
-import java.util.List;
-
-import static org.openqa.selenium.support.locators.RelativeLocator.with;
 
 public class LoginPage {
 
@@ -115,7 +115,8 @@ public class LoginPage {
      */
     public boolean getLoginSubmitButtonRelativeLocatorsRight() {
         WebElement loginPanel = driver.findElement(Using.LOGIN_IMAGE.selector);
-        WebElement loginSubmitButton = driver.findElement(RelativeLocator.with(By.id("btnLogin")).toRightOf(loginPanel));
+        WebElement loginSubmitButton = driver.findElement(
+                RelativeLocator.with(By.id("btnLogin")).toRightOf(loginPanel));
         return loginSubmitButton.isDisplayed();
     }
 
@@ -125,7 +126,8 @@ public class LoginPage {
      */
     public Path clickForgotPasswordRelativeLocatorsNear() {
         WebElement loginPanel = driver.findElement(Using.LOGIN_BUTTON.selector);
-        WebElement forgotPassword = driver.findElement(RelativeLocator.with(By.id("forgotPasswordLink")).near(loginPanel));
+        WebElement forgotPassword = driver.findElement(
+                RelativeLocator.with(By.id("forgotPasswordLink")).near(loginPanel));
         forgotPassword.click();
         return null;
     }
@@ -135,7 +137,8 @@ public class LoginPage {
      * Element to search with the NEAR method.
      */
     public String getSocialImagesRelativeLocatorsNear() {
-        List<WebElement> socialImages = Collections.singletonList(driver.findElement(with(By.tagName("img")).near(Using.LOGIN_FOOTER.selector)));
+        List<WebElement> socialImages = Collections.singletonList(
+                driver.findElement(with(By.tagName("img")).near(Using.LOGIN_FOOTER.selector)));
         return ((WebElement) socialImages).getAttribute("alt");
     }
 }

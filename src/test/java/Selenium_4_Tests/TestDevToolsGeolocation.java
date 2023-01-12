@@ -1,17 +1,16 @@
 package Selenium_4_Tests;
 
+import static org.assertj.core.api.SoftAssertions.assertSoftly;
+
+import java.util.HashMap;
+import java.util.Optional;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.v106.emulation.Emulation;
 import org.openqa.selenium.edge.EdgeDriver;
-
-import java.util.HashMap;
-import java.util.Optional;
-
-import static org.assertj.core.api.SoftAssertions.assertSoftly;
-
 
 public class TestDevToolsGeolocation {
 
@@ -49,7 +48,8 @@ public class TestDevToolsGeolocation {
         }};
         driver.executeCdpCommand("Emulation.setGeolocationOverride", coordinates);
         driver.get("https://where-am-i.org");
-        assertSoftly(softly -> softly.assertThat(driver.getTitle()).isEqualTo("Where Am I? - What is My Location Now on Map"));
+        assertSoftly(softly -> softly.assertThat(driver.getTitle())
+                .isEqualTo("Where Am I? - What is My Location Now on Map"));
     }
 
     /**

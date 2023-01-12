@@ -1,14 +1,18 @@
 package Selenium_4_Tests;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.openqa.selenium.*;
-import org.openqa.selenium.edge.EdgeDriver;
+import static org.assertj.core.api.SoftAssertions.assertSoftly;
 
 import java.util.Set;
 
-import static org.assertj.core.api.SoftAssertions.assertSoftly;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
+import org.openqa.selenium.edge.EdgeDriver;
 
 public class TestWindowManagement {
 
