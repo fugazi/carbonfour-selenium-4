@@ -125,6 +125,8 @@ I must say it was fun learning and automating this website because it was challe
     * Precondition Scenario: Load the Test Data to perform the Register Account page.
     * Test to verify that the user is able to Register an Account.
     * Assertions to each field.
+* Accessibility Testing: Perform accessibility test on the website under Test.
+    * The test will display in logs if there are any accessibility rule violations.
 
 ## 🟢 Pre-requisites: 🟢
 1. Download the latest Java JDK from [here](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133155.html)

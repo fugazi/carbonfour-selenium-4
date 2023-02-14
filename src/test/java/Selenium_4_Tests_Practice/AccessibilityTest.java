@@ -46,7 +46,7 @@ public class AccessibilityTest {
 
     /**
      * Perform accessibility test on the website under Test.
-     * The test will show in logs if there are any accessibility rule violations.
+     * The test will display in logs if there are any accessibility rule violations.
      */
     @Test
     void accessibilityTest() {
