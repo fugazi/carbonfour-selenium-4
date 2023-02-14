@@ -3,7 +3,6 @@ package Selenium_4_Tests_Practice;
 import static Selenium_4_Tests_Practice.BaseUtility.BaseUrl.getBaseUrl;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
