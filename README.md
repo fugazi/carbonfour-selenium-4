@@ -179,4 +179,5 @@ You can use the command line to generate it in two ways:
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://douglasfugazi.co/)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/douglasfugazi)
 [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/douglasfugazi)
-[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/fugazi/carbonfour-selenium-4/blob/main/LICENSE)
+[![MIT License](https://img.shields.io/github/license/fugazi/carbonfour-selenium-4)](https://github.com/fugazi/carbonfour-selenium-4/blob/main/LICENSE)
+
