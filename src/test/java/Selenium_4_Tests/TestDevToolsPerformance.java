@@ -12,9 +12,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v109.network.Network;
-import org.openqa.selenium.devtools.v109.performance.Performance;
-import org.openqa.selenium.devtools.v109.performance.model.Metric;
+import org.openqa.selenium.devtools.v111.network.Network;
+import org.openqa.selenium.devtools.v111.performance.Performance;
+import org.openqa.selenium.devtools.v111.performance.model.Metric;
 import org.openqa.selenium.edge.EdgeDriver;
 
 public class TestDevToolsPerformance {
@@ -54,17 +54,15 @@ public class TestDevToolsPerformance {
         // Enables network tracking, requests events will be now delivered to the client
         devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
         // Add an event Listener for the 'requestWillBeSent' event.
-        devTools.addListener(Network.requestWillBeSent(), event -> {
-            System.out.println("Request URI: " + event.getRequest().getUrl() + "\n" + "Request URI + Assertions: "
-                    + event.getRequest().getUrl().contains("linkedin.com") + "\n" + "Request Type: " + event.getType()
-                    + "\n" + "Request Method: " + event.getRequest().getMethod() + "\n" + "Request Headers: "
-                    + event.getRequest().getHeaders() + "\n" + "Request Post Data: " + event.getRequest().getPostData()
-                    + "\n" + "Request Mixed Content Type: " + event.getRequest().getMixedContentType() + "\n"
-                    + "Request Referrer Policy: " + event.getRequest().getReferrerPolicy() + "\n"
-                    + "Request Is Signed Exchanged: " + event.getRequest().getUrlFragment().isPresent() + "\n"
-                    + "Request Document URL: " + event.getDocumentURL() + "\n" + "Request Initiator: "
-                    + event.getInitiator() + "\n" + "Request Timestamp: " + event.getTimestamp() + "\n");
-        });
+        devTools.addListener(Network.requestWillBeSent(), event -> System.out.println("Request URI: " + event.getRequest().getUrl() + "\n" + "Request URI + Assertions: "
+                + event.getRequest().getUrl().contains("linkedin.com") + "\n" + "Request Type: " + event.getType()
+                + "\n" + "Request Method: " + event.getRequest().getMethod() + "\n" + "Request Headers: "
+                + event.getRequest().getHeaders() + "\n" + "Request Post Data: " + event.getRequest().getPostData()
+                + "\n" + "Request Mixed Content Type: " + event.getRequest().getMixedContentType() + "\n"
+                + "Request Referrer Policy: " + event.getRequest().getReferrerPolicy() + "\n"
+                + "Request Is Signed Exchanged: " + event.getRequest().getUrlFragment().isPresent() + "\n"
+                + "Request Document URL: " + event.getDocumentURL() + "\n" + "Request Initiator: "
+                + event.getInitiator() + "\n" + "Request Timestamp: " + event.getTimestamp() + "\n"));
         // Active URL under test
         driver.get("https://linkedin.com");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("LinkedIn"));
@@ -81,7 +79,7 @@ public class TestDevToolsPerformance {
         devTools.send(Performance.enable(Optional.empty()));
         // Active URL under test
         driver.get("https://linkedin.com");
-        // Return a list of Performance Metrics objects then stream to get all of the names of the metrics captured
+        // Return a list of Performance Metrics objects then stream to get all the names of the metrics captured
         List<Metric> performanceMetrics = devTools.send(Performance.getMetrics());
         List<String> metricNames = performanceMetrics.stream().map(Metric::getName).collect(Collectors.toList());
         // Disables performance tracking
