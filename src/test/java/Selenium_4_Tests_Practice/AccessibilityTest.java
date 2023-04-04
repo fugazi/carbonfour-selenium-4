@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
@@ -61,5 +62,30 @@ public class AccessibilityTest {
         Results results = axeBuilder.analyze(driver);
         List<Rule> violations = results.getViolations();
         log.info("Violations: {}", violations);
+    }
+
+    /**
+     * Perform accessibility test on given a specific WebElement on the website under Test.
+     * The test will display in logs if there are any accessibility rule violations.
+     */
+    @Test
+    void accessibilityTestForWebElement() {
+        AxeRunOptions axeRunOptions = new AxeRunOptions();
+        axeRunOptions.setXPath(true);
+
+        AxeBuilder axeBuilder = new AxeBuilder()
+                .withOptions(axeRunOptions)
+                .withTags(Arrays.asList("wcag2a", "wcag2aa", "wcag21aa"))
+                .disableRules(Collections.singletonList("color-contrast"))
+                .disableIframeTesting();
+        axeBuilder.analyze(driver, driver.findElement(By.id("common-home")));
+
+        Results results = axeBuilder.analyze(driver);
+        List<Rule> violations = results.getViolations();
+        log.info("Violations found: {}", violations);
+        log.info("Rule Violation: {} \tId: {} \tHelp: {}", violations.get(0).getHelp(), violations.get(0).getId(), violations.get(0).getHelp());
+        for (String tag : violations.get(0).getTags()) {
+            log.error("Accessibility Error Tag: {}", tag);
+        }
     }
 }
