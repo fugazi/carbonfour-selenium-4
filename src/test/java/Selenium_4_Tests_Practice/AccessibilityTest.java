@@ -23,7 +23,7 @@ import com.deque.html.axecore.selenium.AxeBuilder;
 @Slf4j
 public class AccessibilityTest {
 
-    WebDriver driver;
+    private WebDriver driver;
 
     /**
      * Initialize the WebDriverManager and EdgeDriver.
