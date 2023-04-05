@@ -76,7 +76,9 @@ I must say it was fun learning and automating this website because it was challe
             * Method 'getFullPageScreenshotAs' is used to take a Full Page screenshot.
     * Scenario 5:
         * How To Use Window and Tab Management In Selenium 4.6
-    * Scenario 6:
+   * Scenario 6:
+       * How To Use Wheel Scrolling with Actions Class In Selenium 4.6
+    * Scenario 7:
         * How To Use CDP command to capture Performance Metrics In Selenium 4.6
             * Time to First Byte (TTFB): To identify when a web server takes too long to respond to requests.
             * First Contentful Paint (FCP): First time in the page load timeline when the user can see anything on the screen.
@@ -85,7 +87,7 @@ I must say it was fun learning and automating this website because it was challe
             * Time to Interactive (TTI): It helps identify cases where a page appears interactive but is not.
             * Total Blocking Time (TBT): It helps quantify the severity of a page's non-interactivity before it becomes reliably interactive.
             * Cumulative Layout Shift (CLS): It helps in quantifying how frequently users encounter unexpected layout shifts.
-   * Scenario 7:
+   * Scenario 8:
        * How To Simulate Devices Viewport In Selenium 4.6
            * Google Chrome
            * Firefox
@@ -100,7 +102,7 @@ I must say it was fun learning and automating this website because it was challe
            * Galaxy Tablet
            * Pixel 6 XL
            * OnePlus 10
-   * Scenario 8:
+   * Scenario 9:
        * How To Simulate Network Interception In Selenium 4.6
            * Network Security to intercept network requests and block requests based on the conditions.
            * Network Block Patterns to block URLs and requests patterns.
