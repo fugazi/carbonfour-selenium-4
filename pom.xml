@@ -22,7 +22,7 @@
         <junit.version>5.10.0-M1</junit.version>
         <jupiter.params>5.10.0-M1</jupiter.params>
         <allure.version>2.22.0</allure.version>
-        <jackson-databind.version>2.15.0</jackson-databind.version>
+        <jackson-databind.version>2.15.1</jackson-databind.version>
     </properties>
 
     <dependencies>
