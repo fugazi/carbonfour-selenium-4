@@ -165,4 +165,15 @@ class TestBiDirectional {
             softly.assertThat(info.getChildren()).isNull();
         });
     }
+
+    /**
+     * Test to Get All Top level browsing contexts
+     */
+    @Test
+    void testGetAllTopLevelContexts() {
+        BrowsingContext window1 = new BrowsingContext(driver, driver.getWindowHandle());
+        List<BrowsingContextInfo> contextInfoList = window1.getTopLevelContexts();
+
+        assertSoftly(softly -> softly.assertThat(contextInfoList.size()).isEqualTo(2));
+    }
 }
