@@ -2,11 +2,14 @@ package Selenium_4_Tests;
 
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
 
+import java.util.List;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.bidi.browsingcontext.BrowsingContext;
+import org.openqa.selenium.bidi.browsingcontext.BrowsingContextInfo;
 import org.openqa.selenium.bidi.browsingcontext.NavigationResult;
 import org.openqa.selenium.bidi.browsingcontext.ReadinessState;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -117,6 +120,28 @@ class TestBiDirectional {
             softly.assertThat(browsingContext.getId()).isNotNull();
             softly.assertThat(info.getNavigationId()).isNotNull();
             softly.assertThat(info.getUrl().contains("ecommerce")).isTrue();
+        });
+    }
+
+    /**
+     * Test to Get browsing context tree using Selenium 4.0
+     * Provides a tree of all browsing contexts descending from the parent browsing context, including the parent browsing context.
+     */
+    @Test
+    void testGetTreeWithAChild() {
+        String referenceContextId = driver.getWindowHandle();
+        BrowsingContext parentWindow = new BrowsingContext(driver, referenceContextId);
+        parentWindow.navigate("https://ecommerce-playground.lambdatest.io", ReadinessState.COMPLETE);
+        List<BrowsingContextInfo> contextInfoList = parentWindow.getTree();
+        BrowsingContextInfo info = contextInfoList.get(0);
+
+        assertSoftly(softly -> {
+            softly.assertThat(contextInfoList.size()).isEqualTo(1);
+            softly.assertThat(contextInfoList.get(0).getId()).isEqualTo(referenceContextId);
+            softly.assertThat(contextInfoList.get(1).getId()).isNotEqualTo(referenceContextId);
+            softly.assertThat(info.getChildren().size()).isEqualTo(1);
+            softly.assertThat(info.getChildren().get(0).getId()).isNotEqualTo(referenceContextId);
+            softly.assertThat(info.getChildren().get(0).getUrl().contains("ecommerce")).isTrue();
         });
     }
 }
