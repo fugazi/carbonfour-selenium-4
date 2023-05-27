@@ -9,11 +9,14 @@ import org.openqa.selenium.WindowType;
 import org.openqa.selenium.bidi.browsingcontext.BrowsingContext;
 import org.openqa.selenium.bidi.browsingcontext.NavigationResult;
 import org.openqa.selenium.bidi.browsingcontext.ReadinessState;
-import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class TestBiDirectional {
+/**
+ * Test for use a combination of W3C BiDi protocol APIs.
+ */
+class TestBiDirectional {
 
-    public EdgeDriver driver;
+    public FirefoxDriver driver;
 
     /**
      * Initialize the WebDriverManager and EdgeDriver.
@@ -21,7 +24,7 @@ public class TestBiDirectional {
      */
     @BeforeEach
     public void setupUrl() {
-        driver = new EdgeDriver();
+        driver = new FirefoxDriver();
         driver.manage().window().maximize();
     }
 
@@ -46,6 +49,74 @@ public class TestBiDirectional {
             softly.assertThat(browsingContext.getId()).isNotNull();
             softly.assertThat(navigationResult.getNavigationId()).isNotNull();
             softly.assertThat(navigationResult.getUrl().contains("ecommerce")).isTrue();
+        });
+    }
+
+    /**
+     * Test to creates a new browsing context in a new window using Selenium 4.0.
+     */
+    @Test
+    void testCreateAWindow() {
+        BrowsingContext browsingContext = new BrowsingContext(driver, WindowType.WINDOW);
+
+        assertSoftly(softly -> {
+            softly.assertThat(browsingContext.getId()).isNotNull();
+            softly.assertThat(browsingContext.getId().equals(driver.getWindowHandle())).isTrue();
+        });
+    }
+
+    /**
+     * Test to Create a Browsing Context for given an ID using Selenium 4.0.
+     */
+    @Test
+    void testCreateABrowsingContextForGivenId() {
+        String id = driver.getWindowHandle();
+        BrowsingContext browsingContext = new BrowsingContext(driver, id);
+
+        assertSoftly(softly -> {
+            softly.assertThat(browsingContext.getId()).isNotNull();
+            softly.assertThat(browsingContext.getId().equals(id)).isTrue();
+        });
+    }
+
+    /**
+     * Test to creates a new tab using Selenium 4.0.
+     */
+    @Test
+    void testCreateANewTab() {
+        BrowsingContext browsingContext = new BrowsingContext(driver, WindowType.TAB);
+
+        assertSoftly(softly -> {
+            softly.assertThat(browsingContext.getId()).isNotNull();
+            softly.assertThat(browsingContext.getId().equals(driver.getWindowHandle())).isTrue();
+        });
+    }
+
+    /**
+     * Test to creates a new tab with a reference context using Selenium 4.0.
+     */
+    @Test
+    void testCreateATabWithAReferenceContext() {
+        BrowsingContext browsingContext = new BrowsingContext(driver, WindowType.TAB, driver.getWindowHandle());
+
+        assertSoftly(softly -> {
+            softly.assertThat(browsingContext.getId()).isNotNull();
+            softly.assertThat(browsingContext.getId().equals(driver.getWindowHandle())).isTrue();
+        });
+    }
+
+    /**
+     * Test to Navigate to a URL using Selenium 4.0.
+     */
+    @Test
+    void testNavigateToAUrl() {
+        BrowsingContext browsingContext = new BrowsingContext(driver, WindowType.TAB);
+        NavigationResult info = browsingContext.navigate("https://ecommerce-playground.lambdatest.io");
+
+        assertSoftly(softly -> {
+            softly.assertThat(browsingContext.getId()).isNotNull();
+            softly.assertThat(info.getNavigationId()).isNotNull();
+            softly.assertThat(info.getUrl().contains("ecommerce")).isTrue();
         });
     }
 }
