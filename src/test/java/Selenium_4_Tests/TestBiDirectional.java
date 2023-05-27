@@ -144,4 +144,25 @@ class TestBiDirectional {
             softly.assertThat(info.getChildren().get(0).getUrl().contains("ecommerce")).isTrue();
         });
     }
+
+    /**
+     * Test to Get browsing context tree with depth using Selenium 4.0
+     * Provides a tree of all browsing contexts descending from the parent browsing context, including the parent browsing context upto the depth value passed.
+     */
+    @Test
+    void testGetTreeWithDepth() {
+        String referenceContextId = driver.getWindowHandle();
+        BrowsingContext parentWindow = new BrowsingContext(driver, referenceContextId);
+        parentWindow.navigate("https://ecommerce-playground.lambdatest.io", ReadinessState.COMPLETE);
+        List<BrowsingContextInfo> contextInfoList = parentWindow.getTree(0);
+        BrowsingContextInfo info = contextInfoList.get(0);
+
+        assertSoftly(softly -> {
+            softly.assertThat(contextInfoList.size()).isEqualTo(1);
+            softly.assertThat(contextInfoList.get(0).getId()).isEqualTo(referenceContextId);
+            softly.assertThat(contextInfoList.get(1).getId()).isNotEqualTo(referenceContextId);
+            softly.assertThat(contextInfoList.get(0).getChildren().size()).isEqualTo(0);
+            softly.assertThat(info.getChildren()).isNull();
+        });
+    }
 }
