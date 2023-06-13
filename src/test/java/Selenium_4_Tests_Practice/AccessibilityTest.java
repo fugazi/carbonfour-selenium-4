@@ -21,7 +21,7 @@ import com.deque.html.axecore.results.Rule;
 import com.deque.html.axecore.selenium.AxeBuilder;
 
 @Slf4j
-public class AccessibilityTest {
+class AccessibilityTest {
 
     private WebDriver driver;
 

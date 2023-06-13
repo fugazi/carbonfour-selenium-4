@@ -8,8 +8,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v111.network.Network;
-import org.openqa.selenium.devtools.v111.network.model.ConnectionType;
+import org.openqa.selenium.devtools.v114.network.Network;
+import org.openqa.selenium.devtools.v114.network.model.ConnectionType;
 import org.openqa.selenium.edge.EdgeDriver;
 
 public class TestDevToolsNetwork {

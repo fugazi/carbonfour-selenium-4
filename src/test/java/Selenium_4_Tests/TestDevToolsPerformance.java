@@ -12,9 +12,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v111.network.Network;
-import org.openqa.selenium.devtools.v111.performance.Performance;
-import org.openqa.selenium.devtools.v111.performance.model.Metric;
+import org.openqa.selenium.devtools.v114.network.Network;
+import org.openqa.selenium.devtools.v114.performance.Performance;
+import org.openqa.selenium.devtools.v114.performance.model.Metric;
 import org.openqa.selenium.edge.EdgeDriver;
 
 public class TestDevToolsPerformance {
