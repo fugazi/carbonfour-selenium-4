@@ -1,0 +1,3 @@
+https://ecommerce-playground.lambdatest.io/index.php
+https://ecommerce-playground.lambdatest.io/index.php?route=account/login
+https://ecommerce-playground.lambdatest.io/index.php?route=account/register

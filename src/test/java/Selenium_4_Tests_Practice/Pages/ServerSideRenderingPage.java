@@ -11,7 +11,8 @@ public class ServerSideRenderingPage {
      * Constructor for the ServerSideRenderingPage class.
      */
     public ServerSideRenderingPage(WebDriver driver) {
-        this.driver = driver; }
+        this.driver = driver;
+    }
 
     /**
      * Locators for the Server Side Rendering page.
@@ -23,7 +24,8 @@ public class ServerSideRenderingPage {
         public final By selector;
 
         Using(By selector) {
-            this.selector = selector; }
+            this.selector = selector;
+        }
     }
 
     /**
@@ -42,7 +44,8 @@ public class ServerSideRenderingPage {
      * @return Main Header.
      */
     public Boolean getMainHeader() {
-        return driver.findElement(Using.MAIN_HEADER.selector).isDisplayed(); }
+        return driver.findElement(Using.MAIN_HEADER.selector).isDisplayed();
+    }
 
     /**
      * Get the Main Navigation on the Server Side Rendering page.
@@ -50,8 +53,10 @@ public class ServerSideRenderingPage {
      * @return Main Navigation.
      */
     public Boolean getMainNavigation() {
-        return driver.findElement(Using.MAIN_NAVIGATION.selector).isDisplayed(); }
+        return driver.findElement(Using.MAIN_NAVIGATION.selector).isDisplayed();
+    }
 
     public Boolean pageRenderedProperty() {
-        return driver.findElement(By.tagName("html")).getAttribute("page-rendered").equals("true"); }
+        return driver.findElement(By.tagName("html")).getAttribute("page-rendered").equals("true");
+    }
 }
