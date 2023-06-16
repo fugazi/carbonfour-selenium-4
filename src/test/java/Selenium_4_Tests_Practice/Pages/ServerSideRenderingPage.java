@@ -31,11 +31,8 @@ public class ServerSideRenderingPage {
      * This means that the browser downloads a page that is already populated with content,
      * instead of having to wait for the JavaScript to download and execute before the browser can display the page.
      * <p>
-     * Verifies if the "data-server-rendered" property is equal to "true" on the Server Side Rendering page.
-     * @return {@code true} if the "data-server-rendered" property is equal to "true", {@code false} otherwise.
-     * <p>
-     * This test checks the value of the "data-server-rendered" property on the page and compares it to "true".
-     * It returns {@code true} if the property value is equal to "true", indicating that Server Side Rendering is enabled.
+     * Verifies if the "page-rendered" property is equal to "true" on the Server Side Rendering page.
+     * @return {@code true} if the "page-rendered" property is equal to "true", indicating that Server Side Rendering is enabled
      * Otherwise, it returns {@code false}.
      */
 
@@ -54,4 +51,7 @@ public class ServerSideRenderingPage {
      */
     public Boolean getMainNavigation() {
         return driver.findElement(Using.MAIN_NAVIGATION.selector).isDisplayed(); }
+
+    public Boolean pageRenderedProperty() {
+        return driver.findElement(By.tagName("html")).getAttribute("page-rendered").equals("true"); }
 }
