@@ -21,7 +21,7 @@
         <axe.version>4.7.0</axe.version>
         <junit.version>5.10.0-M1</junit.version>
         <jupiter.params>5.10.0-M1</jupiter.params>
-        <allure.version>2.22.1</allure.version>
+        <allure.version>2.22.2</allure.version>
         <jackson-databind.version>2.15.2</jackson-databind.version>
     </properties>
 
