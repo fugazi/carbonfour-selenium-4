@@ -19,8 +19,8 @@
         <slf4j.version>2.0.7</slf4j.version>
         <faker.version>1.0.2</faker.version>
         <axe.version>4.7.0</axe.version>
-        <junit.version>5.10.0-RC1</junit.version>
-        <jupiter.params>5.10.0-RC1</jupiter.params>
+        <junit.version>5.10.0-M1</junit.version>
+        <jupiter.params>5.10.0-M1</jupiter.params>
         <allure.version>2.23.0</allure.version>
         <jackson-databind.version>2.15.2</jackson-databind.version>
     </properties>
