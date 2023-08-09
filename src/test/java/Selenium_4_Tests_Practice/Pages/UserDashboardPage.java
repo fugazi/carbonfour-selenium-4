@@ -36,7 +36,7 @@ public class UserDashboardPage {
         CHECKBOX_DEFAULT_ADDRESS(By.xpath("//input[@value='0']")),
         BUTTON_CONTINUE(By.xpath("//input[@value='Continue']"));
 
-        public final By selector;
+        private final By selector;
 
         Using(By selector) {
             this.selector = selector; }

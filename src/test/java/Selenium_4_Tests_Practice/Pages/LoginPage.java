@@ -21,7 +21,7 @@ public class LoginPage {
         USER_LOGIN_DASHBOARD(By.xpath("//h2[normalize-space()='My Account']")),
         USER_DASHBOARD_TABLE(By.xpath("//div[@id='content']"));
 
-        public final By selector;
+        private final By selector;
 
         Using(By selector) {
             this.selector = selector;

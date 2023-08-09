@@ -1,14 +1,19 @@
 package Selenium_4_Tests_Practice.Pages;
 
-import Selenium_4_Tests_Practice.Components.*;
+import java.util.List;
+import java.util.function.BiFunction;
+import java.util.stream.Collectors;
+
+import Selenium_4_Tests_Practice.Components.EmailComponent;
+import Selenium_4_Tests_Practice.Components.FormFieldComponent;
+import Selenium_4_Tests_Practice.Components.InputTextComponent;
+import Selenium_4_Tests_Practice.Components.PasswordComponent;
+import Selenium_4_Tests_Practice.Components.TelephoneComponent;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-
-import java.util.List;
-import java.util.function.BiFunction;
-import java.util.stream.Collectors;
 
 public class RegisterPage {
 
@@ -31,7 +36,7 @@ public class RegisterPage {
         ERROR_MESSAGES(By.xpath("//div[@class='text-danger']")),
         CONTINUE_BUTTON(By.xpath("//input[@value='Continue']"));
 
-        public final By selector;
+        private final By selector;
 
         Using(By selector) {
             this.selector = selector;

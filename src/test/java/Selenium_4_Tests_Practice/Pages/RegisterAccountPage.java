@@ -36,7 +36,7 @@ public class RegisterAccountPage {
         PRIVACY_POLICY_LINK(By.xpath("//a[@class='agree']")),
         CONTINUE_BUTTON(By.xpath("//input[@value='Continue']"));
 
-        public final By selector;
+        private final By selector;
 
         Using(By selector) {
             this.selector = selector;

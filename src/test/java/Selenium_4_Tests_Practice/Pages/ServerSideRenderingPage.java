@@ -21,7 +21,7 @@ public class ServerSideRenderingPage {
         MAIN_HEADER(By.id("main-header")),
         MAIN_NAVIGATION(By.id("main-navigation"));
 
-        public final By selector;
+        private final By selector;
 
         Using(By selector) {
             this.selector = selector;
