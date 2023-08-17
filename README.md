@@ -171,6 +171,9 @@ You can use the command line to generate it in two ways:
     * Screenshots package `Selenium 4/Screenshots` into folder `src/test/java/com.selenium_4/Screenshots`
     * **New Scenarios** Selenium 4.0 Test Practices into folder `src/test/java/Selenium_4_Tests_Practice`
 * testName: `carbonfour-selenium-4`
++
+* Display dependencies updates: `mvn versions:display-dependency-updates`
+* Update properties: `mvn versions:update-properties`
 
 ## 💡 Do you want to help?
 * If you have an idea, suggestion, feature or an issue, please open a new Pull Request on [GitHub](https://github.com/fugazi/carbonfour-selenium-4/pulls)
