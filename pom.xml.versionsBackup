@@ -13,15 +13,15 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.target>11</maven.compiler.target>
         <maven.compiler.source>11</maven.compiler.source>
-        <selenium.version>4.12.1</selenium.version>
+        <selenium.version>4.11.0</selenium.version>
         <assertj.version>3.24.2</assertj.version>
         <lombok.version>1.18.28</lombok.version>
-        <slf4j.version>2.0.9</slf4j.version>
+        <slf4j.version>2.0.7</slf4j.version>
         <faker.version>1.0.2</faker.version>
         <axe.version>4.7.0</axe.version>
         <junit.version>5.10.0</junit.version>
         <jupiter.params>5.10.0</jupiter.params>
-        <allure.version>2.24.0</allure.version>
+        <allure.version>2.23.0</allure.version>
         <jackson-databind.version>2.15.2</jackson-databind.version>
     </properties>
 
