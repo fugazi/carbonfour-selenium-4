@@ -9,7 +9,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v114.emulation.Emulation;
+import org.openqa.selenium.devtools.v116.emulation.Emulation;
 import org.openqa.selenium.edge.EdgeDriver;
 
 public class TestDevToolsGeolocation {
