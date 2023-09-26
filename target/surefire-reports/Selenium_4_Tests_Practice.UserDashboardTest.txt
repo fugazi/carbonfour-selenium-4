@@ -1,13 +1,13 @@
 -------------------------------------------------------------------------------
 Test set: Selenium_4_Tests_Practice.UserDashboardTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 13.325 s <<< FAILURE! - in Selenium_4_Tests_Practice.UserDashboardTest
-Selenium_4_Tests_Practice.UserDashboardTest.createNewAddressBookDashboard  Time elapsed: 7.633 s  <<< ERROR!
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 13.273 s <<< FAILURE! - in Selenium_4_Tests_Practice.UserDashboardTest
+Selenium_4_Tests_Practice.UserDashboardTest.createNewAddressBookDashboard  Time elapsed: 7.805 s  <<< ERROR!
 org.openqa.selenium.NoSuchElementException: 
-Cannot locate option with text: Massachusetts
+Cannot locate option with text: Rhode Island
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.12.1', revision: '8e34639b11'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: driver.version: unknown
 	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:153)
 	at Selenium_4_Tests_Practice.Pages.UserDashboardPage.selectRegionState(UserDashboardPage.java:240)

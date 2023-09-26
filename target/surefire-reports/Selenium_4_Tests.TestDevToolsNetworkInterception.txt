@@ -1,18 +1,18 @@
 -------------------------------------------------------------------------------
 Test set: Selenium_4_Tests.TestDevToolsNetworkInterception
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 26.477 s <<< FAILURE! - in Selenium_4_Tests.TestDevToolsNetworkInterception
-Selenium_4_Tests.TestDevToolsNetworkInterception.verifyWebSocketOperationTest  Time elapsed: 2.587 s  <<< ERROR!
+Tests run: 7, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 24.485 s <<< FAILURE! - in Selenium_4_Tests.TestDevToolsNetworkInterception
+Selenium_4_Tests.TestDevToolsNetworkInterception.verifyWebSocketOperationTest  Time elapsed: 2.608 s  <<< ERROR!
 org.openqa.selenium.NoSuchElementException: 
 no such element: Unable to locate element: {"method":"xpath","selector":"//button[@type='submit']"}
-  (Session info: MicrosoftEdge=116.0.1938.69)
+  (Session info: MicrosoftEdge=117.0.2045.43)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.12.1', revision: '8e34639b11'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [e08f102a36e5dc57d3d064aa27dbe631, findElement {using=xpath, value=//button[@type='submit']}]
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 116.0.1938.69, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:65026}, msedge: {msedgedriverVersion: 116.0.1938.69 (62ef76ea75c4..., userDataDir: C:\Users\dougl\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65026/devtoo..., se:cdpVersion: 116.0.1938.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e08f102a36e5dc57d3d064aa27dbe631
+Command: [2d8c7b79749e6f3ceda85e298f0c6d5e, findElement {using=xpath, value=//button[@type='submit']}]
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 117.0.2045.43, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:51123}, msedge: {msedgedriverVersion: 117.0.2045.41 (b895513e9807..., userDataDir: C:\Users\dougl\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51123/devtoo..., se:cdpVersion: 117.0.2045.43, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2d8c7b79749e6f3ceda85e298f0c6d5e
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)

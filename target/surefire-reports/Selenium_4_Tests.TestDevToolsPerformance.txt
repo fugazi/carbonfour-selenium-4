@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: Selenium_4_Tests.TestDevToolsPerformance
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.733 s - in Selenium_4_Tests.TestDevToolsPerformance
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.865 s - in Selenium_4_Tests.TestDevToolsPerformance

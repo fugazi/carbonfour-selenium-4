@@ -1,14 +1,14 @@
 -------------------------------------------------------------------------------
 Test set: Selenium_4_Tests.TestElementPosition
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 5.016 s <<< FAILURE! - in Selenium_4_Tests.TestElementPosition
-Selenium_4_Tests.TestElementPosition.getElementPosition  Time elapsed: 2.823 s  <<< FAILURE!
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 5.145 s <<< FAILURE! - in Selenium_4_Tests.TestElementPosition
+Selenium_4_Tests.TestElementPosition.getElementPosition  Time elapsed: 2.97 s  <<< FAILURE!
 org.assertj.core.error.AssertJMultipleFailuresError: 
 
 Multiple Failures (1 failure)
 -- failure 1 --
 expected: 303
- but was: 277
+ but was: 280
 at TestElementPosition.lambda$getElementPosition$0(TestElementPosition.java:46)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)

@@ -1,18 +1,18 @@
 -------------------------------------------------------------------------------
 Test set: Selenium_4_Tests.TestLoginRelativeLocators
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 8, Skipped: 0, Time elapsed: 40.272 s <<< FAILURE! - in Selenium_4_Tests.TestLoginRelativeLocators
-Selenium_4_Tests.TestLoginRelativeLocators.getLoginPanelTitle  Time elapsed: 3.606 s  <<< ERROR!
+Tests run: 8, Failures: 0, Errors: 8, Skipped: 0, Time elapsed: 41.409 s <<< FAILURE! - in Selenium_4_Tests.TestLoginRelativeLocators
+Selenium_4_Tests.TestLoginRelativeLocators.getLoginPanelTitle  Time elapsed: 4.316 s  <<< ERROR!
 org.openqa.selenium.NoSuchElementException: 
 no such element: Unable to locate element: {"method":"css selector","selector":"#logInPanelHeading"}
-  (Session info: MicrosoftEdge=116.0.1938.69)
+  (Session info: MicrosoftEdge=117.0.2045.43)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.12.1', revision: '8e34639b11'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [38a293fec68cd4c3a9eb024a2e2faba5, findElement {using=id, value=logInPanelHeading}]
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 116.0.1938.69, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:65234}, msedge: {msedgedriverVersion: 116.0.1938.69 (62ef76ea75c4..., userDataDir: C:\Users\dougl\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65234/devtoo..., se:cdpVersion: 116.0.1938.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 38a293fec68cd4c3a9eb024a2e2faba5
+Command: [57389d7f239153d2f0483a16970c09ee, findElement {using=id, value=logInPanelHeading}]
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 117.0.2045.43, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:51350}, msedge: {msedgedriverVersion: 117.0.2045.41 (b895513e9807..., userDataDir: C:\Users\dougl\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51350/devtoo..., se:cdpVersion: 117.0.2045.43, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 57389d7f239153d2f0483a16970c09ee
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -106,17 +106,17 @@ Session ID: 38a293fec68cd4c3a9eb024a2e2faba5
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
 
-Selenium_4_Tests.TestLoginRelativeLocators.testRelativeLocatorsAbove  Time elapsed: 5.297 s  <<< ERROR!
+Selenium_4_Tests.TestLoginRelativeLocators.testRelativeLocatorsAbove  Time elapsed: 5.225 s  <<< ERROR!
 org.openqa.selenium.NoSuchElementException: 
 no such element: Unable to locate element: {"method":"css selector","selector":"#logInPanelHeading"}
-  (Session info: MicrosoftEdge=116.0.1938.69)
+  (Session info: MicrosoftEdge=117.0.2045.43)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.12.1', revision: '8e34639b11'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [7d34cff7ab36058ba587b7c746d58515, findElement {using=id, value=logInPanelHeading}]
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 116.0.1938.69, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:65271}, msedge: {msedgedriverVersion: 116.0.1938.69 (62ef76ea75c4..., userDataDir: C:\Users\dougl\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65271/devtoo..., se:cdpVersion: 116.0.1938.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 7d34cff7ab36058ba587b7c746d58515
+Command: [232fa594dcb9f768be9a63565dd165d1, findElement {using=id, value=logInPanelHeading}]
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 117.0.2045.43, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:51394}, msedge: {msedgedriverVersion: 117.0.2045.41 (b895513e9807..., userDataDir: C:\Users\dougl\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51394/devtoo..., se:cdpVersion: 117.0.2045.43, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 232fa594dcb9f768be9a63565dd165d1
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -210,17 +210,17 @@ Session ID: 7d34cff7ab36058ba587b7c746d58515
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
 
-Selenium_4_Tests.TestLoginRelativeLocators.testRelativeLocatorsBelow  Time elapsed: 5.236 s  <<< ERROR!
+Selenium_4_Tests.TestLoginRelativeLocators.testRelativeLocatorsBelow  Time elapsed: 5.379 s  <<< ERROR!
 org.openqa.selenium.NoSuchElementException: 
 no such element: Unable to locate element: {"method":"css selector","selector":"#logInPanelHeading"}
-  (Session info: MicrosoftEdge=116.0.1938.69)
+  (Session info: MicrosoftEdge=117.0.2045.43)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.12.1', revision: '8e34639b11'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [01af22913b038ec8e50b2b7ab9c066ba, findElement {using=id, value=logInPanelHeading}]
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 116.0.1938.69, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:65312}, msedge: {msedgedriverVersion: 116.0.1938.69 (62ef76ea75c4..., userDataDir: C:\Users\dougl\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65312/devtoo..., se:cdpVersion: 116.0.1938.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 01af22913b038ec8e50b2b7ab9c066ba
+Command: [5dceb9ac61be0c716329a7ad7007ebbf, findElement {using=id, value=logInPanelHeading}]
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 117.0.2045.43, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:51438}, msedge: {msedgedriverVersion: 117.0.2045.41 (b895513e9807..., userDataDir: C:\Users\dougl\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51438/devtoo..., se:cdpVersion: 117.0.2045.43, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5dceb9ac61be0c716329a7ad7007ebbf
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -314,17 +314,17 @@ Session ID: 01af22913b038ec8e50b2b7ab9c066ba
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
 
-Selenium_4_Tests.TestLoginRelativeLocators.testRelativeLocatorsImage  Time elapsed: 5.17 s  <<< ERROR!
+Selenium_4_Tests.TestLoginRelativeLocators.testRelativeLocatorsImage  Time elapsed: 5.252 s  <<< ERROR!
 org.openqa.selenium.NoSuchElementException: 
 no such element: Unable to locate element: {"method":"css selector","selector":"#logInPanelHeading"}
-  (Session info: MicrosoftEdge=116.0.1938.69)
+  (Session info: MicrosoftEdge=117.0.2045.43)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.12.1', revision: '8e34639b11'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [f9100154850a76d6933fb29448cb0988, findElement {using=id, value=logInPanelHeading}]
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 116.0.1938.69, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:65354}, msedge: {msedgedriverVersion: 116.0.1938.69 (62ef76ea75c4..., userDataDir: C:\Users\dougl\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65354/devtoo..., se:cdpVersion: 116.0.1938.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f9100154850a76d6933fb29448cb0988
+Command: [06edefaacf3d198d65cfc9031113a379, findElement {using=id, value=logInPanelHeading}]
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 117.0.2045.43, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:51482}, msedge: {msedgedriverVersion: 117.0.2045.41 (b895513e9807..., userDataDir: C:\Users\dougl\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51482/devtoo..., se:cdpVersion: 117.0.2045.43, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 06edefaacf3d198d65cfc9031113a379
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -418,17 +418,17 @@ Session ID: f9100154850a76d6933fb29448cb0988
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
 
-Selenium_4_Tests.TestLoginRelativeLocators.testRelativeLocatorsSubmitButton  Time elapsed: 5.297 s  <<< ERROR!
+Selenium_4_Tests.TestLoginRelativeLocators.testRelativeLocatorsSubmitButton  Time elapsed: 5.399 s  <<< ERROR!
 org.openqa.selenium.NoSuchElementException: 
 no such element: Unable to locate element: {"method":"css selector","selector":"#divLoginImage"}
-  (Session info: MicrosoftEdge=116.0.1938.69)
+  (Session info: MicrosoftEdge=117.0.2045.43)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.12.1', revision: '8e34639b11'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [37b177396c32d8e890bdffa30db4cc26, findElement {using=id, value=divLoginImage}]
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 116.0.1938.69, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:65395}, msedge: {msedgedriverVersion: 116.0.1938.69 (62ef76ea75c4..., userDataDir: C:\Users\dougl\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65395/devtoo..., se:cdpVersion: 116.0.1938.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 37b177396c32d8e890bdffa30db4cc26
+Command: [0500aad6377232c1cf7e7d3bd9bf923f, findElement {using=id, value=divLoginImage}]
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 117.0.2045.43, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:51526}, msedge: {msedgedriverVersion: 117.0.2045.41 (b895513e9807..., userDataDir: C:\Users\dougl\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51526/devtoo..., se:cdpVersion: 117.0.2045.43, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0500aad6377232c1cf7e7d3bd9bf923f
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -522,17 +522,17 @@ Session ID: 37b177396c32d8e890bdffa30db4cc26
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
 
-Selenium_4_Tests.TestLoginRelativeLocators.isLoginLogoDisplayed  Time elapsed: 5.07 s  <<< ERROR!
+Selenium_4_Tests.TestLoginRelativeLocators.isLoginLogoDisplayed  Time elapsed: 5.249 s  <<< ERROR!
 org.openqa.selenium.NoSuchElementException: 
 no such element: Unable to locate element: {"method":"css selector","selector":"#divLogo"}
-  (Session info: MicrosoftEdge=116.0.1938.69)
+  (Session info: MicrosoftEdge=117.0.2045.43)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.12.1', revision: '8e34639b11'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [c8b85b3527c1f1bcb7aa0fabde0d6751, findElement {using=id, value=divLogo}]
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 116.0.1938.69, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:65436}, msedge: {msedgedriverVersion: 116.0.1938.69 (62ef76ea75c4..., userDataDir: C:\Users\dougl\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65436/devtoo..., se:cdpVersion: 116.0.1938.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c8b85b3527c1f1bcb7aa0fabde0d6751
+Command: [512ce3669cc56dd51832d947613fbfcd, findElement {using=id, value=divLogo}]
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 117.0.2045.43, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:51569}, msedge: {msedgedriverVersion: 117.0.2045.41 (b895513e9807..., userDataDir: C:\Users\dougl\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51569/devtoo..., se:cdpVersion: 117.0.2045.43, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 512ce3669cc56dd51832d947613fbfcd
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -626,17 +626,17 @@ Session ID: c8b85b3527c1f1bcb7aa0fabde0d6751
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
 
-Selenium_4_Tests.TestLoginRelativeLocators.testRelativeLocatorsForgotPasswordLink  Time elapsed: 5.169 s  <<< ERROR!
+Selenium_4_Tests.TestLoginRelativeLocators.testRelativeLocatorsForgotPasswordLink  Time elapsed: 5.281 s  <<< ERROR!
 org.openqa.selenium.NoSuchElementException: 
 no such element: Unable to locate element: {"method":"css selector","selector":"#divLoginButton"}
-  (Session info: MicrosoftEdge=116.0.1938.69)
+  (Session info: MicrosoftEdge=117.0.2045.43)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.12.1', revision: '8e34639b11'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [f2b93e15af389a2a688e6682005e269f, findElement {using=id, value=divLoginButton}]
-Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 116.0.1938.69, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:65477}, msedge: {msedgedriverVersion: 116.0.1938.69 (62ef76ea75c4..., userDataDir: C:\Users\dougl\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65477/devtoo..., se:cdpVersion: 116.0.1938.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f2b93e15af389a2a688e6682005e269f
+Command: [2c4b3633df605621942aa14ca60df5e9, findElement {using=id, value=divLoginButton}]
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 117.0.2045.43, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:51613}, msedge: {msedgedriverVersion: 117.0.2045.41 (b895513e9807..., userDataDir: C:\Users\dougl\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51613/devtoo..., se:cdpVersion: 117.0.2045.43, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2c4b3633df605621942aa14ca60df5e9
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -727,12 +727,12 @@ Session ID: f2b93e15af389a2a688e6682005e269f
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
 
-Selenium_4_Tests.TestLoginRelativeLocators.testRelativeLocatorsSocialImages  Time elapsed: 5.407 s  <<< ERROR!
+Selenium_4_Tests.TestLoginRelativeLocators.testRelativeLocatorsSocialImages  Time elapsed: 5.296 s  <<< ERROR!
 org.openqa.selenium.NoSuchElementException: 
 Cannot locate an element using [unknown locator]
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.12.1', revision: '8e34639b11'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: driver.version: RemoteWebDriver
 	at org.openqa.selenium.By.findElement(By.java:124)
 	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
