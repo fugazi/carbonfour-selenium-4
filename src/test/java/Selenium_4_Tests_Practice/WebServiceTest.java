@@ -8,6 +8,7 @@ import java.io.IOException;
 import org.apache.hc.client5.http.classic.HttpClient;
 import org.apache.hc.client5.http.classic.methods.HttpPost;
 import org.apache.hc.client5.http.impl.classic.HttpClients;
+import org.apache.hc.core5.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
@@ -33,7 +34,7 @@ public class WebServiceTest {
 
         HttpPost authRequest = new HttpPost("https://webservice.com/rest/user/login");
         String authData = "email=" + email + "&password=" + password;
-        authRequest.setEntity(new StringEntity(authData, ContentType.APPLICATION_FORM_URLENCODED));
+        authRequest.setEntity((HttpEntity) new StringEntity(authData, ContentType.APPLICATION_FORM_URLENCODED));
 
         try {
             HttpResponse response = (HttpResponse) httpClient.execute(authRequest);
