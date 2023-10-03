@@ -56,8 +56,6 @@ public class WebServiceTest {
         HttpPost request = new HttpPost("https://webservice.com/rest/user/logout");
         request.setHeader("Content-Type", "application/json");
         request.setHeader("Accept", "application/json;q=0.9;v=1");
-        request.setHeader("Sec-GPC", "1");
-        request.setHeader("User-Agent", "future");
         request.setHeader("Identity-Token", secureToken);
 
         try {
