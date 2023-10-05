@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.io.IOException;
 
+import Selenium_4_Tests_Practice.Utilities.Environments.BaseDomain;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
@@ -23,6 +25,7 @@ public class WebServiceTest {
 
     private static final String EMAIL = "durrea02@rei.com";
     private static final String PASSWORD = "test1234";
+    private static final String DOMAIN_ENV_VAR = "domain";
     private static final String DOMAIN_BY_DEFAULT = "https://webservice.com";
     private static final String ENDPOINT = "/rest/user/login";
 
@@ -32,11 +35,20 @@ public class WebServiceTest {
         login();
     }
 
+    /**
+     * WebService Login
+     */
+
     private void login() {
 
         HttpPost authRequest = new HttpPost(DOMAIN_BY_DEFAULT + ENDPOINT);
         String authData = "email=" + EMAIL + "&password=" + PASSWORD;
         authRequest.setEntity(new StringEntity(authData, ContentType.APPLICATION_FORM_URLENCODED));
+
+        // Determine the environment based on the base URI
+        String baseUri = BaseDomain.getGlobalServiceURL(
+                System.getProperty(DOMAIN_ENV_VAR) != null ? System.getProperty(DOMAIN_ENV_VAR) : DOMAIN_BY_DEFAULT);
+        String apiBaseUrl = String.format("https://%s", baseUri) + ENDPOINT;
 
         try {
             HttpResponse response = httpClient.execute(authRequest);
@@ -48,7 +60,7 @@ public class WebServiceTest {
     }
 
     /**
-     * WebService SignalsWebService
+     * WebService SignOut
      */
     @Tag("Regression")
     @Test
@@ -61,7 +73,7 @@ public class WebServiceTest {
         request.setHeader("Identity-Token", secureToken);
 
         try {
-            HttpResponse response = (HttpResponse) httpClient.execute(request);
+            HttpResponse response = httpClient.execute(request);
             assertEquals(201, response.getStatusLine().getStatusCode());
         } catch (IOException e) {
             e.printStackTrace();
