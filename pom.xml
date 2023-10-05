@@ -23,8 +23,7 @@
         <jupiter.params>5.10.0</jupiter.params>
         <allure.version>2.24.0</allure.version>
         <jackson-databind.version>2.15.2</jackson-databind.version>
-        <httpclient5.version>5.2.1</httpclient5.version>
-        <httpcore.version>4.4.14</httpcore.version>
+        <httpclient.version>4.5.14</httpclient.version>
     </properties>
 
     <dependencies>
@@ -72,14 +71,9 @@
             <version>${jackson-databind.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.httpcomponents.client5</groupId>
-            <artifactId>httpclient5</artifactId>
-            <version>${httpclient5.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpcore</artifactId>
-            <version>${httpcore.version}</version>
+            <artifactId>httpclient</artifactId>
+            <version>${httpclient.version}</version>
         </dependency>
 
         <dependency>

@@ -5,13 +5,12 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.io.IOException;
 
-import org.apache.hc.client5.http.classic.HttpClient;
-import org.apache.hc.client5.http.classic.methods.HttpPost;
-import org.apache.hc.client5.http.impl.classic.HttpClients;
-import org.apache.hc.core5.http.HttpEntity;
 import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
@@ -22,6 +21,11 @@ public class WebServiceTest {
     private HttpClient httpClient;
     private String secureToken;
 
+    private static final String EMAIL = "durrea02@rei.com";
+    private static final String PASSWORD = "test1234";
+    private static final String DOMAIN_BY_DEFAULT = "https://webservice.com";
+    private static final String ENDPOINT = "/rest/user/login";
+
     @BeforeEach
     public void setUp() {
         httpClient = HttpClients.createDefault();
@@ -29,15 +33,13 @@ public class WebServiceTest {
     }
 
     private void login() {
-        String email = "login@email.com";
-        String password = "password";
 
-        HttpPost authRequest = new HttpPost("https://webservice.com/rest/user/login");
-        String authData = "email=" + email + "&password=" + password;
-        authRequest.setEntity((HttpEntity) new StringEntity(authData, ContentType.APPLICATION_FORM_URLENCODED));
+        HttpPost authRequest = new HttpPost(DOMAIN_BY_DEFAULT + ENDPOINT);
+        String authData = "email=" + EMAIL + "&password=" + PASSWORD;
+        authRequest.setEntity(new StringEntity(authData, ContentType.APPLICATION_FORM_URLENCODED));
 
         try {
-            HttpResponse response = (HttpResponse) httpClient.execute(authRequest);
+            HttpResponse response = httpClient.execute(authRequest);
             assertEquals(200, response.getStatusLine().getStatusCode());
             secureToken = EntityUtils.toString(response.getEntity());
         } catch (IOException e) {
