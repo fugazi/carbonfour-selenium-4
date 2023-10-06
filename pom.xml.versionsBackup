@@ -18,7 +18,7 @@
         <lombok.version>1.18.30</lombok.version>
         <slf4j.version>2.0.9</slf4j.version>
         <faker.version>1.0.2</faker.version>
-        <axe.version>4.8.0</axe.version>
+        <axe.version>4.7.0</axe.version>
         <junit.version>5.10.0</junit.version>
         <jupiter.params>5.10.0</jupiter.params>
         <allure.version>2.24.0</allure.version>
