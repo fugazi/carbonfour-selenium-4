@@ -23,8 +23,8 @@ public class WebServiceTest {
     private HttpClient httpClient;
     private String secureToken;
 
-    private static final String EMAIL = "durrea02@rei.com";
-    private static final String PASSWORD = "test1234";
+    private static final String EMAIL = "user@login.com";
+    private static final String PASSWORD = "password123";
     private static final String DOMAIN_ENV_VAR = "domain";
     private static final String DOMAIN_BY_DEFAULT = "https://webservice.com";
     private static final String ENDPOINT = "/rest/user/login";
