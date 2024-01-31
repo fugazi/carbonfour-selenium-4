@@ -9,7 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v119.emulation.Emulation;
+import org.openqa.selenium.devtools.v121.emulation.Emulation;
 import org.openqa.selenium.edge.EdgeDriver;
 
 public class TestDevToolsDeviceMode {
