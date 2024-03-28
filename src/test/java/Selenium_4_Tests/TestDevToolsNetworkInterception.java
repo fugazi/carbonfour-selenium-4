@@ -1,7 +1,7 @@
 package Selenium_4_Tests;
 
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
-import static org.openqa.selenium.devtools.v122.network.Network.*;
+import static org.openqa.selenium.devtools.v123.network.Network.*;
 import static org.openqa.selenium.remote.http.Contents.utf8String;
 
 import java.util.List;
