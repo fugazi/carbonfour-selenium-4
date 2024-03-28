@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: Selenium_4_Tests.TestDevToolsGeolocation
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.811 s - in Selenium_4_Tests.TestDevToolsGeolocation
