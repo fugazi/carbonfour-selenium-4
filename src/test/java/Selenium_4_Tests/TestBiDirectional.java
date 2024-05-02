@@ -2,9 +2,16 @@ package Selenium_4_Tests;
 
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
 
+import java.util.List;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.WindowType;
+import org.openqa.selenium.bidi.browsingcontext.BrowsingContext;
+import org.openqa.selenium.bidi.browsingcontext.BrowsingContextInfo;
+import org.openqa.selenium.bidi.browsingcontext.NavigationResult;
+import org.openqa.selenium.bidi.browsingcontext.ReadinessState;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
