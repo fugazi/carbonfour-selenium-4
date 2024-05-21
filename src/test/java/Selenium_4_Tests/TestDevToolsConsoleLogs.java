@@ -8,7 +8,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v123.log.Log;
+import org.openqa.selenium.devtools.v125.log.Log;
 import org.openqa.selenium.edge.EdgeDriver;
 
 @Slf4j
