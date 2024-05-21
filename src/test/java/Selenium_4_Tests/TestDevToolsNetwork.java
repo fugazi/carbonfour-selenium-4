@@ -8,8 +8,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v123.network.Network;
-import org.openqa.selenium.devtools.v123.network.model.ConnectionType;
+import org.openqa.selenium.devtools.v125.network.Network;
+import org.openqa.selenium.devtools.v125.network.model.ConnectionType;
 import org.openqa.selenium.edge.EdgeDriver;
 
 public class TestDevToolsNetwork {
@@ -48,7 +48,7 @@ public class TestDevToolsNetwork {
         // Enables network tracking, network events will now be delivered to the client
         devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
         // Activates emulation of network conditions for Cellular 3G.
-        devTools.send(Network.emulateNetworkConditions(false, 150, 2500, 1500, Optional.of(ConnectionType.CELLULAR3G)));
+        devTools.send(Network.emulateNetworkConditions(false, 150, 2500, 1500, Optional.of(ConnectionType.CELLULAR3G), Optional.empty(), Optional.empty()));
         driver.get("https://linkedin.com");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("LinkedIn"));
     }
@@ -61,7 +61,7 @@ public class TestDevToolsNetwork {
         // Enables network tracking, network events will now be delivered to the client
         devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
         // Activates emulation of network conditions for Wi-Fi.
-        devTools.send(Network.emulateNetworkConditions(false, 250, 8500, 5000, Optional.of(ConnectionType.WIFI)));
+        devTools.send(Network.emulateNetworkConditions(false, 250, 8500, 5000, Optional.of(ConnectionType.WIFI), Optional.empty(), Optional.empty()));
         driver.get("https://linkedin.com");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("LinkedIn"));
     }
@@ -74,7 +74,7 @@ public class TestDevToolsNetwork {
         // Enables network tracking, network events will now be delivered to the client
         devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
         // Activates emulation of network conditions for Bluetooth.
-        devTools.send(Network.emulateNetworkConditions(false, 80, 12400, 1185, Optional.of(ConnectionType.BLUETOOTH)));
+        devTools.send(Network.emulateNetworkConditions(false, 150, 2500, 1500, Optional.of(ConnectionType.CELLULAR3G), Optional.empty(), Optional.empty()));
         driver.get("https://linkedin.com");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("LinkedIn"));
     }
