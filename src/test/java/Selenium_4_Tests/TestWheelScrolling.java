@@ -12,7 +12,6 @@ import org.openqa.selenium.interactions.WheelInput;
 public class TestWheelScrolling {
 
     private WebDriver driver;
-    private Actions actions;
 
     /**
      * Initialize the WebDriverManager and EdgeDriver.
@@ -38,7 +37,7 @@ public class TestWheelScrolling {
      */
     @Test
     void testWheelScrolling() {
-        actions = new Actions(driver);
+        Actions actions = new Actions(driver);
         actions.scrollToElement(driver.findElement(By.xpath("//span[normalize-space()='Home']"))).perform();
         // Scroll down by 500 pixels
         actions.scrollByAmount(0, 500).perform();

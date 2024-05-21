@@ -45,9 +45,7 @@ public class TestWindowManagement {
         driver.switchTo().newWindow(WindowType.WINDOW);
         driver.manage().window().maximize();
         driver.get("https://www.google.com");
-        assertSoftly(softly -> {
-            softly.assertThat(driver.getTitle()).isEqualTo("Google");
-        });
+        assertSoftly(softly -> softly.assertThat(driver.getTitle()).isEqualTo("Google"));
     }
 
     /**
@@ -58,9 +56,7 @@ public class TestWindowManagement {
         driver.switchTo().newWindow(WindowType.TAB);
         driver.manage().window().maximize();
         driver.get("https://www.youtube.com");
-        assertSoftly(softly -> {
-            softly.assertThat(driver.getTitle()).contains("YouTube");
-        });
+        assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("YouTube"));
     }
 
     /**
@@ -74,9 +70,7 @@ public class TestWindowManagement {
         WebElement searchBoxTab = driver.findElement(By.name("q"));
         searchBoxTab.sendKeys("Selenium 4.0");
         searchBoxTab.sendKeys(Keys.ENTER);
-        assertSoftly(softly -> {
-            softly.assertThat(driver.getTitle()).contains("Google");
-        });
+        assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Google"));
         // Get The Window ID Handles
         Set<String> parentWindowId = driver.getWindowHandles();
         // Switch To The Parent Window
@@ -85,9 +79,7 @@ public class TestWindowManagement {
         WebElement searchBoxParent = driver.findElement(By.xpath("(//input[@placeholder='Search For Products'])[1]"));
         searchBoxParent.sendKeys("iPhone");
         searchBoxParent.sendKeys(Keys.ENTER);
-        assertSoftly(softly -> {
-            softly.assertThat(driver.getTitle()).isEqualTo("Search - iPhone");
-        });
+        assertSoftly(softly -> softly.assertThat(driver.getTitle()).isEqualTo("Search - iPhone"));
     }
 
 }
