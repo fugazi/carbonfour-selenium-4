@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="Selenium_4_Tests.TestDevToolsNetworkInterception" time="66.6" tests="7" errors="0" skipped="0" failures="1">
+  <properties>
+    <property name="java.specification.version" value="22"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Douglas\Automation\Proyectos\Selenium\Pumpkins\Four Project\carbonfour-selenium-4\target\test-classes;C:\Douglas\Automation\Proyectos\Selenium\Pumpkins\Four Project\carbonfour-selenium-4\target\classes;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-java\4.25.0\selenium-java-4.25.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-api\4.25.0\selenium-api-4.25.0.jar;C:\Users\dougl\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.25.0\selenium-chrome-driver-4.25.0.jar;C:\Users\dougl\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.25.0\selenium-chromium-driver-4.25.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-json\4.25.0\selenium-json-4.25.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.25.0\selenium-manager-4.25.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v127\4.25.0\selenium-devtools-v127-4.25.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v128\4.25.0\selenium-devtools-v128-4.25.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v129\4.25.0\selenium-devtools-v129-4.25.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.25.0\selenium-devtools-v85-4.25.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.25.0\selenium-edge-driver-4.25.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.25.0\selenium-firefox-driver-4.25.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-http\4.25.0\selenium-http-4.25.0.jar;C:\Users\dougl\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.25.0\selenium-ie-driver-4.25.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.25.0\selenium-remote-driver-4.25.0.jar;C:\Users\dougl\.m2\repository\com\google\guava\guava\33.3.0-jre\guava-33.3.0-jre.jar;C:\Users\dougl\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\dougl\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\dougl\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\dougl\.m2\repository\org\checkerframework\checker-qual\3.43.0\checker-qual-3.43.0.jar;C:\Users\dougl\.m2\repository\com\google\errorprone\error_prone_annotations\2.28.0\error_prone_annotations-2.28.0.jar;C:\Users\dougl\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\dougl\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\Users\dougl\.m2\repository\io\opentelemetry\opentelemetry-api\1.42.1\opentelemetry-api-1.42.1.jar;C:\Users\dougl\.m2\repository\io\opentelemetry\opentelemetry-context\1.42.1\opentelemetry-context-1.42.1.jar;C:\Users\dougl\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.42.1\opentelemetry-exporter-logging-1.42.1.jar;C:\Users\dougl\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.42.1\opentelemetry-sdk-common-1.42.1.jar;C:\Users\dougl\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.42.1\opentelemetry-sdk-extension-autoconfigure-spi-1.42.1.jar;C:\Users\dougl\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.42.1\opentelemetry-sdk-extension-autoconfigure-1.42.1.jar;C:\Users\dougl\.m2\repository\io\opentelemetry\opentelemetry-api-incubator\1.42.1-alpha\opentelemetry-api-incubator-1.42.1-alpha.jar;C:\Users\dougl\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.42.1\opentelemetry-sdk-trace-1.42.1.jar;C:\Users\dougl\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.42.1\opentelemetry-sdk-1.42.1.jar;C:\Users\dougl\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.42.1\opentelemetry-sdk-metrics-1.42.1.jar;C:\Users\dougl\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.42.1\opentelemetry-sdk-logs-1.42.1.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-os\4.25.0\selenium-os-4.25.0.jar;C:\Users\dougl\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.25.0\selenium-safari-driver-4.25.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-support\4.25.0\selenium-support-4.25.0.jar;C:\Users\dougl\.m2\repository\org\assertj\assertj-core\3.26.3\assertj-core-3.26.3.jar;C:\Users\dougl\.m2\repository\net\bytebuddy\byte-buddy\1.14.18\byte-buddy-1.14.18.jar;C:\Users\dougl\.m2\repository\org\projectlombok\lombok\1.18.34\lombok-1.18.34.jar;C:\Users\dougl\.m2\repository\org\slf4j\slf4j-simple\2.1.0-alpha1\slf4j-simple-2.1.0-alpha1.jar;C:\Users\dougl\.m2\repository\org\slf4j\slf4j-api\2.1.0-alpha1\slf4j-api-2.1.0-alpha1.jar;C:\Users\dougl\.m2\repository\com\github\javafaker\javafaker\1.0.2\javafaker-1.0.2.jar;C:\Users\dougl\.m2\repository\org\apache\commons\commons-lang3\3.5\commons-lang3-3.5.jar;C:\Users\dougl\.m2\repository\org\yaml\snakeyaml\1.23\snakeyaml-1.23-android.jar;C:\Users\dougl\.m2\repository\com\github\mifmif\generex\1.0.2\generex-1.0.2.jar;C:\Users\dougl\.m2\repository\dk\brics\automaton\automaton\1.11-8\automaton-1.11-8.jar;C:\Users\dougl\.m2\repository\com\deque\html\axe-core\selenium\4.9.1\selenium-4.9.1.jar;C:\Users\dougl\.m2\repository\commons-io\commons-io\2.16.0\commons-io-2.16.0.jar;C:\Users\dougl\.m2\repository\io\github\bonigarcia\webdrivermanager\5.7.0\webdrivermanager-5.7.0.jar;C:\Users\dougl\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\dougl\.m2\repository\com\github\docker-java\docker-java\3.3.5\docker-java-3.3.5.jar;C:\Users\dougl\.m2\repository\com\github\docker-java\docker-java-core\3.3.5\docker-java-core-3.3.5.jar;C:\Users\dougl\.m2\repository\com\github\docker-java\docker-java-api\3.3.5\docker-java-api-3.3.5.jar;C:\Users\dougl\.m2\repository\org\bouncycastle\bcpkix-jdk18on\1.76\bcpkix-jdk18on-1.76.jar;C:\Users\dougl\.m2\repository\org\bouncycastle\bcprov-jdk18on\1.76\bcprov-jdk18on-1.76.jar;C:\Users\dougl\.m2\repository\org\bouncycastle\bcutil-jdk18on\1.76\bcutil-jdk18on-1.76.jar;C:\Users\dougl\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar;C:\Users\dougl\.m2\repository\com\github\docker-java\docker-java-transport-httpclient5\3.3.5\docker-java-transport-httpclient5-3.3.5.jar;C:\Users\dougl\.m2\repository\com\github\docker-java\docker-java-transport\3.3.5\docker-java-transport-3.3.5.jar;C:\Users\dougl\.m2\repository\net\java\dev\jna\jna\5.13.0\jna-5.13.0.jar;C:\Users\dougl\.m2\repository\org\brotli\dec\0.1.2\dec-0.1.2.jar;C:\Users\dougl\.m2\repository\org\apache\commons\commons-compress\1.26.0\commons-compress-1.26.0.jar;C:\Users\dougl\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.2.1\httpclient5-5.2.1.jar;C:\Users\dougl\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.2\httpcore5-5.2.jar;C:\Users\dougl\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.2\httpcore5-h2-5.2.jar;C:\Users\dougl\.m2\repository\com\deque\html\axe-core\dequeutilites\4.9.1\dequeutilites-4.9.1.jar;C:\Users\dougl\.m2\repository\io\qameta\allure\allure-junit5\2.29.0\allure-junit5-2.29.0.jar;C:\Users\dougl\.m2\repository\io\qameta\allure\allure-junit-platform\2.29.0\allure-junit-platform-2.29.0.jar;C:\Users\dougl\.m2\repository\io\qameta\allure\allure-java-commons\2.29.0\allure-java-commons-2.29.0.jar;C:\Users\dougl\.m2\repository\io\qameta\allure\allure-model\2.29.0\allure-model-2.29.0.jar;C:\Users\dougl\.m2\repository\org\junit\platform\junit-platform-launcher\1.10.3\junit-platform-launcher-1.10.3.jar;C:\Users\dougl\.m2\repository\io\qameta\allure\allure-test-filter\2.29.0\allure-test-filter-2.29.0.jar;C:\Users\dougl\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.18.0\jackson-databind-2.18.0.jar;C:\Users\dougl\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.18.0\jackson-annotations-2.18.0.jar;C:\Users\dougl\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.18.0\jackson-core-2.18.0.jar;C:\Users\dougl\.m2\repository\org\apache\httpcomponents\httpclient\4.5.14\httpclient-4.5.14.jar;C:\Users\dougl\.m2\repository\org\apache\httpcomponents\httpcore\4.4.16\httpcore-4.4.16.jar;C:\Users\dougl\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\dougl\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\dougl\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.1\junit-jupiter-api-5.11.1.jar;C:\Users\dougl\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\dougl\.m2\repository\org\junit\platform\junit-platform-commons\1.11.1\junit-platform-commons-1.11.1.jar;C:\Users\dougl\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\dougl\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.11.1\junit-jupiter-engine-5.11.1.jar;C:\Users\dougl\.m2\repository\org\junit\platform\junit-platform-engine\1.11.1\junit-platform-engine-1.11.1.jar;C:\Users\dougl\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.1\junit-jupiter-params-5.11.1.jar;"/>
+    <property name="java.vm.vendor" value="Amazon.com Inc."/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://aws.amazon.com/corretto/"/>
+    <property name="user.timezone" value="America/Bogota"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="22"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="CO"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Amazon Corretto\jdk22.0.1_8\bin"/>
+    <property name="sun.java.command" value="C:\Users\dougl\AppData\Local\Temp\surefire9429331928935843355\surefirebooter-20240930181804243_3.jar C:\Users\dougl\AppData\Local\Temp\surefire9429331928935843355 2024-09-30T18-18-03_117-jvmRun1 surefire-20240930181804243_1tmp surefire_0-20240930181804243_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Douglas\Automation\Proyectos\Selenium\Pumpkins\Four Project\carbonfour-selenium-4\target\test-classes;C:\Douglas\Automation\Proyectos\Selenium\Pumpkins\Four Project\carbonfour-selenium-4\target\classes;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-java\4.25.0\selenium-java-4.25.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-api\4.25.0\selenium-api-4.25.0.jar;C:\Users\dougl\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.25.0\selenium-chrome-driver-4.25.0.jar;C:\Users\dougl\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.25.0\selenium-chromium-driver-4.25.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-json\4.25.0\selenium-json-4.25.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.25.0\selenium-manager-4.25.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v127\4.25.0\selenium-devtools-v127-4.25.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v128\4.25.0\selenium-devtools-v128-4.25.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v129\4.25.0\selenium-devtools-v129-4.25.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.25.0\selenium-devtools-v85-4.25.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.25.0\selenium-edge-driver-4.25.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.25.0\selenium-firefox-driver-4.25.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-http\4.25.0\selenium-http-4.25.0.jar;C:\Users\dougl\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.25.0\selenium-ie-driver-4.25.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.25.0\selenium-remote-driver-4.25.0.jar;C:\Users\dougl\.m2\repository\com\google\guava\guava\33.3.0-jre\guava-33.3.0-jre.jar;C:\Users\dougl\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\dougl\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\dougl\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\dougl\.m2\repository\org\checkerframework\checker-qual\3.43.0\checker-qual-3.43.0.jar;C:\Users\dougl\.m2\repository\com\google\errorprone\error_prone_annotations\2.28.0\error_prone_annotations-2.28.0.jar;C:\Users\dougl\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\dougl\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\Users\dougl\.m2\repository\io\opentelemetry\opentelemetry-api\1.42.1\opentelemetry-api-1.42.1.jar;C:\Users\dougl\.m2\repository\io\opentelemetry\opentelemetry-context\1.42.1\opentelemetry-context-1.42.1.jar;C:\Users\dougl\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.42.1\opentelemetry-exporter-logging-1.42.1.jar;C:\Users\dougl\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.42.1\opentelemetry-sdk-common-1.42.1.jar;C:\Users\dougl\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.42.1\opentelemetry-sdk-extension-autoconfigure-spi-1.42.1.jar;C:\Users\dougl\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.42.1\opentelemetry-sdk-extension-autoconfigure-1.42.1.jar;C:\Users\dougl\.m2\repository\io\opentelemetry\opentelemetry-api-incubator\1.42.1-alpha\opentelemetry-api-incubator-1.42.1-alpha.jar;C:\Users\dougl\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.42.1\opentelemetry-sdk-trace-1.42.1.jar;C:\Users\dougl\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.42.1\opentelemetry-sdk-1.42.1.jar;C:\Users\dougl\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.42.1\opentelemetry-sdk-metrics-1.42.1.jar;C:\Users\dougl\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.42.1\opentelemetry-sdk-logs-1.42.1.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-os\4.25.0\selenium-os-4.25.0.jar;C:\Users\dougl\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.25.0\selenium-safari-driver-4.25.0.jar;C:\Users\dougl\.m2\repository\org\seleniumhq\selenium\selenium-support\4.25.0\selenium-support-4.25.0.jar;C:\Users\dougl\.m2\repository\org\assertj\assertj-core\3.26.3\assertj-core-3.26.3.jar;C:\Users\dougl\.m2\repository\net\bytebuddy\byte-buddy\1.14.18\byte-buddy-1.14.18.jar;C:\Users\dougl\.m2\repository\org\projectlombok\lombok\1.18.34\lombok-1.18.34.jar;C:\Users\dougl\.m2\repository\org\slf4j\slf4j-simple\2.1.0-alpha1\slf4j-simple-2.1.0-alpha1.jar;C:\Users\dougl\.m2\repository\org\slf4j\slf4j-api\2.1.0-alpha1\slf4j-api-2.1.0-alpha1.jar;C:\Users\dougl\.m2\repository\com\github\javafaker\javafaker\1.0.2\javafaker-1.0.2.jar;C:\Users\dougl\.m2\repository\org\apache\commons\commons-lang3\3.5\commons-lang3-3.5.jar;C:\Users\dougl\.m2\repository\org\yaml\snakeyaml\1.23\snakeyaml-1.23-android.jar;C:\Users\dougl\.m2\repository\com\github\mifmif\generex\1.0.2\generex-1.0.2.jar;C:\Users\dougl\.m2\repository\dk\brics\automaton\automaton\1.11-8\automaton-1.11-8.jar;C:\Users\dougl\.m2\repository\com\deque\html\axe-core\selenium\4.9.1\selenium-4.9.1.jar;C:\Users\dougl\.m2\repository\commons-io\commons-io\2.16.0\commons-io-2.16.0.jar;C:\Users\dougl\.m2\repository\io\github\bonigarcia\webdrivermanager\5.7.0\webdrivermanager-5.7.0.jar;C:\Users\dougl\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\dougl\.m2\repository\com\github\docker-java\docker-java\3.3.5\docker-java-3.3.5.jar;C:\Users\dougl\.m2\repository\com\github\docker-java\docker-java-core\3.3.5\docker-java-core-3.3.5.jar;C:\Users\dougl\.m2\repository\com\github\docker-java\docker-java-api\3.3.5\docker-java-api-3.3.5.jar;C:\Users\dougl\.m2\repository\org\bouncycastle\bcpkix-jdk18on\1.76\bcpkix-jdk18on-1.76.jar;C:\Users\dougl\.m2\repository\org\bouncycastle\bcprov-jdk18on\1.76\bcprov-jdk18on-1.76.jar;C:\Users\dougl\.m2\repository\org\bouncycastle\bcutil-jdk18on\1.76\bcutil-jdk18on-1.76.jar;C:\Users\dougl\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar;C:\Users\dougl\.m2\repository\com\github\docker-java\docker-java-transport-httpclient5\3.3.5\docker-java-transport-httpclient5-3.3.5.jar;C:\Users\dougl\.m2\repository\com\github\docker-java\docker-java-transport\3.3.5\docker-java-transport-3.3.5.jar;C:\Users\dougl\.m2\repository\net\java\dev\jna\jna\5.13.0\jna-5.13.0.jar;C:\Users\dougl\.m2\repository\org\brotli\dec\0.1.2\dec-0.1.2.jar;C:\Users\dougl\.m2\repository\org\apache\commons\commons-compress\1.26.0\commons-compress-1.26.0.jar;C:\Users\dougl\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.2.1\httpclient5-5.2.1.jar;C:\Users\dougl\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.2\httpcore5-5.2.jar;C:\Users\dougl\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.2\httpcore5-h2-5.2.jar;C:\Users\dougl\.m2\repository\com\deque\html\axe-core\dequeutilites\4.9.1\dequeutilites-4.9.1.jar;C:\Users\dougl\.m2\repository\io\qameta\allure\allure-junit5\2.29.0\allure-junit5-2.29.0.jar;C:\Users\dougl\.m2\repository\io\qameta\allure\allure-junit-platform\2.29.0\allure-junit-platform-2.29.0.jar;C:\Users\dougl\.m2\repository\io\qameta\allure\allure-java-commons\2.29.0\allure-java-commons-2.29.0.jar;C:\Users\dougl\.m2\repository\io\qameta\allure\allure-model\2.29.0\allure-model-2.29.0.jar;C:\Users\dougl\.m2\repository\org\junit\platform\junit-platform-launcher\1.10.3\junit-platform-launcher-1.10.3.jar;C:\Users\dougl\.m2\repository\io\qameta\allure\allure-test-filter\2.29.0\allure-test-filter-2.29.0.jar;C:\Users\dougl\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.18.0\jackson-databind-2.18.0.jar;C:\Users\dougl\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.18.0\jackson-annotations-2.18.0.jar;C:\Users\dougl\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.18.0\jackson-core-2.18.0.jar;C:\Users\dougl\.m2\repository\org\apache\httpcomponents\httpclient\4.5.14\httpclient-4.5.14.jar;C:\Users\dougl\.m2\repository\org\apache\httpcomponents\httpcore\4.4.16\httpcore-4.4.16.jar;C:\Users\dougl\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\dougl\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\dougl\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.1\junit-jupiter-api-5.11.1.jar;C:\Users\dougl\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\dougl\.m2\repository\org\junit\platform\junit-platform-commons\1.11.1\junit-platform-commons-1.11.1.jar;C:\Users\dougl\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\dougl\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.11.1\junit-jupiter-engine-5.11.1.jar;C:\Users\dougl\.m2\repository\org\junit\platform\junit-platform-engine\1.11.1\junit-platform-engine-1.11.1.jar;C:\Users\dougl\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.1\junit-jupiter-params-5.11.1.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\dougl"/>
+    <property name="user.language" value="es"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-04-16"/>
+    <property name="java.home" value="C:\Program Files\Amazon Corretto\jdk22.0.1_8"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Douglas\Automation\Proyectos\Selenium\Pumpkins\Four Project\carbonfour-selenium-4"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\dougl\AppData\Local\Temp\surefire9429331928935843355\surefirebooter-20240930181804243_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="22.0.1+8-FR"/>
+    <property name="user.name" value="dougl"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Corretto-22.0.1.8.1"/>
+    <property name="localRepository" value="C:\Users\dougl\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/corretto/corretto-22/issues/"/>
+    <property name="java.io.tmpdir" value="C:\Users\dougl\AppData\Local\Temp\"/>
+    <property name="java.version" value="22.0.1"/>
+    <property name="user.dir" value="C:\Douglas\Automation\Proyectos\Selenium\Pumpkins\Four Project\carbonfour-selenium-4"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Amazon Corretto\jdk22.0.1_8\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Amazon Corretto\jdk22.0.1_8\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Amazon Corretto\jdk22.0.1_8\bin;C:\Program Files\Maven\bin;C:\Program Files\Amazon\AWSCLIV2\;C:\Program Files\dotnet\;C:\Program Files\PuTTY\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\PowerShell\7\;C:\Program Files\GitHub CLI\;C:\Users\dougl\AppData\Local\Microsoft\WindowsApps;C:\Users\dougl\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2022.1\bin;;C:\Users\dougl\AppData\Local\GitHubDesktop\bin;C:\Program Files\JetBrains\Aqua 2024.2\bin;;C:\Users\dougl\AppData\Roaming\npm;C:\Users\dougl\AppData\Local\Programs\Microsoft VS Code Insiders\bin;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Amazon.com Inc."/>
+    <property name="java.vm.version" value="22.0.1+8-FR"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="66.0"/>
+  </properties>
+  <testcase name="networkBlockPatterns" classname="Selenium_4_Tests.TestDevToolsNetworkInterception" time="5.899">
+    <system-err><![CDATA[[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Blocking reason final: inspector
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Blocking reason: Optional[inspector]
+]]></system-err>
+  </testcase>
+  <testcase name="getRequestServedFromCacheTest" classname="Selenium_4_Tests.TestDevToolsNetworkInterception" time="6.701">
+    <system-err><![CDATA[[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP request served from cache: 27036.569
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP request served from cache: 27036.632
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP request served from cache: 27036.633
+]]></system-err>
+  </testcase>
+  <testcase name="verifyEventSourceMessagesTest" classname="Selenium_4_Tests.TestDevToolsNetworkInterception" time="25.829">
+    <system-err><![CDATA[[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event data received: The server time is: Mon, 30 Sep 2024 23:23:39 +0000
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event name: message
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event id: 
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source message id: 10988.41
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event time: 549638.45193
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event data received: The server time is: Mon, 30 Sep 2024 23:23:42 +0000
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event name: message
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event id: 
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source message id: 10988.115
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event time: 549641.716959
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event data received: The server time is: Mon, 30 Sep 2024 23:23:46 +0000
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event name: message
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event id: 
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source message id: 10988.158
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event time: 549645.210849
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event data received: The server time is: Mon, 30 Sep 2024 23:23:50 +0000
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event name: message
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event id: 
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source message id: 10988.179
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event time: 549648.749889
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event data received: The server time is: Mon, 30 Sep 2024 23:23:53 +0000
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event name: message
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event id: 
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source message id: 10988.193
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event time: 549652.204437
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event data received: The server time is: Mon, 30 Sep 2024 23:23:56 +0000
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event name: message
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event id: 
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source message id: 10988.201
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event time: 549655.378681
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event data received: The server time is: Mon, 30 Sep 2024 23:23:59 +0000
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event name: message
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event id: 
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source message id: 10988.211
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - Event Source event time: 549658.539131
+]]></system-err>
+  </testcase>
+  <testcase name="verifyWebSocketOperationTest" classname="Selenium_4_Tests.TestDevToolsNetworkInterception" time="17.256">
+    <failure message="&#10;Multiple Failures (1 failure)&#10;-- failure 1 --&#10;Expecting actual:&#10;  &quot;Online Websockets Tester - Debug Client Tool&quot;&#10;to contain:&#10;  &quot;Online WebSocket&quot; &#10;at TestDevToolsNetworkInterception.lambda$verifyWebSocketOperationTest$19(TestDevToolsNetworkInterception.java:207)" type="org.assertj.core.error.AssertJMultipleFailuresError"><![CDATA[org.assertj.core.error.AssertJMultipleFailuresError: 
+
+Multiple Failures (1 failure)
+-- failure 1 --
+Expecting actual:
+  "Online Websockets Tester - Debug Client Tool"
+to contain:
+  "Online WebSocket" 
+at TestDevToolsNetworkInterception.lambda$verifyWebSocketOperationTest$19(TestDevToolsNetworkInterception.java:207)
+	at Selenium_4_Tests.TestDevToolsNetworkInterception.verifyWebSocketOperationTest(TestDevToolsNetworkInterception.java:207)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+]]></failure>
+    <system-err><![CDATA[[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - WebSocket created: wss://demo.piesocket.com/v3/channel_123?api_key=VCXCEuvhGcBDP7XhiJJUDvR1e1D3eiVjgZ9VRiaV&notify_self
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - WebSocket id: 20108.98
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - WebSocket type: script
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - WebSocket frame received: 20108.98
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - {"error":"Unknown api key"}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - 1
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - false
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - WebSocket Closed
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - 549673.245913
+]]></system-err>
+  </testcase>
+  <testcase name="getHttpTrafficTest" classname="Selenium_4_Tests.TestDevToolsNetworkInterception" time="5.749">
+    <system-err><![CDATA[[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 9CC0A812B21E9F47C47E6E5DC8B9BD87
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: https://ecommerce-playground.lambdatest.io/
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: OK
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {Connection=keep-alive, Content-Encoding=gzip, Content-Type=text/html; charset=utf-8, Date=Mon, 30 Sep 2024 23:24:36 GMT, Server=nginx, Transfer-Encoding=chunked, X-Frame-Options=SAMEORIGIN}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[http/1.1]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional[44.206.201.40]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional[443]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: text/html
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 98
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.7
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: https://ecommerce-playground.lambdatest.io/image/cache/catalog/maza/demo/mz_poco/megastore-2/banner/megamenu-offer-220x400.webp
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: OK
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {ETag="66a7d3c7-23f2", Connection=keep-alive, Accept-Ranges=bytes, Content-Length=9202, Date=Mon, 30 Sep 2024 23:24:36 GMT, Content-Type=image/webp, Last-Modified=Mon, 29 Jul 2024 17:39:19 GMT, Server=nginx}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[http/1.1]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional[44.206.201.40]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional[443]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: image/webp
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 98
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.3
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: https://ecommerce-playground.lambdatest.io/catalog/view/theme/mz_poco/asset/stylesheet/megastore-2.28/combine/0b9ff54642c0625026c5c8e8add3d60a.css
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: OK
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {Cache-Control=max-age=315360000, ETag="66cd832e-3d84f", Connection=keep-alive, Expires=Thu, 31 Dec 2037 23:55:55 GMT, Accept-Ranges=bytes, Content-Length=251983, Date=Mon, 30 Sep 2024 23:24:36 GMT, Content-Type=text/css, Last-Modified=Tue, 27 Aug 2024 07:41:34 GMT, Server=nginx}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[http/1.1]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional[44.206.201.40]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional[443]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: text/css
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 92
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.4
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: 
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {content-encoding=gzip, age=442741, report-to={"group":"hosted-libraries-pushers","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/hosted-libraries-pushers"}]}, x-content-type-options=nosniff, expires=Thu, 25 Sep 2025 20:25:22 GMT, alt-svc=h3=":443"; ma=2592000,h3-29=":443"; ma=2592000, date=Wed, 25 Sep 2024 20:25:22 GMT, last-modified=Wed, 10 Mar 2021 14:28:09 GMT, content-type=text/javascript; charset=UTF-8, vary=Accept-Encoding, cache-control=public, max-age=31536000, stale-while-revalidate=2592000, timing-allow-origin=*, cross-origin-opener-policy=same-origin; report-to="hosted-libraries-pushers", cross-origin-resource-policy=cross-origin, content-security-policy-report-only=require-trusted-types-for 'script'; report-uri https://csp.withgoogle.com/csp/hosted-libraries-pushers, accept-ranges=bytes, access-control-allow-origin=*, content-length=31017, x-xss-protection=0, server=sffe}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[h2]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional[[2800:3f0:4005:40c::200a]]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional[443]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: text/javascript
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.8
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: https://ecommerce-playground.lambdatest.io/image/cache/catalog/maza/demo/mz_poco/megastore-2/banner/main-banner-1600x500.webp
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: OK
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {ETag="66a7d3d2-7cba", Connection=keep-alive, Accept-Ranges=bytes, Content-Length=31930, Date=Mon, 30 Sep 2024 23:24:36 GMT, Content-Type=image/webp, Last-Modified=Mon, 29 Jul 2024 17:39:30 GMT, Server=nginx}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[http/1.1]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional[44.206.201.40]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional[443]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: image/webp
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 98
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.10
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: https://ecommerce-playground.lambdatest.io/image/cache/catalog/maza/demo/mz_poco/megastore-2/banner/main-banner3-1600x500.webp
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: OK
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {ETag="66a7d3d4-87de", Connection=keep-alive, Accept-Ranges=bytes, Content-Length=34782, Date=Mon, 30 Sep 2024 23:24:36 GMT, Content-Type=image/webp, Last-Modified=Mon, 29 Jul 2024 17:39:32 GMT, Server=nginx}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[http/1.1]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional[44.206.201.40]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional[443]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: image/webp
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 98
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.9
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: https://ecommerce-playground.lambdatest.io/image/cache/catalog/maza/demo/mz_poco/megastore-2/banner/main-banner2-1600x500.webp
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: OK
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {ETag="66a7d3d3-61e8", Connection=keep-alive, Accept-Ranges=bytes, Content-Length=25064, Date=Mon, 30 Sep 2024 23:24:36 GMT, Content-Type=image/webp, Last-Modified=Mon, 29 Jul 2024 17:39:31 GMT, Server=nginx}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[http/1.1]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional[44.206.201.40]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional[443]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: image/webp
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 140
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.11
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: https://ecommerce-playground.lambdatest.io/image/catalog/maza/demo/mz_poco/megastore-2/html-1.png
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: OK
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {Cache-Control=max-age=315360000, ETag="6231d79d-1fd0", Connection=keep-alive, Expires=Thu, 31 Dec 2037 23:55:55 GMT, Accept-Ranges=bytes, Content-Length=8144, Date=Mon, 30 Sep 2024 23:24:37 GMT, Content-Type=image/png, Last-Modified=Wed, 16 Mar 2022 12:27:09 GMT, Server=nginx}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[http/1.1]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional[44.206.201.40]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional[443]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: image/png
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 98
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.2
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: https://unpkg.com/swiper@7.4.1/swiper-bundle.min.css
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: 
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {content-encoding=br, cf-cache-status=HIT, etag="3ccb-5Koe10fACH1gYqRziowpfORPwas", age=17371, x-content-type-options=nosniff, date=Mon, 30 Sep 2024 23:24:24 GMT, content-type=text/css; charset=utf-8, last-modified=Sat, 26 Oct 1985 08:15:00 GMT, fly-request-id=01J923DEJY4KAVKQ6SQPFJ9R47-mia, vary=Accept-Encoding, strict-transport-security=max-age=31536000; includeSubDomains; preload, cache-control=public, max-age=31536000, via=1.1 fly.io, cf-ray=8cb7f75b9ec431de-MIA, access-control-allow-origin=*, server=cloudflare}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[h2]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional[104.17.247.203]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional[443]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: text/css
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 225
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.569
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: OK
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {Content-Type=image/gif}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[data]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional.empty
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional.empty
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: image/gif
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 0
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.763
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.764
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: OK
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: OK
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {Content-Type=image/svg+xml}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {Content-Type=image/svg+xml}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[data]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[data]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional.empty
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional.empty
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional.empty
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional.empty
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: image/svg+xml
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: image/svg+xml
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 0
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 0
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.546
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: https://unpkg.com/swiper@7.4.1/swiper-bundle.min.js
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: 
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {content-encoding=br, cf-cache-status=HIT, etag="212e8-+9I9CUbhY1/BprAUcnI5oGYQ/d0", age=14382114, x-content-type-options=nosniff, date=Mon, 30 Sep 2024 23:24:24 GMT, content-type=application/javascript; charset=utf-8, last-modified=Sat, 26 Oct 1985 08:15:00 GMT, fly-request-id=01HVP04BVRVABS6W2B8TMTRP3P-mia, vary=Accept-Encoding, strict-transport-security=max-age=31536000; includeSubDomains; preload, cache-control=public, max-age=31536000, via=1.1 fly.io, cf-ray=8cb7f75c1f9c31de-MIA, access-control-allow-origin=*, server=cloudflare}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[h2]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional[104.17.247.203]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional[443]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: application/javascript
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 225
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.6
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: https://ecommerce-playground.lambdatest.io/image/catalog/maza/svg/logo3.svg
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: OK
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {Cache-Control=max-age=315360000, ETag="623077de-1ca7", Connection=keep-alive, Expires=Thu, 31 Dec 2037 23:55:55 GMT, Accept-Ranges=bytes, Content-Length=7335, Date=Mon, 30 Sep 2024 23:24:37 GMT, Content-Type=image/svg+xml, Last-Modified=Tue, 15 Mar 2022 11:26:22 GMT, Server=nginx}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[http/1.1]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional[44.206.201.40]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional[443]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: image/svg+xml
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 98
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.20
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.12
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: https://ecommerce-playground.lambdatest.io/image/cache/transparent-270x338.webp
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: OK
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {ETag="66a7d3c7-10c", Connection=keep-alive, Accept-Ranges=bytes, Content-Length=268, Date=Mon, 30 Sep 2024 23:24:37 GMT, Content-Type=image/webp, Last-Modified=Mon, 29 Jul 2024 17:39:19 GMT, Server=nginx}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[http/1.1]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional[44.206.201.40]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional[443]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: image/webp
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 146
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: https://ecommerce-playground.lambdatest.io/image/cache/transparent-150x150.webp
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: OK
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {ETag="66a7d3d5-90", Connection=keep-alive, Accept-Ranges=bytes, Content-Length=144, Date=Mon, 30 Sep 2024 23:24:37 GMT, Content-Type=image/webp, Last-Modified=Mon, 29 Jul 2024 17:39:33 GMT, Server=nginx}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[http/1.1]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional[44.206.201.40]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional[443]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: image/webp
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 140
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.5
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: https://ecommerce-playground.lambdatest.io/image/catalog/maza/svg/image2vector.svg
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: OK
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.80
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: https://ecommerce-playground.lambdatest.io/image/cache/transparent-252x315.webp
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: OK
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {ETag="66a7d3db-f4", Connection=keep-alive, Accept-Ranges=bytes, Content-Length=244, Date=Mon, 30 Sep 2024 23:24:37 GMT, Content-Type=image/webp, Last-Modified=Mon, 29 Jul 2024 17:39:39 GMT, Server=nginx}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {Cache-Control=max-age=315360000, ETag="62546a8c-19cbe", Connection=keep-alive, Expires=Thu, 31 Dec 2037 23:55:55 GMT, Accept-Ranges=bytes, Content-Length=105662, Date=Mon, 30 Sep 2024 23:24:37 GMT, Content-Type=image/svg+xml, Last-Modified=Mon, 11 Apr 2022 17:51:08 GMT, Server=nginx}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[http/1.1]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[http/1.1]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional[44.206.201.40]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional[44.206.201.40]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional[443]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional[443]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: image/webp
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: image/svg+xml
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 92
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 210
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.541
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;900&display=swap
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: 
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {content-encoding=gzip, x-content-type-options=nosniff, expires=Mon, 30 Sep 2024 23:24:24 GMT, alt-svc=h3=":443"; ma=2592000,h3-29=":443"; ma=2592000, date=Mon, 30 Sep 2024 23:24:24 GMT, content-type=text/css; charset=utf-8, last-modified=Mon, 30 Sep 2024 23:19:48 GMT, x-frame-options=SAMEORIGIN, strict-transport-security=max-age=31536000, link=<https://fonts.gstatic.com>; rel=preconnect; crossorigin, cache-control=private, max-age=86400, stale-while-revalidate=604800, timing-allow-origin=*, cross-origin-opener-policy=same-origin-allow-popups, cross-origin-resource-policy=cross-origin, access-control-allow-origin=*, x-xss-protection=0, server=ESF}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[h2]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional[[2800:3f0:4005:40d::200a]]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional[443]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: text/css
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 249
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.765
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: https://ecommerce-playground.lambdatest.io/image/catalog/maza/demo/mz_poco/spinner/disk.gif
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: OK
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {Cache-Control=max-age=315360000, ETag="6231d79d-12bec", Connection=keep-alive, Expires=Thu, 31 Dec 2037 23:55:55 GMT, Accept-Ranges=bytes, Content-Length=76780, Date=Mon, 30 Sep 2024 23:24:37 GMT, Content-Type=image/gif, Last-Modified=Wed, 16 Mar 2022 12:27:09 GMT, Server=nginx}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[http/1.1]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional[44.206.201.40]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional[443]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: image/gif
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 98
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.1123
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTciIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNyAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEzLjY1NTEgMEMxNS4yNTA2IDAgMTYuNTQ0IDEuMjkzNDEgMTYuNTQ0IDIuODg4ODlWNS41NTU1NkMxNi41NDQgNS45MjM3NSAxNi4yNDU1IDYuMjIyMjMgMTUuODc3MyA2LjIyMjIzQzE1LjUwOTIgNi4yMjIyMyAxNS4yMTA3IDUuOTIzNzUgMTUuMjEwNyA1LjU1NTU2VjIuODg4ODlDMTUuMjEwNyAyLjAyOTc4IDE0LjUxNDIgMS4zMzMzMyAxMy42NTUxIDEuMzMzMzNIMTAuOTg4NEMxMC42MjAzIDEuMzMzMzMgMTAuMzIxOCAxLjAzNDg1IDEwLjMyMTggMC42NjY2NjdDMTAuMzIxOCAwLjI5ODQ4IDEwLjYyMDMgMCAxMC45ODg0IDBIMTMuNjU1MVoiIGZpbGw9IiMwMzYwQjkiLz4KPHBhdGggZD0iTTMuNDMyODQgMEMxLjgzNzM0IDAgMC41NDM5NDUgMS4yOTM0IDAuNTQzOTQ1IDIuODg4ODlWNS41NTU1NkMwLjU0Mzk0NSA1LjkyMzc1IDAuODQyNDI1IDYuMjIyMjMgMS4yMTA2MSA2LjIyMjIzQzEuNTc4OCA2LjIyMjIzIDEuODc3MjggNS45MjM3NSAxLjg3NzI4IDUuNTU1NTZWMi44ODg4OUMxLjg3NzI4IDIuMDI5NzggMi41NzM3MiAxLjMzMzMzIDMuNDMyODQgMS4zMzMzM0g2LjA5OTVDNi40Njc2OSAxLjMzMzMzIDYuNzY2MTcgMS4wMzQ4NSA2Ljc2NjE3IDAuNjY2NjY3QzYuNzY2MTcgMC4yOTg0OCA2LjQ2NzY5IDAgNi4wOTk1IDBIMy40MzI4NFoiIGZpbGw9IiMwMzYwQjkiLz4KPHBhdGggZD0iTTEzLjY1NTEgMTYuMDAwMUMxNS4yNTA2IDE2LjAwMDEgMTYuNTQ0IDE0LjcwNjYgMTYuNTQ0IDEzLjExMTJWMTAuNDQ0NUMxNi41NDQgMTAuMDc2MyAxNi4yNDU1IDkuNzc3ODMgMTUuODc3MyA5Ljc3NzgzQzE1LjUwOTIgOS43Nzc4MyAxNS4yMTA3IDEwLjA3NjMgMTUuMjEwNyAxMC40NDQ1VjEzLjExMTJDMTUuMjEwNyAxMy45NzAzIDE0LjUxNDIgMTQuNjY2NyAxMy42NTUxIDE0LjY2NjdIMTAuOTg4NEMxMC42MjAzIDE0LjY2NjcgMTAuMzIxOCAxNC45NjUyIDEwLjMyMTggMTUuMzMzNEMxMC4zMjE4IDE1LjcwMTYgMTAuNjIwMyAxNi4wMDAxIDEwLjk4ODQgMTYuMDAwMUgxMy42NTUxWiIgZmlsbD0iIzAzNjBCOSIvPgo8cGF0aCBkPSJNMC41NDM5NDUgMTMuMTExMkMwLjU0Mzk0NSAxNC43MDY2IDEuODM3MzQgMTYuMDAwMSAzLjQzMjg0IDE2LjAwMDFINi4wOTk1QzYuNDY3NjkgMTYuMDAwMSA2Ljc2NjE3IDE1LjcwMTYgNi43NjYxNyAxNS4zMzM0QzYuNzY2MTcgMTQuOTY1MiA2LjQ2NzY5IDE0LjY2NjcgNi4wOTk1IDE0LjY2NjdIMy40MzI4NEMyLjU3MzcyIDE0LjY2NjcgMS44NzcyOCAxMy45NzAzIDEuODc3MjggMTMuMTExMlYxMC40NDQ1QzEuODc3MjggMTAuMDc2MyAxLjU3ODggOS43Nzc4MyAxLjIxMDYxIDkuNzc3ODNDMC44NDI0MjUgOS43Nzc4MyAwLjU0Mzk0NSAxMC4wNzYzIDAuNTQzOTQ1IDEwLjQ0NDVWMTMuMTExMloiIGZpbGw9IiMwMzYwQjkiLz4KPHBhdGggZD0iTTguNTQzODcgMTAuNjY3OEMxMC4wMTY3IDEwLjY2NzggMTEuMjEwNSA5LjQ3Mzk0IDExLjIxMDUgOC4wMDExNEMxMS4yMTA1IDYuNTI4MzQgMTAuMDE2NyA1LjMzNDQ3IDguNTQzODcgNS4zMzQ0N0M3LjA3MTA3IDUuMzM0NDcgNS44NzcyIDYuNTI4MzQgNS44NzcyIDguMDAxMTRDNS44NzcyIDkuNDczOTQgNy4wNzEwNyAxMC42Njc4IDguNTQzODcgMTAuNjY3OFpNOC41NDM4NyA5LjMzNDQ3QzcuODA3NTEgOS4zMzQ0NyA3LjIxMDUzIDguNzM3NDkgNy4yMTA1MyA4LjAwMTE0QzcuMjEwNTMgNy4yNjQ3OCA3LjgwNzUxIDYuNjY3ODEgOC41NDM4NyA2LjY2NzgxQzkuMjgwMjIgNi42Njc4MSA5Ljg3NzIgNy4yNjQ3OCA5Ljg3NzIgOC4wMDExNEM5Ljg3NzIgOC43Mzc0OSA5LjI4MDIyIDkuMzM0NDcgOC41NDM4NyA5LjMzNDQ3WiIgZmlsbD0iIzAzNjBCOSIvPgo8cGF0aCBkPSJNNC41NDM2NyA0Ljg4ODEzQzUuMDM0NiA0Ljg4ODEzIDUuNDMyNTYgNC40OTAxNyA1LjQzMjU2IDMuOTk5MjRDNS40MzI1NiAzLjUwODMzIDUuMDM0NiAzLjExMDM1IDQuNTQzNjcgMy4xMTAzNUM0LjA1Mjc2IDMuMTEwMzUgMy42NTQ3OSAzLjUwODMzIDMuNjU0NzkgMy45OTkyNEMzLjY1NDc5IDQuNDkwMTcgNC4wNTI3NiA0Ljg4ODEzIDQuNTQzNjcgNC44ODgxM1oiIGZpbGw9IiMwMzYwQjkiLz4KPC9zdmc+
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: OK
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.520
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: https://ecommerce-playground.lambdatest.io/image/cache/transparent-430x323.webp
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: OK
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {Content-Type=image/svg+xml}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[data]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional.empty
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {ETag="66a7d3dd-164", Connection=keep-alive, Accept-Ranges=bytes, Content-Length=356, Date=Mon, 30 Sep 2024 23:24:37 GMT, Content-Type=image/webp, Last-Modified=Mon, 29 Jul 2024 17:39:41 GMT, Server=nginx}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional.empty
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[http/1.1]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: image/svg+xml
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional[44.206.201.40]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 0
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional[443]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: image/webp
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 140
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.543
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: 
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {cdn-status=200, content-encoding=gzip, cf-cache-status=HIT, etag=W/"a454220fc07088bf1fdd19313b6bfd50", age=18677501, x-content-type-options=nosniff, date=Mon, 30 Sep 2024 23:24:24 GMT, last-modified=Mon, 25 Jan 2021 22:04:08 GMT, content-type=application/javascript; charset=utf-8, vary=Accept-Encoding, cdn-cache=HIT, cdn-cachedat=09/04/2022 07:27:08, cdn-requestpullcode=200, strict-transport-security=max-age=31536000; includeSubDomains; preload, cache-control=public, max-age=31919000, cdn-requestpullsuccess=True, timing-allow-origin=*, cdn-uid=b1941f61-b576-4f40-80de-5677acb38f74, cdn-requestid=20402c46d1b967ea0fa87b72fe8e55d8, cross-origin-resource-policy=cross-origin, cdn-pullzone=252412, cdn-proxyver=1.02, cf-ray=8cb7f75d1af49aeb-MIA, access-control-allow-origin=*, cdn-edgestorageid=878, server=cloudflare, cdn-requestcountrycode=US}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[h3]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional[[2606:4700::6812:acf]]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional[443]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: application/javascript
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 0
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.1101
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: https://fonts.gstatic.com/s/nunitosans/v15/pe0TMImSLYBIv1o4X1M8ce2xCx3yop4tQpF_MeTm0lfGWVpNn64CL7U8upHZIbMV51Q42ptCp7t1R-s.woff2
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: 
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {age=371892, report-to={"group":"apps-themes","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/apps-themes"}]}, x-content-type-options=nosniff, expires=Fri, 26 Sep 2025 16:06:12 GMT, alt-svc=h3=":443"; ma=2592000,h3-29=":443"; ma=2592000, date=Thu, 26 Sep 2024 16:06:12 GMT, last-modified=Thu, 27 Apr 2023 00:27:41 GMT, content-type=font/woff2, cache-control=public, max-age=31536000, timing-allow-origin=*, cross-origin-opener-policy=same-origin; report-to="apps-themes", cross-origin-resource-policy=cross-origin, content-security-policy-report-only=require-trusted-types-for 'script'; report-uri https://csp.withgoogle.com/csp/apps-themes, accept-ranges=bytes, access-control-allow-origin=*, content-length=31052, x-xss-protection=0, server=sffe}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[h3]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional[[2800:3f0:4005:40e::2003]]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional[443]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: font/woff2
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 0
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.545
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: 
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {cf-cdnjs-via=cfworker/kv, content-encoding=br, cf-cache-status=HIT, etag="5eb03ec3-113c", age=881164, report-to={"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=waPiZyRru03geIZ6jEM5n%2B8RGQJ95UjeFjV%2FN4inDSpYQR6mHzA87IEVwtMWVeKe4lK6JJ1uz9c1DQPibSvoUJ4n9z33sWCiKgEQB5QPyztKusbg51YhNUZrG3yo4VaaMD%2FDm3I8Q01W%2Fuculo9D4hP3"}],"group":"cf-nel","max_age":604800}, x-content-type-options=nosniff, expires=Sat, 20 Sep 2025 23:24:24 GMT, date=Mon, 30 Sep 2024 23:24:24 GMT, content-type=application/javascript; charset=utf-8, last-modified=Mon, 04 May 2020 16:11:47 GMT, vary=Accept-Encoding, strict-transport-security=max-age=15780000, cache-control=public, max-age=30672000, timing-allow-origin=*, nel={"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}, cross-origin-resource-policy=cross-origin, cf-ray=8cb7f75d4f06099e-MIA, accept-ranges=bytes, access-control-allow-origin=*, content-length=1296, server=cloudflare}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[h3]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional[[2606:4700::6811:190e]]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional[443]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: application/javascript
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 0
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.544
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: 
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {cf-cdnjs-via=cfworker/kv, content-encoding=br, cf-cache-status=HIT, etag="5eb03ec3-139e", age=19272, report-to={"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=khtprvPyt4DfT5Mn8y%2FkXuVQpvsmdbcyjLSxMZ%2BfWA0yllYQtx6MaTcfbcXqYt8MNg96sYZcdh2vrv1yCh9KcZcuQ3i5BsEioqKNrwEdTQcrIzdx7qebJInOLzd7W3285Zndv81iF0VnojDLChkazFiS"}],"group":"cf-nel","max_age":604800}, x-content-type-options=nosniff, expires=Sat, 20 Sep 2025 23:24:24 GMT, date=Mon, 30 Sep 2024 23:24:24 GMT, content-type=application/javascript; charset=utf-8, last-modified=Mon, 04 May 2020 16:11:47 GMT, vary=Accept-Encoding, strict-transport-security=max-age=15780000, cache-control=public, max-age=30672000, timing-allow-origin=*, nel={"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}, cross-origin-resource-policy=cross-origin, cf-ray=8cb7f75d4f0b099e-MIA, accept-ranges=bytes, access-control-allow-origin=*, content-length=2090, server=cloudflare}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[h3]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional[[2606:4700::6811:190e]]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional[443]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: application/javascript
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 0
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.547
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: https://ecommerce-playground.lambdatest.io/catalog/view/theme/mz_poco/asset/javascript/megastore-2.28/combine/8b12f47993fae9bbca4938af4dad3125all.js
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: OK
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {Cache-Control=max-age=315360000, ETag="66cd832e-d38e", Connection=keep-alive, Expires=Thu, 31 Dec 2037 23:55:55 GMT, Accept-Ranges=bytes, Content-Length=54158, Date=Mon, 30 Sep 2024 23:24:37 GMT, Content-Type=application/javascript, Last-Modified=Tue, 27 Aug 2024 07:41:34 GMT, Server=nginx}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[http/1.1]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional[44.206.201.40]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional[443]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: application/javascript
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 146
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.766
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: https://ecommerce-playground.lambdatest.io/image/cache/catalog/maza/demo/mz_poco/megastore-2/banner/parallex-image-1920x1080.webp
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: OK
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {ETag="66a7d3d5-5e36", Connection=keep-alive, Accept-Ranges=bytes, Content-Length=24118, Date=Mon, 30 Sep 2024 23:24:37 GMT, Content-Type=image/webp, Last-Modified=Mon, 29 Jul 2024 17:39:33 GMT, Server=nginx}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[http/1.1]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional[44.206.201.40]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional[443]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: image/webp
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 210
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.542
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: https://use.fontawesome.com/releases/v5.12.0/css/all.css
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: 
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {cache-control=max-age=31556926, nel={"success_fraction":0,"report_to":"cf-nel","max_age":604800}, content-encoding=br, cf-cache-status=HIT, etag=W/"500d1a92f875b1d96d37a3a3f8f0438c", age=2154467, report-to={"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=wTXKBCJsMWpen8ey51l2Zi6Gv0GjfyrQrCsW3PI0G9bReGmvWnqu3pHCKNJrDarW1pLs2SP7Py5MbAWCHdIhljOgtQCbXfxAZSfJYIIaDH4Z%2F2i3vgbkRPV1MaVfKQ1okJWCKevD"}],"group":"cf-nel","max_age":604800}, cf-ray=8cb7f75e2b18a4bb-MIA, date=Mon, 30 Sep 2024 23:24:24 GMT, content-type=text/css, last-modified=Fri, 22 Sep 2023 01:45:03 GMT, vary=Accept-Encoding, server=cloudflare}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[h2]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional[104.21.27.152]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional[443]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: text/css
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 414
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response received: 19584.1130
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response url: https://use.fontawesome.com/releases/v5.12.0/webfonts/fa-solid-900.woff2
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status: 200
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response status text: 
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response headers: {cache-control=max-age=31556926, nel={"success_fraction":0,"report_to":"cf-nel","max_age":604800}, cf-cache-status=HIT, etag="f6121be597a72928f54e7ab5b95512a1", age=2631507, report-to={"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=16GXvf7l%2BXtXcEVjCqXrPhXv1GOV8G8X4blnPsQZsjf%2B8AsTNEWRIRw1V%2FnvQXyogu84ZGhx8Cv6j1C%2FGyVHo123hgoXP9UxXPiJd32JWUlGCj4iWwqAKVHTZpCYWv8h2Pthj%2Fg4"}],"group":"cf-nel","max_age":604800}, cf-ray=8cb7f7618bdb746a-MIA, accept-ranges=bytes, access-control-allow-origin=*, content-length=76084, date=Mon, 30 Sep 2024 23:24:25 GMT, content-type=font/woff2, last-modified=Fri, 22 Sep 2023 01:45:05 GMT, vary=Origin, Accept-Encoding, server=cloudflare}
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response protocol: Optional[h2]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote IP address: Optional[104.21.27.152]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response remote port: Optional[443]
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response mime type: font/woff2
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - HTTP response connection id: 453
+[CDP Connection] INFO Selenium_4_Tests.TestDevToolsNetworkInterception - ---
+]]></system-err>
+  </testcase>
+  <testcase name="networkFetchTracking" classname="Selenium_4_Tests.TestDevToolsNetworkInterception" time="2.502"/>
+  <testcase name="interceptNetworkRequests" classname="Selenium_4_Tests.TestDevToolsNetworkInterception" time="2.62"/>
+</testsuite>

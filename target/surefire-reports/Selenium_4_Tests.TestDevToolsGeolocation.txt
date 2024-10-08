@@ -1,0 +1,30 @@
+-------------------------------------------------------------------------------
+Test set: Selenium_4_Tests.TestDevToolsGeolocation
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 18.646 s <<< FAILURE! - in Selenium_4_Tests.TestDevToolsGeolocation
+Selenium_4_Tests.TestDevToolsGeolocation.mockGeolocationDevToolsCommandTimeZone  Time elapsed: 6.428 s  <<< FAILURE!
+org.assertj.core.error.AssertJMultipleFailuresError: 
+
+Multiple Failures (1 failure)
+-- failure 1 --
+expected: "My Location - Where am I Right Now?"
+ but was: "My Location Now - Where am I Right Now?"
+at TestDevToolsGeolocation.lambda$mockGeolocationDevToolsCommandTimeZone$2(TestDevToolsGeolocation.java:87)
+	at Selenium_4_Tests.TestDevToolsGeolocation.mockGeolocationDevToolsCommandTimeZone(TestDevToolsGeolocation.java:87)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+Selenium_4_Tests.TestDevToolsGeolocation.mockGeolocationDevToolsCommand  Time elapsed: 5.678 s  <<< FAILURE!
+org.assertj.core.error.AssertJMultipleFailuresError: 
+
+Multiple Failures (1 failure)
+-- failure 1 --
+expected: "My Location - Where am I Right Now?"
+ but was: "My Location Now - Where am I Right Now?"
+at TestDevToolsGeolocation.lambda$mockGeolocationDevToolsCommand$1(TestDevToolsGeolocation.java:68)
+	at Selenium_4_Tests.TestDevToolsGeolocation.mockGeolocationDevToolsCommand(TestDevToolsGeolocation.java:68)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+

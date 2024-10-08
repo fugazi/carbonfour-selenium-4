@@ -1,0 +1,17 @@
+-------------------------------------------------------------------------------
+Test set: Selenium_4_Tests.TestDevToolsConsoleLogs
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 9.8 s <<< FAILURE! - in Selenium_4_Tests.TestDevToolsConsoleLogs
+Selenium_4_Tests.TestDevToolsConsoleLogs.viewBrowserConsoleLogs  Time elapsed: 9.793 s  <<< FAILURE!
+org.assertj.core.error.AssertJMultipleFailuresError: 
+
+Multiple Failures (1 failure)
+-- failure 1 --
+expected: "My Location - Where am I Right Now?"
+ but was: "My Location Now - Where am I Right Now?"
+at TestDevToolsConsoleLogs.lambda$viewBrowserConsoleLogs$1(TestDevToolsConsoleLogs.java:61)
+	at Selenium_4_Tests.TestDevToolsConsoleLogs.viewBrowserConsoleLogs(TestDevToolsConsoleLogs.java:61)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+

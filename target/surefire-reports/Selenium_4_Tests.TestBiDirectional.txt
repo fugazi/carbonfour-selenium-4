@@ -1,0 +1,121 @@
+-------------------------------------------------------------------------------
+Test set: Selenium_4_Tests.TestBiDirectional
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 0, Errors: 9, Skipped: 0, Time elapsed: 36.763 s <<< FAILURE! - in Selenium_4_Tests.TestBiDirectional
+Selenium_4_Tests.TestBiDirectional.testCreateATabWithAReferenceContext  Time elapsed: 6.894 s  <<< ERROR!
+org.openqa.selenium.bidi.BiDiException: 
+Check if this browser version supports BiDi and if the 'webSocketUrl: true' capability is set.
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: BiDi Connection
+	at org.openqa.selenium.firefox.FirefoxDriver.getBiDi(FirefoxDriver.java:386)
+	at org.openqa.selenium.bidi.browsingcontext.BrowsingContext.<init>(BrowsingContext.java:120)
+	at Selenium_4_Tests.TestBiDirectional.testCreateATabWithAReferenceContext(TestBiDirectional.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+Selenium_4_Tests.TestBiDirectional.testCreateANewTab  Time elapsed: 3.665 s  <<< ERROR!
+org.openqa.selenium.bidi.BiDiException: 
+Check if this browser version supports BiDi and if the 'webSocketUrl: true' capability is set.
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: BiDi Connection
+	at org.openqa.selenium.firefox.FirefoxDriver.getBiDi(FirefoxDriver.java:386)
+	at org.openqa.selenium.bidi.browsingcontext.BrowsingContext.<init>(BrowsingContext.java:100)
+	at Selenium_4_Tests.TestBiDirectional.testCreateANewTab(TestBiDirectional.java:90)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+Selenium_4_Tests.TestBiDirectional.testGetTreeWithAChild  Time elapsed: 3.566 s  <<< ERROR!
+org.openqa.selenium.bidi.BiDiException: 
+Check if this browser version supports BiDi and if the 'webSocketUrl: true' capability is set.
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: BiDi Connection
+	at org.openqa.selenium.firefox.FirefoxDriver.getBiDi(FirefoxDriver.java:386)
+	at org.openqa.selenium.bidi.browsingcontext.BrowsingContext.<init>(BrowsingContext.java:88)
+	at Selenium_4_Tests.TestBiDirectional.testGetTreeWithAChild(TestBiDirectional.java:133)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+Selenium_4_Tests.TestBiDirectional.testCreateAWindow  Time elapsed: 3.62 s  <<< ERROR!
+org.openqa.selenium.bidi.BiDiException: 
+Check if this browser version supports BiDi and if the 'webSocketUrl: true' capability is set.
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: BiDi Connection
+	at org.openqa.selenium.firefox.FirefoxDriver.getBiDi(FirefoxDriver.java:386)
+	at org.openqa.selenium.bidi.browsingcontext.BrowsingContext.<init>(BrowsingContext.java:100)
+	at Selenium_4_Tests.TestBiDirectional.testCreateAWindow(TestBiDirectional.java:63)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+Selenium_4_Tests.TestBiDirectional.testCreateABrowsingContextForGivenId  Time elapsed: 3.565 s  <<< ERROR!
+org.openqa.selenium.bidi.BiDiException: 
+Check if this browser version supports BiDi and if the 'webSocketUrl: true' capability is set.
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: BiDi Connection
+	at org.openqa.selenium.firefox.FirefoxDriver.getBiDi(FirefoxDriver.java:386)
+	at org.openqa.selenium.bidi.browsingcontext.BrowsingContext.<init>(BrowsingContext.java:88)
+	at Selenium_4_Tests.TestBiDirectional.testCreateABrowsingContextForGivenId(TestBiDirectional.java:77)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+Selenium_4_Tests.TestBiDirectional.testNavigateToAUrl  Time elapsed: 3.665 s  <<< ERROR!
+org.openqa.selenium.bidi.BiDiException: 
+Check if this browser version supports BiDi and if the 'webSocketUrl: true' capability is set.
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: BiDi Connection
+	at org.openqa.selenium.firefox.FirefoxDriver.getBiDi(FirefoxDriver.java:386)
+	at org.openqa.selenium.bidi.browsingcontext.BrowsingContext.<init>(BrowsingContext.java:100)
+	at Selenium_4_Tests.TestBiDirectional.testNavigateToAUrl(TestBiDirectional.java:116)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+Selenium_4_Tests.TestBiDirectional.testGetTreeWithDepth  Time elapsed: 3.631 s  <<< ERROR!
+org.openqa.selenium.bidi.BiDiException: 
+Check if this browser version supports BiDi and if the 'webSocketUrl: true' capability is set.
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: BiDi Connection
+	at org.openqa.selenium.firefox.FirefoxDriver.getBiDi(FirefoxDriver.java:386)
+	at org.openqa.selenium.bidi.browsingcontext.BrowsingContext.<init>(BrowsingContext.java:88)
+	at Selenium_4_Tests.TestBiDirectional.testGetTreeWithDepth(TestBiDirectional.java:155)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+Selenium_4_Tests.TestBiDirectional.testNavigateToUrlWithReadinessState  Time elapsed: 3.925 s  <<< ERROR!
+org.openqa.selenium.bidi.BiDiException: 
+Check if this browser version supports BiDi and if the 'webSocketUrl: true' capability is set.
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: BiDi Connection
+	at org.openqa.selenium.firefox.FirefoxDriver.getBiDi(FirefoxDriver.java:386)
+	at org.openqa.selenium.bidi.browsingcontext.BrowsingContext.<init>(BrowsingContext.java:100)
+	at Selenium_4_Tests.TestBiDirectional.testNavigateToUrlWithReadinessState(TestBiDirectional.java:47)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+Selenium_4_Tests.TestBiDirectional.testGetAllTopLevelContexts  Time elapsed: 4.064 s  <<< ERROR!
+org.openqa.selenium.bidi.BiDiException: 
+Check if this browser version supports BiDi and if the 'webSocketUrl: true' capability is set.
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
+Driver info: BiDi Connection
+	at org.openqa.selenium.firefox.FirefoxDriver.getBiDi(FirefoxDriver.java:386)
+	at org.openqa.selenium.bidi.browsingcontext.BrowsingContext.<init>(BrowsingContext.java:88)
+	at Selenium_4_Tests.TestBiDirectional.testGetAllTopLevelContexts(TestBiDirectional.java:174)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
