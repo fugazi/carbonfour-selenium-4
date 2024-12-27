@@ -100,7 +100,7 @@ class TestBiDirectional {
      */
     @Test
     void testCreateATabWithAReferenceContext() {
-        BrowsingContext browsingContext = new BrowsingContext(driver, WindowType.TAB, driver.getWindowHandle());
+        BrowsingContext browsingContext = new BrowsingContext(driver, WindowType.TAB);
 
         assertSoftly(softly -> {
             softly.assertThat(browsingContext.getId()).isNotNull();
