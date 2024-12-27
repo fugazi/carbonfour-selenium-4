@@ -3,6 +3,7 @@ package Selenium_4_Tests;
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -46,16 +47,19 @@ public class TestDevToolsDeviceMode {
         devTools.createSession();
 
         // Emulate Device Mode. This includes width, height, deviceScaleFactor, and mobile.
-        HashMap deviceMetrics = new HashMap() {{
-            put("width", 800);
-            put("height", 600);
-            put("mobile", true);
-            put("deviceScaleFactor", 50);
-            put("screenOrientation", new HashMap() {{
-                put("type", "landscapePrimary");
-                put("angle", 50);
-            }});
-        }};
+        Map<String, Object> deviceMetrics = new HashMap<>();
+        deviceMetrics.put("width", 800);
+        deviceMetrics.put("height", 600);
+        deviceMetrics.put("mobile", true);
+        deviceMetrics.put("deviceScaleFactor", 50);
+
+        // Add screen orientation as a nested map
+        Map<String, Object> screenOrientation = new HashMap<>();
+        screenOrientation.put("type", "landscapePrimary");
+        screenOrientation.put("angle", 50);
+
+        deviceMetrics.put("screenOrientation", screenOrientation);
+
         driver.executeCdpCommand("Emulation.setDeviceMetricsOverride", deviceMetrics);
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
@@ -69,16 +73,19 @@ public class TestDevToolsDeviceMode {
         devTools.createSession();
 
         // Simulating Device Mode
-        HashMap deviceMetrics = new HashMap() {{
-            put("width", 700);
-            put("height", 500);
-            put("mobile", true);
-            put("deviceScaleFactor", 70);
-            put("screenOrientation", new HashMap() {{
-                put("type", "portraitPrimary");
-                put("angle", 20);
-            }});
-        }};
+        Map<String, Object> deviceMetrics = new HashMap<>();
+        deviceMetrics.put("width", 700);
+        deviceMetrics.put("height", 500);
+        deviceMetrics.put("mobile", true);
+        deviceMetrics.put("deviceScaleFactor", 70);
+
+        // Add screen orientation as a nested map
+        Map<String, Object> screenOrientation = new HashMap<>();
+        screenOrientation.put("type", "portraitPrimary");
+        screenOrientation.put("angle", 20);
+
+        deviceMetrics.put("screenOrientation", screenOrientation);
+
         driver.executeCdpCommand("Emulation.setDeviceMetricsOverride", deviceMetrics);
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
@@ -92,16 +99,19 @@ public class TestDevToolsDeviceMode {
         devTools.createSession();
 
         // Simulating Device Mode
-        HashMap deviceMetrics = new HashMap() {{
-            put("width", 1024);
-            put("height", 768);
-            put("mobile", true);
-            put("deviceScaleFactor", 70);
-            put("screenOrientation", new HashMap() {{
-                put("type", "portraitSecondary");
-                put("angle", 45);
-            }});
-        }};
+        Map<String, Object> deviceMetrics = new HashMap<>();
+        deviceMetrics.put("width", 1024);
+        deviceMetrics.put("height", 768);
+        deviceMetrics.put("mobile", true);
+        deviceMetrics.put("deviceScaleFactor", 70);
+
+        // Add screen orientation as a nested map
+        Map<String, Object> screenOrientation = new HashMap<>();
+        screenOrientation.put("type", "portraitSecondary");
+        screenOrientation.put("angle", 45);
+
+        deviceMetrics.put("screenOrientation", screenOrientation);
+
         driver.executeCdpCommand("Emulation.setDeviceMetricsOverride", deviceMetrics);
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
@@ -118,16 +128,19 @@ public class TestDevToolsDeviceMode {
         devTools.send(Emulation.setTimezoneOverride("America/New_York"));
 
         // Simulating Device Mode
-        HashMap deviceMetrics = new HashMap() {{
-            put("width", 1600);
-            put("height", 1200);
-            put("mobile", true);
-            put("deviceScaleFactor", 50);
-            put("screenOrientation", new HashMap() {{
-                put("type", "landscapeSecondary");
-                put("angle", 25);
-            }});
-        }};
+        Map<String, Object> deviceMetrics = new HashMap<>();
+        deviceMetrics.put("width", 1600);
+        deviceMetrics.put("height", 1200);
+        deviceMetrics.put("mobile", true);
+        deviceMetrics.put("deviceScaleFactor", 50);
+
+        // Add screen orientation as a nested map
+        Map<String, Object> screenOrientation = new HashMap<>();
+        screenOrientation.put("type", "landscapeSecondary");
+        screenOrientation.put("angle", 25);
+
+        deviceMetrics.put("screenOrientation", screenOrientation);
+
         driver.executeCdpCommand("Emulation.setDeviceMetricsOverride", deviceMetrics);
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
