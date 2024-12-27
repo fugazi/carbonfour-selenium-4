@@ -51,11 +51,11 @@ public class TestDevToolsConsoleLogs {
         devTools.addListener(Log.entryAdded(), logEntry -> {
             // Print The Logs To The Console
             log.info("--------");
-            log.info("Level: " + logEntry.getLevel());
-            log.info("Text: " + logEntry.getText());
-            log.info("URL: " + logEntry.getUrl());
-            log.info("Timestamp: " + logEntry.getTimestamp());
-            log.info("StackTrace: " + logEntry.getStackTrace());
+            log.info("Level: {}", logEntry.getLevel());
+            log.info("Text: {}", logEntry.getText());
+            log.info("URL: {}", logEntry.getUrl());
+            log.info("Timestamp: {}", logEntry.getTimestamp());
+            log.info("StackTrace: {}", logEntry.getStackTrace());
             log.info("--------");
         });
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).isEqualTo("My Location - Where am I Right Now?"));
