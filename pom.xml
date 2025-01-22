@@ -13,8 +13,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.target>11</maven.compiler.target>
         <maven.compiler.source>11</maven.compiler.source>
-        <selenium.version>4.27.0</selenium.version>
-        <assertj.version>3.27.0</assertj.version>
+        <selenium.version>4.28.0</selenium.version>
+        <assertj.version>3.27.3</assertj.version>
         <lombok.version>1.18.36</lombok.version>
         <slf4j.version>2.1.0-alpha1</slf4j.version>
         <faker.version>1.0.2</faker.version>
