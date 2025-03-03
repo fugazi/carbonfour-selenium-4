@@ -154,16 +154,17 @@ public class TestDevToolsDeviceMode {
         devTools.createSession();
 
         // Simulating Device Mode
-        HashMap deviceMetrics = new HashMap() {{
-            put("width", 800);
-            put("height", 800);
-            put("mobile", true);
-            put("deviceScaleFactor", 90);
-            put("screenOrientation", new HashMap() {{
-                put("type", "landscapePrimary");
-                put("angle", 90);
-            }});
-        }};
+        // Simulating Device Mode
+        Map<String, Object> deviceMetrics = new HashMap<>();
+        deviceMetrics.put("width", 800);
+        deviceMetrics.put("height", 800);
+        deviceMetrics.put("mobile", true);
+        deviceMetrics.put("deviceScaleFactor", 90);
+        Map<String, Object> screenOrientation = new HashMap<>();
+        screenOrientation.put("type", "landscapePrimary");
+        screenOrientation.put("angle", 90);
+
+        deviceMetrics.put("screenOrientation", screenOrientation);
         driver.executeCdpCommand("Emulation.setDeviceMetricsOverride", deviceMetrics);
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
@@ -177,16 +178,16 @@ public class TestDevToolsDeviceMode {
         devTools.createSession();
 
         // Simulating Device Mode
-        HashMap deviceMetrics = new HashMap() {{
-            put("width", 900);
-            put("height", 700);
-            put("mobile", true);
-            put("deviceScaleFactor", 50);
-            put("screenOrientation", new HashMap() {{
-                put("type", "portraitPrimary");
-                put("angle", 0);
-            }});
-        }};
+        Map<String, Object> deviceMetrics = new HashMap<>();
+        deviceMetrics.put("width", 900);
+        deviceMetrics.put("height", 700);
+        deviceMetrics.put("mobile", true);
+        deviceMetrics.put("deviceScaleFactor", 50);
+        Map<String, Object> screenOrientation = new HashMap<>();
+        screenOrientation.put("type", "portraitPrimary");
+        screenOrientation.put("angle", 0);
+
+        deviceMetrics.put("screenOrientation", screenOrientation);
         driver.executeCdpCommand("Emulation.setDeviceMetricsOverride", deviceMetrics);
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
@@ -200,17 +201,18 @@ public class TestDevToolsDeviceMode {
         devTools.createSession();
 
         // Simulating Device Mode
-        HashMap deviceMetrics = new HashMap() {{
-            put("width", 375);
-            put("height", 812);
-            put("mobile", true);
-            put("deviceScaleFactor", 0);
-            put("DisplayFeature", new HashMap() {{
-                put("orientation", "horizontal");
-                put("offset", 0);
-                put("maskLength", 0);
-            }});
-        }};
+        Map<String, Object> deviceMetrics = new HashMap<>();
+        deviceMetrics.put("width", 375);
+        deviceMetrics.put("height", 812);
+        deviceMetrics.put("mobile", true);
+        deviceMetrics.put("deviceScaleFactor", 0);
+
+        Map<String, Object> displayFeature = new HashMap<>();
+        displayFeature.put("orientation", "horizontal");
+        displayFeature.put("offset", 0);
+        displayFeature.put("maskLength", 0);
+
+        deviceMetrics.put("DisplayFeature", displayFeature);
         driver.executeCdpCommand("Emulation.setDeviceMetricsOverride", deviceMetrics);
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
@@ -224,17 +226,18 @@ public class TestDevToolsDeviceMode {
         devTools.createSession();
 
         // Simulating Device Mode
-        HashMap deviceMetrics = new HashMap() {{
-            put("width", 320);
-            put("height", 568);
-            put("mobile", true);
-            put("deviceScaleFactor", 0);
-            put("DisplayFeature", new HashMap() {{
-                put("orientation", "vertical");
-                put("offset", 0);
-                put("maskLength", 0);
-            }});
-        }};
+        Map<String, Object> deviceMetrics = new HashMap<>();
+        deviceMetrics.put("width", 320);
+        deviceMetrics.put("height", 568);
+        deviceMetrics.put("mobile", true);
+        deviceMetrics.put("deviceScaleFactor", 0);
+
+        Map<String, Object> displayFeature = new HashMap<>();
+        displayFeature.put("orientation", "vertical");
+        displayFeature.put("offset", 0);
+        displayFeature.put("maskLength", 0);
+
+        deviceMetrics.put("DisplayFeature", displayFeature);
         driver.executeCdpCommand("Emulation.setDeviceMetricsOverride", deviceMetrics);
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
@@ -248,17 +251,18 @@ public class TestDevToolsDeviceMode {
         devTools.createSession();
 
         // Simulating Device Mode
-        HashMap deviceMetrics = new HashMap() {{
-            put("width", 412);
-            put("height", 869);
-            put("mobile", true);
-            put("deviceScaleFactor", 0);
-            put("DisplayFeature", new HashMap() {{
-                put("orientation", "horizontal");
-                put("offset", 0);
-                put("maskLength", 0);
-            }});
-        }};
+        Map<String, Object> deviceMetrics = new HashMap<>();
+        deviceMetrics.put("width", 412);
+        deviceMetrics.put("height", 869);
+        deviceMetrics.put("mobile", true);
+        deviceMetrics.put("deviceScaleFactor", 0);
+
+        Map<String, Object> displayFeature = new HashMap<>();
+        displayFeature.put("orientation", "horizontal");
+        displayFeature.put("offset", 0);
+        displayFeature.put("maskLength", 0);
+
+        deviceMetrics.put("DisplayFeature", displayFeature);
         driver.executeCdpCommand("Emulation.setDeviceMetricsOverride", deviceMetrics);
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
@@ -272,17 +276,18 @@ public class TestDevToolsDeviceMode {
         devTools.createSession();
 
         // Simulating Device Mode
-        HashMap deviceMetrics = new HashMap() {{
-            put("width", 420);
-            put("height", 933);
-            put("mobile", true);
-            put("deviceScaleFactor", 0);
-            put("DisplayFeature", new HashMap() {{
-                put("orientation", "vertical");
-                put("offset", 0);
-                put("maskLength", 0);
-            }});
-        }};
+        Map<String, Object> deviceMetrics = new HashMap<>();
+        deviceMetrics.put("width", 420);
+        deviceMetrics.put("height", 933);
+        deviceMetrics.put("mobile", true);
+        deviceMetrics.put("deviceScaleFactor", 0);
+
+        Map<String, Object> displayFeature = new HashMap<>();
+        displayFeature.put("orientation", "vertical");
+        displayFeature.put("offset", 0);
+        displayFeature.put("maskLength", 0);
+
+        deviceMetrics.put("DisplayFeature", displayFeature);
         driver.executeCdpCommand("Emulation.setDeviceMetricsOverride", deviceMetrics);
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
@@ -296,17 +301,18 @@ public class TestDevToolsDeviceMode {
         devTools.createSession();
 
         // Simulating Device Mode
-        HashMap deviceMetrics = new HashMap() {{
-            put("width", 1024);
-            put("height", 1366);
-            put("mobile", true);
-            put("deviceScaleFactor", 0);
-            put("DisplayFeature", new HashMap() {{
-                put("orientation", "vertical");
-                put("offset", 0);
-                put("maskLength", 0);
-            }});
-        }};
+        Map<String, Object> deviceMetrics = new HashMap<>();
+        deviceMetrics.put("width", 1024);
+        deviceMetrics.put("height", 1366);
+        deviceMetrics.put("mobile", true);
+        deviceMetrics.put("deviceScaleFactor", 0);
+
+        Map<String, Object> displayFeature = new HashMap<>();
+        displayFeature.put("orientation", "vertical");
+        displayFeature.put("offset", 0);
+        displayFeature.put("maskLength", 0);
+
+        deviceMetrics.put("DisplayFeature", displayFeature);
         driver.executeCdpCommand("Emulation.setDeviceMetricsOverride", deviceMetrics);
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
@@ -320,17 +326,18 @@ public class TestDevToolsDeviceMode {
         devTools.createSession();
 
         // Simulating Device Mode
-        HashMap deviceMetrics = new HashMap() {{
-            put("width", 1134);
-            put("height", 712);
-            put("mobile", true);
-            put("deviceScaleFactor", 0);
-            put("DisplayFeature", new HashMap() {{
-                put("orientation", "vertical");
-                put("offset", 0);
-                put("maskLength", 0);
-            }});
-        }};
+        Map<String, Object> deviceMetrics = new HashMap<>();
+        deviceMetrics.put("width", 1134);
+        deviceMetrics.put("height", 712);
+        deviceMetrics.put("mobile", true);
+        deviceMetrics.put("deviceScaleFactor", 0);
+
+        Map<String, Object> displayFeature = new HashMap<>();
+        displayFeature.put("orientation", "vertical");
+        displayFeature.put("offset", 0);
+        displayFeature.put("maskLength", 0);
+
+        deviceMetrics.put("DisplayFeature", displayFeature);
         driver.executeCdpCommand("Emulation.setDeviceMetricsOverride", deviceMetrics);
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
