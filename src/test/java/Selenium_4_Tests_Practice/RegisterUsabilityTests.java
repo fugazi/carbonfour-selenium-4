@@ -16,7 +16,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.JavascriptException;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v130.log.Log;
+import org.openqa.selenium.devtools.v133.log.Log;
 import org.openqa.selenium.edge.EdgeDriver;
 
 @Slf4j
@@ -71,11 +71,11 @@ public class RegisterUsabilityTests {
         devTools.addListener(Log.entryAdded(), logEntry -> {
             // Print The Logs To The Console
             log.info("--------");
-            log.info("Level: " + logEntry.getLevel());
-            log.info("Text: " + logEntry.getText());
-            log.info("URL: " + logEntry.getUrl());
-            log.info("Timestamp: " + logEntry.getTimestamp());
-            log.info("StackTrace: " + logEntry.getStackTrace());
+            log.info("Level: {}", logEntry.getLevel());
+            log.info("Text: {}", logEntry.getText());
+            log.info("URL: {}", logEntry.getUrl());
+            log.info("Timestamp: {}", logEntry.getTimestamp());
+            log.info("StackTrace: {}", logEntry.getStackTrace());
             log.info("--------");
         });
 
@@ -85,9 +85,9 @@ public class RegisterUsabilityTests {
                 .isEqualTo(REGISTER_ACCOUNT_TITLE));
         assertSoftly(softly -> softly.assertThat(driver.getCurrentUrl()).contains(REGISTER_BASE_URL));
         assertSoftly(softly -> softly.assertThat(LOGIN_URL_LINK)
-                .isEqualTo(registerAccountPage.loginPageLink().getAttribute("href")));
+                .isEqualTo(registerAccountPage.loginPageLink().getDomAttribute("href")));
         assertSoftly(softly -> softly.assertThat(PRIVACY_POLICY_LINK)
-                .isEqualTo(registerAccountPage.privacyPolicyLink().getAttribute("href")));
+                .isEqualTo(registerAccountPage.privacyPolicyLink().getDomAttribute("href")));
     }
 
 }

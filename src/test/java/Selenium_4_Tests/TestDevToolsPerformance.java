@@ -12,9 +12,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v130.network.Network;
-import org.openqa.selenium.devtools.v130.performance.Performance;
-import org.openqa.selenium.devtools.v130.performance.model.Metric;
+import org.openqa.selenium.devtools.v133.network.Network;
+import org.openqa.selenium.devtools.v133.performance.Performance;
+import org.openqa.selenium.devtools.v133.performance.model.Metric;
 import org.openqa.selenium.edge.EdgeDriver;
 
 public class TestDevToolsPerformance {
@@ -57,7 +57,7 @@ public class TestDevToolsPerformance {
         devTools.addListener(Network.requestWillBeSent(), event -> System.out.println("Request URI: " + event.getRequest().getUrl() + "\n" + "Request URI + Assertions: "
                 + event.getRequest().getUrl().contains("linkedin.com") + "\n" + "Request Type: " + event.getType()
                 + "\n" + "Request Method: " + event.getRequest().getMethod() + "\n" + "Request Headers: "
-                + event.getRequest().getHeaders() + "\n" + "Request Post Data: " + event.getRequest().getPostData()
+                + event.getRequest().getHeaders() + "\n" + "Request Post Data: " + event.getRequest()
                 + "\n" + "Request Mixed Content Type: " + event.getRequest().getMixedContentType() + "\n"
                 + "Request Referrer Policy: " + event.getRequest().getReferrerPolicy() + "\n"
                 + "Request Is Signed Exchanged: " + event.getRequest().getUrlFragment().isPresent() + "\n"
@@ -85,6 +85,11 @@ public class TestDevToolsPerformance {
         // Disables performance tracking
         devTools.send(Performance.disable());
         // Print the metrics captured
+        List<String> metricsAssert = getStringList(performanceMetrics, metricNames);
+        assertSoftly(softly -> softly.assertThat(metricNames).containsAll(metricsAssert));
+    }
+
+    private static List<String> getStringList(List<Metric> performanceMetrics, List<String> metricNames) {
         List<String> metricsAssert = Arrays.asList("Timestamp", "Documents", "Frames", "JSEventListeners", "Nodes",
                 "LayoutCount", "RecalcStyleCount", "RecalcStyleDuration", "LayoutDuration", "MediaKeySessions",
                 "Resources", "DomContentLoaded", "NavigationStart", "TaskDuration", "JSHeapUsedSize", "JSHeapTotalSize",
@@ -92,6 +97,6 @@ public class TestDevToolsPerformance {
         // Assert that the metrics captured are the expected metrics
         metricsAssert.forEach(metric -> System.out.println(
                 "Metric: " + metric + "\n" + performanceMetrics.get(metricNames.indexOf(metric)).getValue()));
-        assertSoftly(softly -> softly.assertThat(metricNames).containsAll(metricsAssert));
+        return metricsAssert;
     }
 }

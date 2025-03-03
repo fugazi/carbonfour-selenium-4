@@ -45,7 +45,7 @@ class ServerSideRenderingTest {
     @CsvFileSource(resources = "/ServerSideRenderingURL.txt")
     void serverSideRenderingTest(String url) {
         driver.get(url);
-        log.info("Server Side Rendering is active on " + url);
+        log.info("Server Side Rendering is active on {}", url);
         var ssrPage = new ServerSideRenderingPage(driver);
         assertSoftly(softly -> {
             softly.assertThat(ssrPage.getMainHeader())
