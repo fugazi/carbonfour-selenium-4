@@ -1,7 +1,7 @@
 package Selenium_4_Tests;
 
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
-import static org.openqa.selenium.devtools.v130.network.Network.*;
+import static org.openqa.selenium.devtools.v133.network.Network.*;
 import static org.openqa.selenium.remote.http.Contents.utf8String;
 
 import java.util.List;
@@ -15,11 +15,11 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.NetworkInterceptor;
-import org.openqa.selenium.devtools.v130.fetch.Fetch;
-import org.openqa.selenium.devtools.v130.network.Network;
-import org.openqa.selenium.devtools.v130.network.model.BlockedReason;
-import org.openqa.selenium.devtools.v130.network.model.ResourceType;
-import org.openqa.selenium.devtools.v130.security.Security;
+import org.openqa.selenium.devtools.v133.fetch.Fetch;
+import org.openqa.selenium.devtools.v133.network.Network;
+import org.openqa.selenium.devtools.v133.network.model.BlockedReason;
+import org.openqa.selenium.devtools.v133.network.model.ResourceType;
+import org.openqa.selenium.devtools.v133.security.Security;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.http.HttpResponse;
@@ -123,27 +123,27 @@ public class TestDevToolsNetworkInterception {
         // Add a new request listener
         devTools.addListener(loadingFailed(), loadingFailed -> {
             if (loadingFailed.getType().equals(ResourceType.STYLESHEET)) {
-                log.info("Blocking reason: " + loadingFailed.getBlockedReason());
+                log.info("Blocking reason: {}", loadingFailed.getBlockedReason());
                 assertSoftly(softly -> softly.assertThat(loadingFailed.getBlockedReason())
                         .isEqualTo(Optional.of(BlockedReason.INSPECTOR)));
             } else if (loadingFailed.getType().equals(ResourceType.IMAGE)) {
-                log.info("Blocking reason: " + loadingFailed.getBlockedReason());
+                log.info("Blocking reason: {}", loadingFailed.getBlockedReason());
                 assertSoftly(softly -> softly.assertThat(loadingFailed.getBlockedReason())
                         .isEqualTo(Optional.of(BlockedReason.INSPECTOR)));
             } else if (loadingFailed.getType().equals(ResourceType.SCRIPT)) {
-                log.info("Blocking reason: " + loadingFailed.getBlockedReason());
+                log.info("Blocking reason: {}", loadingFailed.getBlockedReason());
                 assertSoftly(softly -> softly.assertThat(loadingFailed.getBlockedReason())
                         .isEqualTo(Optional.of(BlockedReason.INSPECTOR)));
             } else if (loadingFailed.getType().equals(ResourceType.XHR)) {
-                log.info("Blocking reason: " + loadingFailed.getBlockedReason());
+                log.info("Blocking reason: {}", loadingFailed.getBlockedReason());
                 assertSoftly(softly -> softly.assertThat(loadingFailed.getBlockedReason())
                         .isEqualTo(Optional.of(BlockedReason.INSPECTOR)));
             } else if (loadingFailed.getType().equals(ResourceType.MEDIA)) {
-                log.info("Blocking reason: " + loadingFailed.getBlockedReason());
+                log.info("Blocking reason: {}", loadingFailed.getBlockedReason());
                 assertSoftly(softly -> softly.assertThat(loadingFailed.getBlockedReason())
                         .isEqualTo(Optional.of(BlockedReason.INSPECTOR)));
             } else if (loadingFailed.getType().equals(ResourceType.WEBSOCKET)) {
-                log.info("Blocking reason: " + loadingFailed.getBlockedReason());
+                log.info("Blocking reason: {}", loadingFailed.getBlockedReason());
                 assertSoftly(softly -> softly.assertThat(loadingFailed.getBlockedReason())
                         .isEqualTo(Optional.of(BlockedReason.INSPECTOR)));
             }
@@ -155,7 +155,7 @@ public class TestDevToolsNetworkInterception {
                         "https://ecommerce-playground.lambdatest.io/catalog/view/theme/mz_poco/asset/stylesheet/megastore-2.28/combine/eba62915f06ab23a214a819a0557a58b.css")));
         // Add a listener to the 'Network' method to get the blocked request
         devTools.addListener(loadingFailed(), loadingFailed -> {
-            log.info("Blocking reason final: " + loadingFailed.getBlockedReason().get());
+            log.info("Blocking reason final: {}", loadingFailed.getBlockedReason().get());
         });
         // Go to the website
         driver.get("https://ecommerce-playground.lambdatest.io");
@@ -176,20 +176,20 @@ public class TestDevToolsNetworkInterception {
         devTools.send(enable(Optional.empty(), Optional.empty(), Optional.empty()));
         // Add a new WebSocket listener
         devTools.addListener(webSocketCreated(), ws -> {
-            log.info("WebSocket created: " + ws.getUrl());
-            log.info("WebSocket id: " + ws.getRequestId());
-            log.info("WebSocket type: " + ws.getInitiator().stream().findFirst().get().getType());
+            log.info("WebSocket created: {}", ws.getUrl());
+            log.info("WebSocket id: {}", ws.getRequestId());
+            log.info("WebSocket type: {}", ws.getInitiator().stream().findFirst().get().getType());
         });
         // Received WebSocket listener
         devTools.addListener(webSocketFrameReceived(), e -> {
-            log.info("WebSocket frame received: " + e.getRequestId());
+            log.info("WebSocket frame received: {}", e.getRequestId());
             log.info(e.getResponse().getPayloadData());
             log.info(e.getResponse().getOpcode().toString());
             log.info(String.valueOf(e.getResponse().getMask()));
         });
         // Get WebSocket error listener
         devTools.addListener(webSocketFrameError(), e -> {
-            log.info("WebSocket error: " + e.getErrorMessage());
+            log.info("WebSocket error: {}", e.getErrorMessage());
         });
         // Close WebSocket listener
         devTools.addListener(webSocketClosed(), c -> {
@@ -221,11 +221,11 @@ public class TestDevToolsNetworkInterception {
         devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
         // Add a new Event Source listener
         devTools.addListener(eventSourceMessageReceived(), e -> {
-            log.info("Event Source event data received: " + e.getData());
-            log.info("Event Source event name: " + e.getEventName());
-            log.info("Event Source event id: " + e.getEventId());
-            log.info("Event Source message id: " + e.getRequestId());
-            log.info("Event Source event time: " + e.getTimestamp());
+            log.info("Event Source event data received: {}", e.getData());
+            log.info("Event Source event name: {}", e.getEventName());
+            log.info("Event Source event id: {}", e.getEventId());
+            log.info("Event Source message id: {}", e.getRequestId());
+            log.info("Event Source event time: {}", e.getTimestamp());
         });
         // Go to the website and open an Event Source connection
         driver.get("https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_sse");
@@ -247,16 +247,16 @@ public class TestDevToolsNetworkInterception {
         devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
         // Add a new HTTP listener
         devTools.addListener(responseReceived(), e -> {
-            log.info("HTTP response received: " + e.getRequestId());
-            log.info("HTTP response url: " + e.getResponse().getUrl());
-            log.info("HTTP response status: " + e.getResponse().getStatus());
-            log.info("HTTP response status text: " + e.getResponse().getStatusText());
-            log.info("HTTP response headers: " + e.getResponse().getHeaders());
-            log.info("HTTP response protocol: " + e.getResponse().getProtocol());
-            log.info("HTTP response remote IP address: " + e.getResponse().getRemoteIPAddress());
-            log.info("HTTP response remote port: " + e.getResponse().getRemotePort());
-            log.info("HTTP response mime type: " + e.getResponse().getMimeType());
-            log.info("HTTP response connection id: " + e.getResponse().getConnectionId());
+            log.info("HTTP response received: {}", e.getRequestId());
+            log.info("HTTP response url: {}", e.getResponse().getUrl());
+            log.info("HTTP response status: {}", e.getResponse().getStatus());
+            log.info("HTTP response status text: {}", e.getResponse().getStatusText());
+            log.info("HTTP response headers: {}", e.getResponse().getHeaders());
+            log.info("HTTP response protocol: {}", e.getResponse().getProtocol());
+            log.info("HTTP response remote IP address: {}", e.getResponse().getRemoteIPAddress());
+            log.info("HTTP response remote port: {}", e.getResponse().getRemotePort());
+            log.info("HTTP response mime type: {}", e.getResponse().getMimeType());
+            log.info("HTTP response connection id: {}", e.getResponse().getConnectionId());
             log.info("---");
         });
         // Go to the website
@@ -282,7 +282,7 @@ public class TestDevToolsNetworkInterception {
         devTools.send(Network.clearBrowserCookies());
         // Add a new HTTP listener
         devTools.addListener(requestServedFromCache(), cacheRequest -> {
-            log.info("HTTP request served from cache: " + cacheRequest);
+            log.info("HTTP request served from cache: {}", cacheRequest);
         });
         // Go to the website
         driver.get("https://ecommerce-playground.lambdatest.io");

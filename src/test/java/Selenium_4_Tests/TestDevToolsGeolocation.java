@@ -3,13 +3,14 @@ package Selenium_4_Tests;
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v130.emulation.Emulation;
+import org.openqa.selenium.devtools.v133.emulation.Emulation;
 import org.openqa.selenium.edge.EdgeDriver;
 
 public class TestDevToolsGeolocation {
@@ -41,13 +42,14 @@ public class TestDevToolsGeolocation {
      */
     @Test
     void mockGeolocationCDPCommand() {
-        HashMap coordinates = new HashMap() {{
-            put("latitude", 34.066540);
-            put("longitude", -84.296260);
-            put("accuracy", 1);
-        }};
+        Map<String, Object> coordinates = new HashMap<>();
+        coordinates.put("latitude", 34.066540);
+        coordinates.put("longitude", -84.296260);
+        coordinates.put("accuracy", 1);
+
         driver.executeCdpCommand("Emulation.setGeolocationOverride", coordinates);
         driver.get("https://where-am-i.org");
+
         assertSoftly(softly -> softly.assertThat(driver.getTitle())
                 .isEqualTo("Where Am I? - What is My Location Now on Map"));
     }
