@@ -18,6 +18,7 @@ import org.openqa.selenium.devtools.NetworkInterceptor;
 import org.openqa.selenium.devtools.v133.fetch.Fetch;
 import org.openqa.selenium.devtools.v133.network.Network;
 import org.openqa.selenium.devtools.v133.network.model.BlockedReason;
+import org.openqa.selenium.devtools.v133.network.model.Initiator;
 import org.openqa.selenium.devtools.v133.network.model.ResourceType;
 import org.openqa.selenium.devtools.v133.security.Security;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -154,9 +155,7 @@ public class TestDevToolsNetworkInterception {
                         "https://ecommerce-playground.lambdatest.io/image/catalog/opencart-logo.png",
                         "https://ecommerce-playground.lambdatest.io/catalog/view/theme/mz_poco/asset/stylesheet/megastore-2.28/combine/eba62915f06ab23a214a819a0557a58b.css")));
         // Add a listener to the 'Network' method to get the blocked request
-        devTools.addListener(loadingFailed(), loadingFailed -> {
-            log.info("Blocking reason final: {}", loadingFailed.getBlockedReason().get());
-        });
+        devTools.addListener(loadingFailed(), loadingFailed -> log.info("Blocking reason final: {}", loadingFailed.getBlockedReason().orElse(null)));
         // Go to the website
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
@@ -178,7 +177,8 @@ public class TestDevToolsNetworkInterception {
         devTools.addListener(webSocketCreated(), ws -> {
             log.info("WebSocket created: {}", ws.getUrl());
             log.info("WebSocket id: {}", ws.getRequestId());
-            log.info("WebSocket type: {}", ws.getInitiator().stream().findFirst().get().getType());
+            log.info("WebSocket type: {}", ws.getInitiator().flatMap(initiator -> Optional.ofNullable(initiator.getType())).orElse(
+                    Initiator.Type.valueOf("No initiator type")));
         });
         // Received WebSocket listener
         devTools.addListener(webSocketFrameReceived(), e -> {
@@ -188,9 +188,7 @@ public class TestDevToolsNetworkInterception {
             log.info(String.valueOf(e.getResponse().getMask()));
         });
         // Get WebSocket error listener
-        devTools.addListener(webSocketFrameError(), e -> {
-            log.info("WebSocket error: {}", e.getErrorMessage());
-        });
+        devTools.addListener(webSocketFrameError(), e -> log.info("WebSocket error: {}", e.getErrorMessage()));
         // Close WebSocket listener
         devTools.addListener(webSocketClosed(), c -> {
             log.info("WebSocket Closed");
@@ -281,9 +279,7 @@ public class TestDevToolsNetworkInterception {
         devTools.send(Network.clearBrowserCache());
         devTools.send(Network.clearBrowserCookies());
         // Add a new HTTP listener
-        devTools.addListener(requestServedFromCache(), cacheRequest -> {
-            log.info("HTTP request served from cache: {}", cacheRequest);
-        });
+        devTools.addListener(requestServedFromCache(), cacheRequest -> log.info("HTTP request served from cache: {}", cacheRequest));
         // Go to the website
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
