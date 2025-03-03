@@ -13,16 +13,16 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.target>11</maven.compiler.target>
         <maven.compiler.source>11</maven.compiler.source>
-        <selenium.version>4.28.1</selenium.version>
+        <selenium.version>4.29.0</selenium.version>
         <assertj.version>3.27.3</assertj.version>
         <lombok.version>1.18.36</lombok.version>
         <slf4j.version>2.1.0-alpha1</slf4j.version>
         <faker.version>1.0.2</faker.version>
         <axe.version>4.10.1</axe.version>
-        <junit.version>5.12.0-M1</junit.version>
-        <jupiter.params>5.12.0-M1</jupiter.params>
+        <junit.version>5.12.0</junit.version>
+        <jupiter.params>5.12.0</jupiter.params>
         <allure.version>2.29.1</allure.version>
-        <jackson-databind.version>2.18.2</jackson-databind.version>
+        <jackson-databind.version>2.18.3</jackson-databind.version>
         <httpclient.version>4.5.14</httpclient.version>
     </properties>
 
