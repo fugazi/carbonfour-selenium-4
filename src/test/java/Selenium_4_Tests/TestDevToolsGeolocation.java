@@ -10,7 +10,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v133.emulation.Emulation;
+import org.openqa.selenium.devtools.v137.emulation.Emulation;
 import org.openqa.selenium.edge.EdgeDriver;
 
 public class TestDevToolsGeolocation {
@@ -65,7 +65,8 @@ public class TestDevToolsGeolocation {
         DevTools devTools = driver.getDevTools();
         devTools.createSession();
         // Set The Geolocation Override: Latitude, Longitude, Accuracy.
-        devTools.send(Emulation.setGeolocationOverride(Optional.of(41.889980), Optional.of(12.494260), Optional.of(1)));
+        devTools.send(Emulation.setGeolocationOverride(Optional.of(41.889980), Optional.of(12.494260), Optional.of(1),
+                Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty()));
         driver.get("https://my-location.org/");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).isEqualTo("My Location - Where am I Right Now?"));
     }
@@ -77,11 +78,11 @@ public class TestDevToolsGeolocation {
      */
     @Test
     void mockGeolocationDevToolsCommandTimeZone() {
-        // Get The DevTools & Create A Session with the ChromeDriver.
         DevTools devTools = driver.getDevTools();
         devTools.createSession();
         // Set The Geolocation Override: Latitude, Longitude, Accuracy.
-        devTools.send(Emulation.setGeolocationOverride(Optional.of(41.889980), Optional.of(12.494260), Optional.of(1)));
+        devTools.send(Emulation.setGeolocationOverride(Optional.of(41.889980), Optional.of(12.494260), Optional.of(1),
+                Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty()));
         // Set The Time Zone Override: Time Zone ID.
         devTools.send(Emulation.setTimezoneOverride("Europe/Rome"));
         devTools.send(Emulation.setLocaleOverride(Optional.of("it-IT")));

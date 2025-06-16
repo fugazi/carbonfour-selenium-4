@@ -1,7 +1,7 @@
 package Selenium_4_Tests;
 
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
-import static org.openqa.selenium.devtools.v133.network.Network.*;
+import static org.openqa.selenium.devtools.v137.network.Network.*;
 import static org.openqa.selenium.remote.http.Contents.utf8String;
 
 import java.util.List;
@@ -15,12 +15,12 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.NetworkInterceptor;
-import org.openqa.selenium.devtools.v133.fetch.Fetch;
-import org.openqa.selenium.devtools.v133.network.Network;
-import org.openqa.selenium.devtools.v133.network.model.BlockedReason;
-import org.openqa.selenium.devtools.v133.network.model.Initiator;
-import org.openqa.selenium.devtools.v133.network.model.ResourceType;
-import org.openqa.selenium.devtools.v133.security.Security;
+import org.openqa.selenium.devtools.v137.fetch.Fetch;
+import org.openqa.selenium.devtools.v137.network.Network;
+import org.openqa.selenium.devtools.v137.network.model.BlockedReason;
+import org.openqa.selenium.devtools.v137.network.model.Initiator;
+import org.openqa.selenium.devtools.v137.network.model.ResourceType;
+import org.openqa.selenium.devtools.v137.security.Security;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.http.HttpResponse;
