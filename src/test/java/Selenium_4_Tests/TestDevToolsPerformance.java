@@ -12,9 +12,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v137.network.Network;
-import org.openqa.selenium.devtools.v137.performance.Performance;
-import org.openqa.selenium.devtools.v137.performance.model.Metric;
+import org.openqa.selenium.devtools.v145.network.Network;
+import org.openqa.selenium.devtools.v145.performance.Performance;
+import org.openqa.selenium.devtools.v145.performance.model.Metric;
 import org.openqa.selenium.edge.EdgeDriver;
 
 public class TestDevToolsPerformance {
@@ -52,7 +52,7 @@ public class TestDevToolsPerformance {
         DevTools devTools = driver.getDevTools();
         devTools.createSession();
         // Enables network tracking, requests events will be now delivered to the client
-        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty()));
         // Add an event Listener for the 'requestWillBeSent' event.
         devTools.addListener(Network.requestWillBeSent(), event -> System.out.println("Request URI: " + event.getRequest().getUrl() + "\n" + "Request URI + Assertions: "
                 + event.getRequest().getUrl().contains("linkedin.com") + "\n" + "Request Type: " + event.getType()

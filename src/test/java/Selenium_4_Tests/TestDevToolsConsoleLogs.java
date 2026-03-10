@@ -2,17 +2,18 @@ package Selenium_4_Tests;
 
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
 
-import lombok.extern.slf4j.Slf4j;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v137.log.Log;
+import org.openqa.selenium.devtools.v145.log.Log;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@Slf4j
 public class TestDevToolsConsoleLogs {
+
+    private static final Logger log = LoggerFactory.getLogger(TestDevToolsConsoleLogs.class);
 
     public EdgeDriver driver;
 

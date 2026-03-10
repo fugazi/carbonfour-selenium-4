@@ -4,7 +4,6 @@ import static Selenium_4_Tests_Practice.BaseUtility.BaseUrl.getBaseUrl;
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
 
 import Selenium_4_Tests_Practice.Pages.ServerSideRenderingPage;
-import lombok.extern.slf4j.Slf4j;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,9 +11,11 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@Slf4j
 class ServerSideRenderingTest {
+    private static final Logger log = LoggerFactory.getLogger(ServerSideRenderingTest.class);
     private WebDriver driver;
 
     /**

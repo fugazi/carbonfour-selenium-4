@@ -1,13 +1,10 @@
 package Selenium_4_Tests;
 
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
-import static org.openqa.selenium.devtools.v137.network.Network.*;
 import static org.openqa.selenium.remote.http.Contents.utf8String;
 
 import java.util.List;
 import java.util.Optional;
-
-import lombok.extern.slf4j.Slf4j;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,22 +12,22 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.NetworkInterceptor;
-import org.openqa.selenium.devtools.v137.fetch.Fetch;
-import org.openqa.selenium.devtools.v137.network.Network;
-import org.openqa.selenium.devtools.v137.network.model.BlockedReason;
-import org.openqa.selenium.devtools.v137.network.model.Initiator;
-import org.openqa.selenium.devtools.v137.network.model.ResourceType;
-import org.openqa.selenium.devtools.v137.security.Security;
+import org.openqa.selenium.devtools.v145.fetch.Fetch;
+import org.openqa.selenium.devtools.v145.network.Network;
+import org.openqa.selenium.devtools.v145.network.model.BlockedReason;
+import org.openqa.selenium.devtools.v145.network.model.Initiator;
+import org.openqa.selenium.devtools.v145.network.model.ResourceType;
+import org.openqa.selenium.devtools.v145.security.Security;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.http.HttpResponse;
 import org.openqa.selenium.remote.http.Route;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import com.google.common.collect.ImmutableList;
-
-@Slf4j
 public class TestDevToolsNetworkInterception {
 
+    private static final Logger log = LoggerFactory.getLogger(TestDevToolsNetworkInterception.class);
     private static final Integer PAUSE_TIME = 5000;
 
     public EdgeDriver driver;
@@ -119,10 +116,10 @@ public class TestDevToolsNetworkInterception {
         // Enables security tracking with the 'Security' method, security events will now be delivered to the client
         devTools.send(Security.setIgnoreCertificateErrors(true));
         // Block all requests patterns
-        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
-        devTools.send(Network.setBlockedURLs(ImmutableList.of("*")));
+        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty()));
+        devTools.send(Network.setBlockedURLs(Optional.empty(), Optional.of(List.of("*"))));
         // Add a new request listener
-        devTools.addListener(loadingFailed(), loadingFailed -> {
+        devTools.addListener(Network.loadingFailed(), loadingFailed -> {
             if (loadingFailed.getType().equals(ResourceType.STYLESHEET)) {
                 log.info("Blocking reason: {}", loadingFailed.getBlockedReason());
                 assertSoftly(softly -> softly.assertThat(loadingFailed.getBlockedReason())
@@ -150,12 +147,12 @@ public class TestDevToolsNetworkInterception {
             }
         });
         // Block Patterns - In this example: Block some IMG requests.
-        devTools.send(Network.setBlockedURLs(
-                List.of("https://ecommerce-playground.lambdatest.io/image/catalog/maza/svg/image2vector.svg",
+        devTools.send(Network.setBlockedURLs(Optional.empty(),
+                Optional.of(List.of("https://ecommerce-playground.lambdatest.io/image/catalog/maza/svg/image2vector.svg",
                         "https://ecommerce-playground.lambdatest.io/image/catalog/opencart-logo.png",
-                        "https://ecommerce-playground.lambdatest.io/catalog/view/theme/mz_poco/asset/stylesheet/megastore-2.28/combine/eba62915f06ab23a214a819a0557a58b.css")));
+                        "https://ecommerce-playground.lambdatest.io/catalog/view/theme/mz_poco/asset/stylesheet/megastore-2.28/combine/eba62915f06ab23a214a819a0557a58b.css"))));
         // Add a listener to the 'Network' method to get the blocked request
-        devTools.addListener(loadingFailed(), loadingFailed -> log.info("Blocking reason final: {}", loadingFailed.getBlockedReason().orElse(null)));
+        devTools.addListener(Network.loadingFailed(), loadingFailed -> log.info("Blocking reason final: {}", loadingFailed.getBlockedReason().orElse(null)));
         // Go to the website
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
@@ -172,25 +169,25 @@ public class TestDevToolsNetworkInterception {
         DevTools devTools = driver.getDevTools();
         devTools.createSession();
         // Enables network tracking with the 'Enable' method, network events will now be delivered to the client
-        devTools.send(enable(Optional.empty(), Optional.empty(), Optional.empty()));
+        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty()));
         // Add a new WebSocket listener
-        devTools.addListener(webSocketCreated(), ws -> {
+        devTools.addListener(Network.webSocketCreated(), ws -> {
             log.info("WebSocket created: {}", ws.getUrl());
             log.info("WebSocket id: {}", ws.getRequestId());
             log.info("WebSocket type: {}", ws.getInitiator().flatMap(initiator -> Optional.ofNullable(initiator.getType())).orElse(
                     Initiator.Type.valueOf("No initiator type")));
         });
         // Received WebSocket listener
-        devTools.addListener(webSocketFrameReceived(), e -> {
+        devTools.addListener(Network.webSocketFrameReceived(), e -> {
             log.info("WebSocket frame received: {}", e.getRequestId());
             log.info(e.getResponse().getPayloadData());
             log.info(e.getResponse().getOpcode().toString());
             log.info(String.valueOf(e.getResponse().getMask()));
         });
         // Get WebSocket error listener
-        devTools.addListener(webSocketFrameError(), e -> log.info("WebSocket error: {}", e.getErrorMessage()));
+        devTools.addListener(Network.webSocketFrameError(), e -> log.info("WebSocket error: {}", e.getErrorMessage()));
         // Close WebSocket listener
-        devTools.addListener(webSocketClosed(), c -> {
+        devTools.addListener(Network.webSocketClosed(), c -> {
             log.info("WebSocket Closed");
             log.info(String.valueOf(c.getTimestamp()));
         });
@@ -216,9 +213,9 @@ public class TestDevToolsNetworkInterception {
         DevTools devTools = driver.getDevTools();
         devTools.createSession();
         // Enables network tracking with the 'Enable' method, network events will now be delivered to the client
-        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty()));
         // Add a new Event Source listener
-        devTools.addListener(eventSourceMessageReceived(), e -> {
+        devTools.addListener(Network.eventSourceMessageReceived(), e -> {
             log.info("Event Source event data received: {}", e.getData());
             log.info("Event Source event name: {}", e.getEventName());
             log.info("Event Source event id: {}", e.getEventId());
@@ -242,9 +239,9 @@ public class TestDevToolsNetworkInterception {
         DevTools devTools = driver.getDevTools();
         devTools.createSession();
         // Enables network tracking with the 'Enable' method, network events will now be delivered to the client
-        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty()));
         // Add a new HTTP listener
-        devTools.addListener(responseReceived(), e -> {
+        devTools.addListener(Network.responseReceived(), e -> {
             log.info("HTTP response received: {}", e.getRequestId());
             log.info("HTTP response url: {}", e.getResponse().getUrl());
             log.info("HTTP response status: {}", e.getResponse().getStatus());
@@ -273,13 +270,13 @@ public class TestDevToolsNetworkInterception {
         DevTools devTools = driver.getDevTools();
         devTools.createSession();
         // Enables network tracking with the 'Enable' method, network events will now be delivered to the client
-        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty()));
         // Clear Browser Cache
         devTools.send(Network.setCacheDisabled(true));
         devTools.send(Network.clearBrowserCache());
         devTools.send(Network.clearBrowserCookies());
         // Add a new HTTP listener
-        devTools.addListener(requestServedFromCache(), cacheRequest -> log.info("HTTP request served from cache: {}", cacheRequest));
+        devTools.addListener(Network.requestServedFromCache(), cacheRequest -> log.info("HTTP request served from cache: {}", cacheRequest));
         // Go to the website
         driver.get("https://ecommerce-playground.lambdatest.io");
         assertSoftly(softly -> softly.assertThat(driver.getTitle()).contains("Your Store"));
