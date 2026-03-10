@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.function.Consumer;
 
 import Selenium_4_Tests_Practice.Pages.RegisterAccountPage;
-import lombok.extern.slf4j.Slf4j;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,11 +15,14 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.JavascriptException;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v140.log.Log;
+import org.openqa.selenium.devtools.v145.log.Log;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@Slf4j
 public class RegisterUsabilityTests {
+
+    private static final Logger log = LoggerFactory.getLogger(RegisterUsabilityTests.class);
 
     private static final String REGISTER_ACCOUNT_TITLE = "Register Account";
     private static final String REGISTER_BASE_URL = "https://ecommerce-playground.lambdatest.io/";
