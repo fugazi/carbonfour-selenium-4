@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.JavascriptException;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v145.log.Log;
+import org.openqa.selenium.devtools.v149.log.Log;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
